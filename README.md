@@ -26,8 +26,16 @@ I have a custom "home occupancy" sensor which combines a few device trackers to 
 ## Screenshots
 Some screenshots of what Home Assistant Looks like:
 
+### Main Screen
+I like this screen, feels like a control panel for the entire house, even though most of it is just temperature/humidity for the various rooms.
+
 ![Main lovelace screen](www/github/lovelace-control.png)
 
+### Floorplan
+
 ![Floorplan](www/github/floorplan.png)
+
+### Trends
+I use Grafana to aid in visualizing trends from my Home Assistant data.
 
 ![Trends lovelace screen](www/github/lovelace-trends.png)
