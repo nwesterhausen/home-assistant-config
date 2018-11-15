@@ -9,11 +9,11 @@ I have a server which I use as a Docker host. Alongside other fun things, it run
 - Home Assistant ([docs](https://www.home-assistant.io/docs/installation/docker/), [docker hub](https://hub.docker.com/r/homeassistant/))
    - My zwave device is passed through to the container
 - Node-red (I built my own image based on node10, [docs](https://nodered.org/docs/platforms/docker))
-- EMQTT (Using [emqx-docker](https://github.com/emqx/emqx-docker), [official site](emqtt.io))
+- EMQTT (Using [emqx-docker](https://github.com/emqx/emqx-docker), [official site](https://emqtt.io))
    - I have a raspberry pi running [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt/).
 - InfluxDB/Grafana
    - I store all sensor data into InfluxDB
-- Traefik (reverse-proxy based on Docker container labels, [official site](traefik.io))
+- Traefik (reverse-proxy based on Docker container labels, [official site](https://traefik.io))
 - Cloud9 IDE (For easily editing Home-Assistant configuration files, [docker hub](https://hub.docker.com/r/kdelfour/cloud9-docker/))
 
 ## Home Assistant Customizations Used
