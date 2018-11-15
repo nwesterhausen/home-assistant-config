@@ -1,0 +1,9 @@
+- name: Getting Dressed
+  entities:
+    light.bedroom_room_lights:
+      state: on
+      brightness: 25
+    light.rec_room_lights: on
+- name: Turn off lights
+  entities:
+    group.all_lights: off

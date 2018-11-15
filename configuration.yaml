@@ -1,0 +1,211 @@
+homeassistant:
+  name: !secret home_name
+  # "Localization"
+  unit_system: Imperial
+  temperature_unit: F
+  # Location, used for sunrise/sunset etc
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret altitude
+  time_zone: !secret time_zone
+  # Customizations
+  customize: !include customize.yaml
+  # Remember that "trusted_networks" bypasses TOTP
+  auth_providers:
+   - type: homeassistant
+   - type: trusted_networks
+  # Using Time-based One Time Passwords for additional security
+  auth_mfa_modules:
+    - type: totp
+##########################
+##      NAV PANELS      ##
+##########################
+config:
+map:
+# logbook: !include logbook.yaml
+# Custom Panels
+# panel_iframe:
+# cloud9:
+#   title: 'Config Editor'
+#   url: !secret editor_url
+#   icon: 'mdi:pencil'
+# nodered:
+#   title: 'Node Red'
+#   url: !secret node_red_url
+#   icon: 'mdi:arrow-decision'
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:floor-plan
+    url_path: floorplan
+    config: !include floorplan.yaml
+##########################
+##        HTTP          ##
+##########################
+http:
+  # We don't need to encrypt here because all traffic goes through a proxy
+  #base_url: 0.0.0.0
+  #base_url: !secret hass_url
+  #server_port: 443
+  #ssl_certificate: !secret cert_loc
+  #ssl_key: !secret key_loc
+  use_x_forwarded_for: True
+  trusted_proxies:
+    - 127.0.0.1
+    - ::1
+    - !secret proxyip
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+  trusted_networks:
+    - !secret lannetwork
+##########################
+##    OPENUV PLATFORM   ##
+##########################
+openuv:
+  api_key: !secret openuvkey
+##########################
+##    NOTIFICATIONS     ##
+##########################
+notify:
+  - platform: html5
+    name: HTML5 Notification
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
+  - platform: discord
+    token: !secret discord_bot_token
+    name: Discord Notify
+##########################
+##        MQTT          ##
+##########################
+mqtt:
+    broker: !secret mqtt_broker_url
+    port: 1883
+    client_id: docker--homeassistant
+    username: !secret mqtt_user
+    password: !secret mqtt_password
+    birth_message:
+      topic: 'hass/status'
+      payload: 'online'
+    will_message:
+      topic: 'hass/status'
+      payload: 'offline'
+    discovery: true
+##########################
+##    INFLUXDB          ##
+##########################
+influxdb:
+    host: influxdb
+    username: !secret influxdb_user
+    password: !secret influxdb_password
+    tags:
+        instance: prod
+        source: hass
+    default_measurement: state
+    include:
+        domains:
+            - sensor
+##########################
+##    DEVICE TRACKER    ##
+##########################
+device_tracker:
+  - platform: gpslogger
+  - platform: unifi
+    host: !secret unifi_ip
+    username: !secret unifi_user
+    password: !secret unifi_password
+    verify_ssl: false
+    new_device_defaults:
+      track_new_devices: False
+      hide_if_away: True
+  - platform: tile
+    username: !secret tile_username
+    password: !secret tile_password
+    new_device_defaults:
+      track_new_devices: True
+      hide_if_away: True
+##########################
+##       ZWAVE          ##
+##########################
+zwave:
+  usb_path: /dev/ttyACM0
+##########################
+##       NEST           ##
+##########################
+nest:
+    client_id: !secret nest_id
+    client_secret: !secret nest_secret
+##########################
+##       TTS            ##
+##########################
+tts:
+  - platform: google
+    cache: true
+    cache_dir: /config/tts
+    time_memory: 300
+##########################
+##     PLEX / ROKU      ##
+##########################
+# media_player:
+#   - platform: plex
+#     entity_namespace: 'plex'
+#     include_non_clients: true
+#     scan_interval: 5
+#     show_all_controls: false
+#     use_custom_entity_ids: true
+#     use_episode_art: true
+#     remove_unavailable_clients: true
+#     client_remove_interval: 600
+#   - platform: roku
+##########################
+##        G CAST        ##
+##########################
+cast:
+##########################
+##      INCLUDES        ##
+##########################
+automation: !include automations.yaml
+binary_sensor: !include binary_sensors.yaml
+camera: !include cameras.yaml
+cloud: !include cloud.yaml
+#cover: !include cover.yaml (garage door cover template)
+group: !include groups.yaml
+#input_select: !include input_select.yaml
+#input_boolean: !include input_boolean.yaml
+#input_number: !include input_number.yaml
+#input_text: !include input_text.yaml
+frontend: !include frontend.yaml
+light: !include lights.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+zone: !include zones.yaml
+##########################
+##        MISC          ##
+##########################
+# Track the sun
+sun:
+# Modify log errors
+logger:
+  default: info
+  logs:
+    # ignore warnings like:
+    # - Found malformed XML at http://123.123.123.123:9080: status=ok
+    netdisco.ssdp: error
+    # unifi hub loggin (for allowing it to be added..)
+    aiounifi: debug
+    homeassistant.components.unifi: debug
+    homeassistant.components.switch.unifi: debug
+# Check for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+# Discover some devices automatically
+#discovery:
+# Record a small history (3 days at most)
+recorder:
+  purge_keep_days: 3

@@ -1,0 +1,15 @@
+# Example .gitignore file for your config dir. Lines with ! will not be ignored.
+*
+!*.yaml
+!.gitignore
+!.readme
+
+*.conf
+*.txt
+*.log
+.storage
+.cloud
+.google.token
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml

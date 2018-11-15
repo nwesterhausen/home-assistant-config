@@ -1,0 +1,301 @@
+title: Home
+
+# could include external resources
+resources:
+  - url: /local/custom_ui/dark-sky-weather-card/dark-sky-weather-card.js?v=2
+    type: js
+  - url: /local/custom-lovelace/thermostat-card/thermostat-card.js?v=1
+    type: module
+
+# Optional background for all views.
+# Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
+
+background: linear-gradient(#03A9F4, black)
+
+# Exclude entities from "Unused entities" view
+excluded_entities:
+  - group.darksky_sensors
+
+views:
+########################################################
+###
+###  HOME DASHBOARD
+###
+########################################################
+
+    # View tab title.
+  - icon: mdi:home
+    # Optional unique id for direct access /lovelace/${id}
+    id: home
+    # Each view can have a different theme applied. Theme should be defined in the frontend.
+    theme: dark-mode
+    # Main family members as badges
+    # badges:
+    #   - entity: device_tracker.ot_kamspixel
+    #   - entity: device_tracker.ot_nickspixel
+    # The cards to show on this view.
+    cards:
+
+      ## ##
+      ## Family Location
+      ## ##
+      - type: entities
+        id: whoswhere
+        title: Who's Where
+        entities:
+          - entity: device_tracker.kamspixel
+          - entity: device_tracker.nickspixel
+
+
+      ## ##
+      ## Guest Location
+      ## ##
+      - type: entity-filter
+        title: Guests
+        id: guestsvisitng
+        entities:
+          - entity: device_tracker.marks_iphone
+          - entity: device_tracker.karens_iphone
+          - entity: device_tracker.mercys_iphone
+        state_filter:
+          - home
+        show_empty: False
+        card:
+          type: entities
+          title: Guests at home
+
+      ## ##
+      ## BEDROOM
+      ## ##
+      - type: entities
+        title: Bedroom
+        id: bedroomcontrol
+        entities:
+          - entity: group.bedroom_room_lights
+            name: Bedroom Lights (Room)
+          - entity: group.bedroom_bed_lights
+            name: Bedroom Lights (Bed)
+          - entity: group.all_bedroom_lights
+            name: Bedroom Lights (All)
+          - entity: sensor.master_bedroom_temperature
+            name: Temperature
+          - entity: sensor.master_bedroom_humidity
+            name: Humidity
+
+      ## ##
+      ## Laundry Room
+      ## ##
+      - type: entities
+        title: Laundry Room
+        id: laundrycontrol
+        show_header_toggle: false
+        entities:
+          - entity: sensor.laundry_room_temperature
+            name: Temperature
+          - entity: sensor.laundry_room_humidity
+            name: Humidity
+          - entity: switch.laundry_room
+            name: Laundry Room Switch
+            icon: mdi:light-switch
+
+      ## ##
+      ## Office
+      ## ##
+      - type: entities
+        title: Office
+        id: officecontrol
+        show_header_toggle: false
+        entities:
+          - entity: sensor.network_rack_temperature
+            name: Temperature (Network)
+          - entity: sensor.network_rack_humidity
+            name: Humidity (Network)
+          - entity: sensor.kams_desk_temperature
+            name: Temperature (Kam's Desk)
+          - entity: sensor.kams_desk_humidity
+            name: Humidity (Kam's Desk)
+
+      ## ##
+      ## Rec Room
+      ## ##
+      - type: entities
+        title: Rec Room
+        id: recroomcontrol
+        show_header_toggle: false
+        entities:
+          - entity: sensor.recroom_temperature_sink
+            name: Temperature
+          - entity: sensor.recroom_luminance
+            name: Light Level
+          - entity: group.all_recroom_lights
+            name: Rec Room Lights (All)
+          - entity: switch.recroom_ceiling
+            name: Rec Room Ceiling Lights
+            icon: mdi:light-switch
+          - entity: switch.recroom_corner
+            name: Rec Room Corner Lights
+            icon: mdi:light-switch
+          - entity: light.recroom_walls
+            name: Rec Room Wall Lights
+            icon: mdi:light-switch
+          - entity: light.recroom_table
+            name: Rec Room Table Lights
+            icon: mdi:light-switch
+          - entity: sensor.recroom_temperature_southwall
+            name: Temperature (Southwall)
+          - entity: sensor.recroom_humidity_southwall
+            name: Humidity (Southwall)
+
+      ## ##
+      ## Avery's Room
+      ## ##
+      - type: entities
+        title: Avery's Room
+        id: averyroomcontrol
+        show_header_toggle: false
+        entities:
+          - entity: sensor.averys_room_temperature
+            name: Temperature
+          - entity: sensor.averys_room_humidity
+            name: Humidity
+
+
+      ## ##
+      ## Kitchen
+      ## ##
+      - type: entities
+        title: Kitchen
+        id: kitchencontrol
+        show_header_toggle: false
+        entities:
+          - entity: sensor.kitchen_temperature
+            name: Temperature
+          - entity: sensor.kitchen_humidity
+            name: Humidity
+
+      ## ##
+      ## Guest Room
+      ## ##
+      - type: entities
+        title: Guest Room
+        id: guestroomcontrol
+        show_header_toggle: false
+        entities:
+          - entity: sensor.guest_room_temperature
+            name: Temperature
+          - entity: sensor.guest_room_humidity
+            name: Humidity
+
+      ## ##
+      ## Guest Bathroom
+      ## ##
+      - type: entities
+        title: Guest Bathroom
+        id: guestbathcontrol
+        show_header_toggle: false
+        entities:
+          - entity: sensor.guest_bathroom_temperature
+            name: Temperature
+          - entity: sensor.guest_bathroom_humidity
+            name: Humidity
+
+      ## ##
+      ## Thermostat
+      ## ##
+      - type: thermostat
+        id: thermostat
+        entity: climate.living_room
+
+########################################################
+###
+###  Weather and Temperature
+###
+########################################################
+  - icon: mdi:thermometer
+    id: temperatures
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Weather and Temperatures
+    cards:
+      - type: glance
+        title: Home Temperatures
+        id: hometemps
+        show_name: false
+        entities:
+          - entity: sensor.living_room_thermostat_temperature
+            icon: mdi:television-classic
+          - entity: sensor.network_rack_temperature
+            icon: mdi:desktop-tower-monitor
+          - entity: sensor.laundry_room_temperature
+            icon: mdi:washing-machine
+          - entity: sensor.zooz_zse40_4in1_sensor_temperature
+            icon: mdi:gamepad-variant
+
+      - type: glance
+        title: Home Humidity
+        id: homehumids
+        show_name: false
+        entities:
+          - entity: sensor.living_room_thermostat_humidity
+            icon: mdi:television-classic
+          - entity: sensor.network_rack_humidity
+            icon: mdi:desktop-tower-monitor
+          - entity: sensor.network_rack_humidity
+            icon: mdi:washing-machine
+          - entity: sensor.zooz_zse40_4in1_sensor_relative_humidity
+            icon: mdi:gamepad-variant
+
+
+      - type: custom:dark-sky-weather-card
+        id: weathercard
+        entity_sun: sun.sun
+        entity_daily_summary: sensor.dark_sky_daily_summary
+        entity_current_conditions: sensor.dark_sky_icon
+        entity_humidity: sensor.dark_sky_humidity
+        entity_pressure: sensor.dark_sky_pressure
+        entity_temperature: sensor.dark_sky_temperature
+        entity_visibility: sensor.dark_sky_visibility
+        entity_wind_bearing: sensor.dark_sky_wind_bearing
+        entity_wind_speed: sensor.dark_sky_wind_speed
+        entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
+        entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
+        entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
+        entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
+        entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
+        entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature
+        entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_1
+        entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_2
+        entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_3
+        entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_4
+        entity_forecast_icon_1: sensor.dark_sky_icon_1
+        entity_forecast_icon_2: sensor.dark_sky_icon_2
+        entity_forecast_icon_3: sensor.dark_sky_icon_3
+        entity_forecast_icon_4: sensor.dark_sky_icon_4
+        entity_forecast_icon_5: sensor.dark_sky_icon_5
+
+
+
+    # Specify a tab icon if you want the view tab to be an icon.
+########################################################
+###
+###  Graphs and Trends
+###
+########################################################
+  - icon: mdi:chart-areaspline
+    id: trends
+    title: Home Data Trends
+    cards:
+      - type: picture-entity
+        id: temptrends
+        entity: camera.indoor_vs_outdoor_temperatures
+        show_name: false
+        show_state: false
+        name: Home vs Outside Temperatures Past 24h
+########################################################
+###
+###  Cameras
+###
+########################################################
+  - icon: mdi:cctv
+    id: cctv
+    title: Camera Feeds
+    cards:

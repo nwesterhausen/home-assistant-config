@@ -1,0 +1,9 @@
+sensor.vision_zp3111_multisensor_alarm_level_10_1:
+  hidden: true
+device_tracker.001b21a72267:
+  hidden: true
+device_tracker.0242c0a87920:
+  homebridge_hidden: true
+binary_sensor.floorplan:
+  custom_ui_state_card: state-card-floorplan
+  config: !include floorplan.yaml

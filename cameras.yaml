@@ -1,0 +1,29 @@
+- platform: generic
+  still_image_url: 'https://icons.wxug.com/data/weather-maps/radar/united-states/dayton-ohio-region-current-radar-animation.gif'
+  name: WundergroundRadar
+- platform: generic
+  still_image_url: !secret meteogram_png_url
+  name: Meteogram
+- platform: generic
+  name: ISS
+  still_image_url: http://staticmap.openstreetmap.de/staticmap.php?center={{ states.binary_sensor.iss.attributes.lat }},{{ states.binary_sensor.iss.attributes.long }}&zoom=4&size=865x512&maptype=mapnik&markers={{ states.binary_sensor.iss.attributes.lat }},{{ states.binary_sensor.iss.attributes.long }},lightblue
+  limit_refetch_to_url_change: true
+
+
+
+### GRAFANA GRAPHS
+- platform: generic
+  still_image_url: 'http://grafana:3000/render/d-solo/MTH6SJxmz/edgewood?orgId=1&panelId=12&width=500&height=500&tz=America%2FIndianapolis'
+  username: !secret grafana_user
+  password: !secret grafana_password
+  name: Indoor vs Outdoor Temperatures
+- platform: generic
+  still_image_url: 'http://grafana:3000/render/d-solo/kRYCDJxmz/docker?orgId=1&panelId=9&width=1000&height=500&tz=America%2FIndianapolis'
+  username: !secret grafana_user
+  password: !secret grafana_password
+  name: Docker Container Memory Usage
+- platform: generic
+  still_image_url: 'http://grafana:3000/render/d-solo/kRYCDJxmz/docker?orgId=1&panelId=4&width=500&height=500&tz=America%2FIndianapolis'
+  username: !secret grafana_user
+  password: !secret grafana_password
+  name: Docker Host Memory Usage

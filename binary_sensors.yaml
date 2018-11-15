@@ -1,0 +1,33 @@
+# - platform: workday
+#   country: US
+#   state: IN
+#   workdays: [mon, tue, wed, thu, fri]
+# - platform: iss
+- platform: template
+  sensors:
+    # Laundry room motion
+    laundry_motion:
+      entity_id: sensor.laundry_motion_level
+      friendly_name: "Laundry Room Motion"
+      value_template: >-
+        { states.sensor.laundry_motion_level.state|int = 8  }
+    # Anyone Home
+    home_occupied:
+      entity_id:
+        - device_tracker.kamspixel
+        - device_tracker.nickspixel
+        - device_tracker.billies_htc
+        - binary_sensor.laundry_motion
+      value_template: >-
+        {{ is_state('device_tracker.kamspixel', 'home')
+           or is_state('device_tracker.nickspixel', 'home') }}
+# DUMMY SENSOR FOR ha_floorplan
+- platform: mqtt
+  state_topic: dummy/floorplan/sensor
+  name: Floorplan
+# PING SENSORS
+# - platform: ping
+#   host: grafana
+#   name: Grafana Accessible
+#   count: 2
+#   scan_interval: 30

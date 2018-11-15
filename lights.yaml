@@ -1,0 +1,33 @@
+## BEDROOM
+- platform: group
+  name: All Bedroom Lights
+  view: no
+  icon: mdi:lightbulb-outline
+  entities:
+    - light.bedroom_room_1
+    - light.bedroom_room_2
+    - light.bedroom_bed_1
+    - light.bedroom_bed_2
+
+- platform: group
+  name: Bedroom Room Lights
+  icon: mdi:door
+  entities:
+    - light.bedroom_room_1
+    - light.bedroom_room_2
+
+- platform: group
+  name: Bedroom Bed Lights
+  icon: mdi:hotel
+  entities:
+    - light.bedroom_bed_1
+    - light.bedroom_bed_2
+    
+
+## RECROOM
+- platform: group
+  name: Dimmable Rec Room Lights
+  icon: mdi:lightbulb-outline
+  entities:
+    - light.recroom_tables
+    - light.recroom_walls

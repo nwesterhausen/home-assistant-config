@@ -1,0 +1,235 @@
+# rokus:
+#   entities:
+#     - media_player.averys_room
+#     - media_player.family_room
+
+# google_homes:
+#   entities:
+#     - media_player.family_room_mini
+#     - media_player.kitchen_mini
+#     - media_player.living_room_mini
+#     - media_player.office_mini
+
+# chromecasts:
+#   entities:
+#     - media_player.family_room_audio
+#     - media_player.front_rooms
+#     - media_player.indoors
+#     - media_player.master_bedroom_speaker
+#     - media_player.office_audio
+
+weather_pics:
+  entities:
+    - camera.meteogram
+    - camera.wundergroundradar
+
+indoor_weather:
+  entities:
+    - sensor.living_room_thermostat_humidity
+    - sensor.living_room_thermostat_temperature
+    - sensor.laundry_room_humidity
+    - sensor.laundry_room_temperature
+    - sensor.network_rack_humidity
+    - sensor.network_rack_temperature
+
+allergy:
+  entities:
+    - sensor.allergy_index_forecasted_average
+    - sensor.allergy_index_historical_average
+    - sensor.allergy_index_today
+    - sensor.allergy_index_tomorrow
+    - sensor.allergy_index_yesterday
+    - sensor.cold__flu_forecasted_average
+
+darksky_sensors:
+  entities:
+    - group.darksky_current
+    - group.darksky_1
+    - group.darksky_2
+    - group.darksky_3
+    - group.darksky_4
+    - group.darksky_5
+
+darksky_current:
+  entities:
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_daily_max_precip_intensity
+    - sensor.dark_sky_daily_summary
+    - sensor.dark_sky_daytime_high_apparent_temperature
+    - sensor.dark_sky_daytime_high_temperature
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_nearest_storm_bearing
+    - sensor.dark_sky_nearest_storm_distance
+    - sensor.dark_sky_overnight_low_apparent_temperature
+    - sensor.dark_sky_overnight_low_temperature
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_accumulation
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_uv_index
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_wind_speed
+
+darksky_1:
+  entities:
+    - sensor.dark_sky_wind_speed_1
+    - sensor.dark_sky_wind_bearing_1
+    - sensor.dark_sky_visibility_1
+    - sensor.dark_sky_uv_index_1
+    - sensor.dark_sky_pressure_1
+    - sensor.dark_sky_precip_probability_1
+    - sensor.dark_sky_precip_intensity_1
+    - sensor.dark_sky_precip_accumulation_1
+    - sensor.dark_sky_overnight_low_apparent_temperature_1
+    - sensor.dark_sky_overnight_low_temperature_1
+    - sensor.dark_sky_precip_1
+    - sensor.dark_sky_daytime_high_apparent_temperature_1
+    - sensor.dark_sky_daytime_high_temperature_1
+    - sensor.dark_sky_humidity_1
+    - sensor.dark_sky_icon_1
+    - sensor.dark_sky_daily_max_precip_intensity_1
+
+darksky_2:
+  entities:
+    - sensor.dark_sky_wind_speed_2
+    - sensor.dark_sky_wind_bearing_2
+    - sensor.dark_sky_visibility_2
+    - sensor.dark_sky_uv_index_2
+    - sensor.dark_sky_pressure_2
+    - sensor.dark_sky_precip_probability_2
+    - sensor.dark_sky_precip_intensity_2
+    - sensor.dark_sky_precip_accumulation_2
+    - sensor.dark_sky_overnight_low_apparent_temperature_2
+    - sensor.dark_sky_overnight_low_temperature_2
+    - sensor.dark_sky_precip_2
+    - sensor.dark_sky_daytime_high_apparent_temperature_2
+    - sensor.dark_sky_daytime_high_temperature_2
+    - sensor.dark_sky_humidity_2
+    - sensor.dark_sky_icon_2
+    - sensor.dark_sky_daily_max_precip_intensity_2
+
+darksky_3:
+  entities:
+    - sensor.dark_sky_wind_speed_3
+    - sensor.dark_sky_wind_bearing_3
+    - sensor.dark_sky_visibility_3
+    - sensor.dark_sky_uv_index_3
+    - sensor.dark_sky_pressure_3
+    - sensor.dark_sky_precip_probability_3
+    - sensor.dark_sky_precip_intensity_3
+    - sensor.dark_sky_precip_accumulation_3
+    - sensor.dark_sky_overnight_low_apparent_temperature_3
+    - sensor.dark_sky_overnight_low_temperature_3
+    - sensor.dark_sky_precip_3
+    - sensor.dark_sky_daytime_high_apparent_temperature_3
+    - sensor.dark_sky_daytime_high_temperature_3
+    - sensor.dark_sky_humidity_3
+    - sensor.dark_sky_icon_3
+    - sensor.dark_sky_daily_max_precip_intensity_3
+
+darksky_4:
+  entities:
+    - sensor.dark_sky_wind_speed_4
+    - sensor.dark_sky_wind_bearing_4
+    - sensor.dark_sky_visibility_4
+    - sensor.dark_sky_uv_index_4
+    - sensor.dark_sky_pressure_4
+    - sensor.dark_sky_precip_probability_4
+    - sensor.dark_sky_precip_intensity_4
+    - sensor.dark_sky_precip_accumulation_4
+    - sensor.dark_sky_overnight_low_apparent_temperature_4
+    - sensor.dark_sky_overnight_low_temperature_4
+    - sensor.dark_sky_precip_4
+    - sensor.dark_sky_daytime_high_apparent_temperature_4
+    - sensor.dark_sky_daytime_high_temperature_4
+    - sensor.dark_sky_humidity_4
+    - sensor.dark_sky_icon_4
+    - sensor.dark_sky_daily_max_precip_intensity_4
+
+darksky_5:
+  entities:
+    - sensor.dark_sky_wind_speed_5
+    - sensor.dark_sky_wind_bearing_5
+    - sensor.dark_sky_visibility_5
+    - sensor.dark_sky_uv_index_5
+    - sensor.dark_sky_pressure_5
+    - sensor.dark_sky_precip_probability_5
+    - sensor.dark_sky_precip_intensity_5
+    - sensor.dark_sky_precip_accumulation_5
+    - sensor.dark_sky_overnight_low_apparent_temperature_5
+    - sensor.dark_sky_overnight_low_temperature_5
+    - sensor.dark_sky_precip_5
+    - sensor.dark_sky_daytime_high_apparent_temperature_5
+    - sensor.dark_sky_daytime_high_temperature_5
+    - sensor.dark_sky_humidity_5
+    - sensor.dark_sky_icon_5
+    - sensor.dark_sky_daily_max_precip_intensity_5
+
+
+catchall:
+  entities:
+    - automation.startup_notification
+    - binary_sensor.edgewood_away
+    - binary_sensor.living_room_thermostat_fan
+    - binary_sensor.living_room_thermostat_has_leaf
+    - binary_sensor.living_room_thermostat_is_locked
+    - binary_sensor.living_room_thermostat_is_using_emergency_heat
+    - binary_sensor.living_room_thermostat_online
+    - binary_sensor.zooz_motion
+    - camera.worldtime
+    - climate.living_room
+    - device_tracker.001b21a72267
+    - device_tracker.09ab01ac06180h5j
+    - device_tracker.0cc47a9d2d65
+    - device_tracker.48db50e3a579
+    - device_tracker.70e28408b4e6
+    - device_tracker.amazon58940129a
+    - device_tracker.android8b561041c72d36c2
+    - device_tracker.androidf69be76daf2942cc
+    - device_tracker.baf4e41498e6
+    - device_tracker.billies_desktop
+    - device_tracker.chromecastaudio
+    - device_tracker.chromecastaudio_2
+    - device_tracker.condor
+    - device_tracker.dcd916b0eaa9
+    - device_tracker.desktop9jc850e
+    - device_tracker.drobo
+    - device_tracker.freenas
+    - device_tracker.googlehomemini
+    - device_tracker.googlehomemini_2
+    - device_tracker.googlehomemini_3
+    - device_tracker.googlehomemini_4
+    - device_tracker.hal9000
+    - device_tracker.hassbian
+    - device_tracker.kameriepc
+    - device_tracker.kameries_corpy
+    - device_tracker.living_room
+    - device_tracker.mqtt
+    - device_tracker.nickdesktop
+    - device_tracker.nicks_pixel
+    - device_tracker.ot_nickspixel
+    - device_tracker.pfsense_router
+    - device_tracker.plex
+    - device_tracker.roku_averys_room
+    - device_tracker.roku_living_room
+    - device_tracker.rpislot2
+    - device_tracker.test_nickspixel
+    - device_tracker.tile_nixel_xl
+    - device_tracker.tile_van_keys_replaced
+    - device_tracker.ua105314077
+    - device_tracker.usbb2ua5451bpg
+    - sensor.edgewood_eta
+    - sensor.hassuptime
+    - sensor.living_room_thermostat_hvac_state
+    - sensor.living_room_thermostat_operation_mode
+    - sensor.living_room_thermostat_target
+    - sensor.test
+    - sun.sun
+    - zone.home
+    - zone.ot_nickspixel__home
+    - zone.ot_nickspixel__work
