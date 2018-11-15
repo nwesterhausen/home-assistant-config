@@ -22,3 +22,12 @@ For my floorplan panel I use [ha-floorplan](https://github.com/pkozul/ha-floorpl
 My Xiaomi sensors record temperature in Celcius, so I template them into Fahrenheit.
 
 I have a custom "home occupancy" sensor which combines a few device trackers to see if at least one person is home.
+
+## Screenshots
+Some screenshots of what Home Assistant Looks like:
+
+![Main lovelace screen](www/github/lovelace-control.png)
+
+![Floorplan](www/github/floorplan.png)
+
+![Trends lovelace screen](www/github/lovelace-trends.png)
