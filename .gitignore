@@ -18,7 +18,9 @@ certs
 deps
 tts
 www/people
+www/fontawesome
 
+.HA_VERSION
 .uuid
 .google.token
 ip_bans.yaml

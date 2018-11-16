@@ -44,7 +44,9 @@ views:
         title: Who's Where
         entities:
           - entity: device_tracker.kamspixel
+            secondary_info: last-changed
           - entity: device_tracker.nickspixel
+            secondary_info: last-changed
 
 
       ## ##
@@ -219,8 +221,11 @@ views:
         id: hometemps
         entities:
           - entity: sensor.average_indoor_temperature
+            icon: fal:temperature-high
           - entity: sensor.average_indoor_temperature_zone_a
+            icon: fal:temperature-high
           - entity: sensor.average_indoor_temperature_zone_b
+            icon: fal:temperature-high
 
       - type: custom:dark-sky-weather-card
         id: weathercard
