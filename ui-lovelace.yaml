@@ -71,11 +71,11 @@ views:
         title: Bedroom
         id: bedroomcontrol
         entities:
-          - entity: group.bedroom_room_lights
+          - entity: light.bedroom_room_lights
             name: Bedroom Lights (Room)
-          - entity: group.bedroom_bed_lights
+          - entity: light.bedroom_bed_lights
             name: Bedroom Lights (Bed)
-          - entity: group.all_bedroom_lights
+          - entity: light.all_bedroom_lights
             name: Bedroom Lights (All)
           - entity: sensor.master_bedroom_temperature
             name: Temperature
@@ -127,8 +127,6 @@ views:
             name: Temperature
           - entity: sensor.recroom_luminance
             name: Light Level
-          - entity: group.all_recroom_lights
-            name: Rec Room Lights (All)
           - entity: switch.recroom_ceiling
             name: Rec Room Ceiling Lights
             icon: mdi:light-switch
@@ -223,7 +221,7 @@ views:
           - entity: sensor.average_indoor_temperature
           - entity: sensor.average_indoor_temperature_zone_a
           - entity: sensor.average_indoor_temperature_zone_b
-            
+
       - type: custom:dark-sky-weather-card
         id: weathercard
         entity_sun: sun.sun
