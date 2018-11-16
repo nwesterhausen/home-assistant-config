@@ -1,0 +1,6 @@
+platform: google_travel_time
+name: TravelTime Nick to Home
+api_key: !secret google_cloud_platform_key
+origin: device_tracker.nicks_pixel
+destination: !secret home_placeid
+scan_interval: 14400

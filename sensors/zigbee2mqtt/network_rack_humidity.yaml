@@ -1,0 +1,10 @@
+platform: "mqtt"
+state_topic: "zigbee2mqtt/network_rack"
+availability_topic: "zigbee2mqtt/bridge/state"
+name: "network_rack_humidity"
+unit_of_measurement: "%"
+icon: "mdi:water-percent"
+value_template: "{{ value_json.humidity }}"
+json_attributes:
+- "battery"
+- "voltage"

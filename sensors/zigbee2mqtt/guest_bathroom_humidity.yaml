@@ -1,0 +1,10 @@
+platform: "mqtt"
+state_topic: "zigbee2mqtt/guest_bathroom"
+availability_topic: "zigbee2mqtt/bridge/state"
+unit_of_measurement: "%"
+name: "guest_bathroom_humidity"
+icon: "mdi:water-percent"
+value_template: "{{ value_json.humidity }}"
+json_attributes:
+  - "battery"
+  - "voltage"

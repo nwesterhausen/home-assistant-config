@@ -1,0 +1,6 @@
+platform: min_max
+type: mean
+name: Average Indoor Temperature
+entity_ids:
+  - sensor.average_indoor_temperature_zone_a
+  - sensor.average_indoor_temperature_zone_b
