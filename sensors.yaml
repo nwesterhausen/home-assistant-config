@@ -29,7 +29,21 @@
 - platform: season
   type: astronomical
 - platform: moon
-
+##########################
+##     MAP  SENSORS     ##
+##########################
+- platform: google_travel_time
+  name: Travel Time - Home from Work
+  api_key: !secret google_cloud_platform_key
+  origin: !secret work_placeid
+  destination: !secret home_placeid
+  scan_interval: 14400
+- platform: google_travel_time
+  name: Travel Time - Work from Home
+  api_key: !secret google_cloud_platform_key
+  destination: !secret work_placeid
+  origin: !secret home_placeid
+  scan_interval: 14400
 ##########################
 ## DARK SKY SENSORS     ##
 ##########################

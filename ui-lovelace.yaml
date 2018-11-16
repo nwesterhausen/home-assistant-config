@@ -24,7 +24,7 @@ views:
 ########################################################
 
     # View tab title.
-  - icon: mdi:home
+  - icon: fas:home
     # Optional unique id for direct access /lovelace/${id}
     id: home
     # Each view can have a different theme applied. Theme should be defined in the frontend.
@@ -211,40 +211,19 @@ views:
 ###  Weather and Temperature
 ###
 ########################################################
-  - icon: mdi:thermometer
+  - icon: far:temperature-frigid
     id: temperatures
     # Title of the view. Will be used as the tooltip for tab icon
     title: Weather and Temperatures
     cards:
-      - type: glance
+      - type: entities
         title: Home Temperatures
         id: hometemps
-        show_name: false
         entities:
-          - entity: sensor.living_room_thermostat_temperature
-            icon: mdi:television-classic
-          - entity: sensor.network_rack_temperature
-            icon: mdi:desktop-tower-monitor
-          - entity: sensor.laundry_room_temperature
-            icon: mdi:washing-machine
-          - entity: sensor.zooz_zse40_4in1_sensor_temperature
-            icon: mdi:gamepad-variant
-
-      - type: glance
-        title: Home Humidity
-        id: homehumids
-        show_name: false
-        entities:
-          - entity: sensor.living_room_thermostat_humidity
-            icon: mdi:television-classic
-          - entity: sensor.network_rack_humidity
-            icon: mdi:desktop-tower-monitor
-          - entity: sensor.network_rack_humidity
-            icon: mdi:washing-machine
-          - entity: sensor.zooz_zse40_4in1_sensor_relative_humidity
-            icon: mdi:gamepad-variant
-
-
+          - entity: sensor.average_indoor_temperature
+          - entity: sensor.average_indoor_temperature_zone_a
+          - entity: sensor.average_indoor_temperature_zone_b
+            
       - type: custom:dark-sky-weather-card
         id: weathercard
         entity_sun: sun.sun
@@ -280,7 +259,7 @@ views:
 ###  Graphs and Trends
 ###
 ########################################################
-  - icon: mdi:chart-areaspline
+  - icon: fas:chart-line
     id: trends
     title: Home Data Trends
     cards:
