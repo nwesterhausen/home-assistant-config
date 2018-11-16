@@ -209,7 +209,7 @@ views:
 ###  Weather and Temperature
 ###
 ########################################################
-  - icon: far:temperature-frigid
+  - icon: fal:temperature-frigid
     id: temperatures
     # Title of the view. Will be used as the tooltip for tab icon
     title: Weather and Temperatures
