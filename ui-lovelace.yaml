@@ -4,8 +4,6 @@ title: Home
 resources:
   - url: /local/custom_ui/dark-sky-weather-card/dark-sky-weather-card.js?v=2
     type: js
-  - url: /local/custom-lovelace/thermostat-card/thermostat-card.js?v=1
-    type: module
 
 # Optional background for all views.
 # Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
