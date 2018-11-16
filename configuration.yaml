@@ -177,7 +177,7 @@ frontend: !include frontend.yaml
 light: !include lights.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
-sensor: !include sensors.yaml
+sensor: !include_dir_list sensors
 switch: !include switches.yaml
 zone: !include zones.yaml
 ##########################
