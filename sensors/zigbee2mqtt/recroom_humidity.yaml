@@ -1,0 +1,10 @@
+platform: "mqtt"
+state_topic: "zigbee2mqtt/recroom_southwall"
+availability_topic: "zigbee2mqtt/bridge/state"
+unit_of_measurement: "%"
+name: "recroom_humidity_southwall"
+icon: "mdi:water-percent"
+value_template: "{{ value_json.humidity }}"
+json_attributes:
+  - "battery"
+  - "voltage"

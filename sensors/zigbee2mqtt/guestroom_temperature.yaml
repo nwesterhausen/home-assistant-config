@@ -1,0 +1,10 @@
+platform: "mqtt"
+state_topic: "zigbee2mqtt/guest_room"
+availability_topic: "zigbee2mqtt/bridge/state"
+unit_of_measurement: "°F"
+name: "guest_room_temperature"
+icon: "mdi:thermometer"
+value_template: "{{ ((float(value_json.temperature) * 9 / 5 )  +  32) | round(1) }}"
+json_attributes:
+  - "battery"
+  - "voltage"
