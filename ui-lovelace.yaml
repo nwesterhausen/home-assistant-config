@@ -123,6 +123,8 @@ views:
         id: recroomcontrol
         show_header_toggle: false
         entities:
+          - entity: group.recroom_lights
+            name: All Recroom Lights
           - entity: sensor.recroom_temperature_sink
             name: Temperature
           - entity: sensor.recroom_luminance

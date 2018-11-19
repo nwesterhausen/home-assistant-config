@@ -1,3 +1,11 @@
+recroom_lights:
+  icon: mdi:lamp
+  entities:
+      - switch.recroom_ceiling
+      - switch.recroom_corner
+      - light.recroom_table
+      - light.recroom_wall
+
 # rokus:
 #   entities:
 #     - media_player.averys_room
