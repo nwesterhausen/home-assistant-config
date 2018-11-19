@@ -1,0 +1,36 @@
+## Restaurants
+- name: Oaken Barrel
+  latitude: 39.615762
+  longitude: -86.090704
+  radius: 25
+  icon: mdi:food
+- name: Sushi Club
+  latitude: 39.649916
+  longitude: -86.085521
+  radius: 25
+  icon: mdi:food
+- name: Longhorn Steakhouse
+  latitude: 39.666509
+  longitude: -86.086285
+  radius: 25
+  icon: mdi:food
+- name: Scotty's Brewhouse
+  latitude: 39.663632
+  longitude: -86.090758
+  radius: 25
+  icon: mdi:food
+- name: Texas Roadhouse
+  latitude: 39.664059
+  longitude: -86.093051
+  radius: 25
+  icon: mdi:food
+- name: Cracker Barrell
+  latitude: 39.666553
+  longitude: -86.093968
+  radius: 25
+  icon: mdi:food
+- name: Ponderosa
+  latitude: 39.694143
+  longitude: -86.081684
+  radius: 25
+  icon: mdi:food

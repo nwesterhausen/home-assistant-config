@@ -1,0 +1,26 @@
+## Home Improvement Stores
+# Lowes
+- name: Lowes
+  latitude: 39.702188
+  longitude: -86.085412
+  radius: 120
+  icon: mdi:cart
+# Home Depot
+- name: Home Depot
+  latitude: 39.667425
+  longitude: -86.088839
+  radius: 120
+  icon: mdi:cart
+# Menards
+- name: Menards
+  latitude: 39.663829
+  longitude: -86.084462
+  radius: 100
+  icon: mdi:cart
+## Craft Stores
+# Michaels
+- name: Michaels
+  latitude: 39.648204
+  longitude: -86.138420
+  radius: 100
+  icon: mdi:cart

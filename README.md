@@ -35,14 +35,20 @@ Here is a list of devices and quantity in my home.
 | Roku Premier+ | 1 | On main TV
 | Insignia Roku TV | 1 | In living room
 
+### PoE Cameras
+| Device | Quantity | Comment
+| ---    | ---      | ---
+| BESDER Wide Angle Outdoor IP Camera | 3 |
+| BESDER Vandal-proof Dome Camera | 2 | 
+
 ## Infrastructure
 I have a server which I use as a Docker host. Alongside other fun things, it runs Home-Assistant and some add-ons:
 
 - Home Assistant ([docs](https://www.home-assistant.io/docs/installation/docker/), [docker hub](https://hub.docker.com/r/homeassistant/))
    - My zwave device is passed through to the container
-- Ubiquiti Unifi Controller
-   - 2 Unifi Access Points
-   - 1 48 port Unifi Switch
+- Ubiquiti Unifi Controller ([docker hub](https://hub.docker.com/r/jacobalberty/unifi/))
+   - 2 Unifi Access Points (UAP-HD, UAP-AC-PRO-E)
+   - 1 48 port Unifi Switch (48 POE-500W)
 - Node-red (I built my own image based on node10, [docs](https://nodered.org/docs/platforms/docker))
 - EMQTT (Using [emqx-docker](https://github.com/emqx/emqx-docker), [official site](https://emqtt.io))
    - I have a raspberry pi running [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt/) for zigbee devices
