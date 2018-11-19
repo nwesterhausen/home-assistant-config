@@ -3,6 +3,30 @@ Configuration files for my Home Assistant instance.
 
 [![Build Status](https://travis-ci.org/nwesterhausen/Home-Assistant-Config.svg?branch=master)](https://travis-ci.org/nwesterhausen/Home-Assistant-Config)
 
+## Screenshots
+Some screenshots of what Home Assistant Looks like:
+
+### Main Screen
+A control panel for the entire house, even though most of it is just temperature/humidity for the various rooms.
+
+![Main lovelace screen](www/github/lovelace-control.png)
+
+### Floorplan
+
+![Floorplan](www/github/floorplan.png)
+
+### Trends
+I use Grafana to aid in visualizing trends from my Home Assistant data.
+
+![Trends lovelace screen](www/github/lovelace-trends.png)
+
+## Home Assistant Customizations Used
+For my floorplan panel I use [ha-floorplan](https://github.com/pkozul/ha-floorplan) which works brilliantly. I also use the [animated darksky weather card](https://community.home-assistant.io/t/custom-dark-sky-animated-weather-card/59816) in my Lovelace UI.
+
+My Xiaomi sensors record temperature in Celcius, so I template them into Fahrenheit.
+
+I have a custom "home occupancy" sensor which combines a few device trackers to see if at least one person is home.
+
 ## Devices
 Here is a list of devices and quantity in my home.
 
@@ -58,27 +82,3 @@ I have a server which I use as a Docker host. Alongside other fun things, it run
 - Cloud9 IDE (For easily editing Home-Assistant configuration files, [docker hub](https://hub.docker.com/r/kdelfour/cloud9-docker/))
 - ShinobiPro NVR
 - OPNSense router
-
-## Home Assistant Customizations Used
-For my floorplan panel I use [ha-floorplan](https://github.com/pkozul/ha-floorplan) which works brilliantly. I also use the [animated darksky weather card](https://community.home-assistant.io/t/custom-dark-sky-animated-weather-card/59816) in my Lovelace UI.
-
-My Xiaomi sensors record temperature in Celcius, so I template them into Fahrenheit.
-
-I have a custom "home occupancy" sensor which combines a few device trackers to see if at least one person is home.
-
-## Screenshots
-Some screenshots of what Home Assistant Looks like:
-
-### Main Screen
-A control panel for the entire house, even though most of it is just temperature/humidity for the various rooms.
-
-![Main lovelace screen](www/github/lovelace-control.png)
-
-### Floorplan
-
-![Floorplan](www/github/floorplan.png)
-
-### Trends
-I use Grafana to aid in visualizing trends from my Home Assistant data.
-
-![Trends lovelace screen](www/github/lovelace-trends.png)
