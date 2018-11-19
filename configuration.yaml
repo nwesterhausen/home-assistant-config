@@ -174,7 +174,6 @@ group: !include groups.yaml
 #input_text: !include input_text.yaml
 frontend: !include frontend.yaml
 light: !include lights.yaml
-scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include_dir_list sensors
 switch: !include switches.yaml
