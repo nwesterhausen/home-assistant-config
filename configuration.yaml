@@ -169,9 +169,7 @@ cloud: !include cloud.yaml
 group: !include groups.yaml
 frontend: !include frontend.yaml
 light: !include lights.yaml
-script: !include scripts.yaml
 sensor: !include_dir_list sensors
-switch: !include switches.yaml
 zone: !include_dir_merge_list zones
 ##########################
 ##        MISC          ##
