@@ -166,12 +166,7 @@ cast:
 binary_sensor: !include binary_sensors.yaml
 camera: !include cameras.yaml
 cloud: !include cloud.yaml
-#cover: !include cover.yaml (garage door cover template)
 group: !include groups.yaml
-#input_select: !include input_select.yaml
-#input_boolean: !include input_boolean.yaml
-#input_number: !include input_number.yaml
-#input_text: !include input_text.yaml
 frontend: !include frontend.yaml
 light: !include lights.yaml
 script: !include scripts.yaml
