@@ -163,7 +163,6 @@ cast:
 ##########################
 ##      INCLUDES        ##
 ##########################
-automation: !include automations.yaml
 binary_sensor: !include binary_sensors.yaml
 camera: !include cameras.yaml
 cloud: !include cloud.yaml
