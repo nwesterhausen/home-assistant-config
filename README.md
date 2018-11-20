@@ -66,8 +66,8 @@ Here is a list of devices and quantity in my home.
 ### PoE Cameras
 | Device | Quantity | Comment
 | ---    | ---      | ---
-| BESDER Wide Angle Outdoor IP Camera | 3 |
-| BESDER Vandal-proof Dome Camera | 2 | 
+| BESDER Wide Angle Outdoor IP Camera | 3 | [Store link](https://www.aliexpress.com/item/BESDER-Wide-Angle-2-8mm-Outdoor-IP-Camera-PoE-1080P-960P-720P-Metal-Case-ONVIF-Security/32820004957.html)
+| BESDER Vandal-proof Dome Camera | 2 | [Store link](https://www.aliexpress.com/item/BESDER-H-265-5MP-2592-1944-IP-Camera-Vandal-proof-Surveillance-Video-Dome-Camera-CCTV-H/32849408406.html)
 
 ## Infrastructure
 I have a server which I use as a Docker host. Alongside other fun things, it runs Home-Assistant and some add-ons:
