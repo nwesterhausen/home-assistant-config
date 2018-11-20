@@ -20,7 +20,9 @@ I use Grafana to aid in visualizing trends from my Home Assistant data.
 
 ![Trends lovelace screen](www/github/lovelace-trends.png)
 
-## Home Assistant Customizations Used
+## Home Assistant Customizations
+One of the neat things I use Home Assistant for is notifying my wife and I when one of us arrives at a common destination, whether on errands or as part of the workday. I use a node-red flow to send a message to Discord when someone enters or leaves a zone.
+
 For my floorplan panel I use [ha-floorplan](https://github.com/pkozul/ha-floorplan) which works brilliantly. I also use the [animated darksky weather card](https://community.home-assistant.io/t/custom-dark-sky-animated-weather-card/59816) in my Lovelace UI.
 
 My Xiaomi sensors record temperature in Celcius, so I template them into Fahrenheit.
