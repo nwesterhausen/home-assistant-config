@@ -164,7 +164,7 @@ cast:
 ##      INCLUDES        ##
 ##########################
 binary_sensor: !include binary_sensors.yaml
-camera: !include cameras.yaml
+camera: !include_dir_merge_list cameras
 cloud: !include cloud.yaml
 group: !include groups.yaml
 frontend: !include frontend.yaml
