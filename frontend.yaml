@@ -1,7 +1,7 @@
   javascript_version: latest
   extra_html_url:
     - /local/custom_ui/state-card-floorplan.html
-    - /local/fontawesome/hass-fontawesome-solid.html
-    - /local/fontawesome/hass-fontawesome-regular.html
-    - /local/fontawesome/hass-fontawesome-brands.html
-    - /local/fontawesome/hass-fontawesome-light.html
+    - /local/custom_icons/hass-fontawesome-solid.html
+    - /local/custom_icons/hass-fontawesome-regular.html
+    - /local/custom_icons/hass-fontawesome-brands.html
+    - /local/custom_icons/hass-fontawesome-light.html
