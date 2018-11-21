@@ -23,6 +23,7 @@ www/custom_icons
 .HA_VERSION
 .uuid
 .google.token
+.spotify-token-cache
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
