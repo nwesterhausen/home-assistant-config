@@ -24,3 +24,10 @@
   longitude: -86.138420
   radius: 100
   icon: mdi:cart
+## Other
+# Newegg willcall
+- name: newegg Will Call
+  latitude: 39.673870
+  longitude: -86.303603
+  radius: 50
+  icon: mdi:cart
