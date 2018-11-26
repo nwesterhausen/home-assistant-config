@@ -160,10 +160,6 @@ media_player:
 #     client_remove_interval: 600
 #   - platform: roku
 ##########################
-##        G CAST        ##
-##########################
-cast:
-##########################
 ##  GOOGLE CALENDAR     ##
 ##########################
 google:
@@ -205,7 +201,7 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
 # Discover some devices automatically
-#discovery:
+discovery:
 # Record a small history (3 days at most)
 recorder:
   purge_keep_days: 3
