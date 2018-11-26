@@ -116,6 +116,8 @@ views:
             name: Temperature (Kam's Desk)
           - entity: sensor.kams_desk_humidity
             name: Humidity (Kam's Desk)
+          - entity: media_player.office_mini
+          - entity: media_player.office_audio
 
       ## ##
       ## Rec Room
@@ -147,6 +149,24 @@ views:
             name: Temperature (Southwall)
           - entity: sensor.recroom_humidity_southwall
             name: Humidity (Southwall)
+          - entity: media_player.family_room_mini
+          - entity: media_player.family_room_audio
+          - entity: media_player.family_room
+          - entity: media_player.averys_room
+      
+      ## ##
+      ## Living Room
+      ## ##
+      - type: entities
+        title: Living Room
+        id: livingroomcontrol
+        show_header_toggle: false
+        entities:
+          - entity: sensor.living_room_thermostat_temperature
+            name: Temperature
+          - entity: sensor.living_room_thermostat_humidity
+            name: Humidity
+          - entity: media_player.living_room
 
       ## ##
       ## Avery's Room
@@ -174,6 +194,7 @@ views:
             name: Temperature
           - entity: sensor.kitchen_humidity
             name: Humidity
+          - entity: media_player.kitchen_mini
 
       ## ##
       ## Guest Room
