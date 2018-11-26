@@ -20,7 +20,8 @@
         - binary_sensor.laundry_motion
       value_template: >-
         {{ is_state('device_tracker.kamspixel', 'home')
-           or is_state('device_tracker.nickspixel', 'home') }}
+           or is_state('device_tracker.nickspixel', 'home')
+           or is_state('device_tracker.billies_phone', 'home') }}
 # DUMMY SENSOR FOR ha_floorplan
 - platform: mqtt
   state_topic: dummy/floorplan/sensor
