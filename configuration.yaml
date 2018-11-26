@@ -164,6 +164,12 @@ media_player:
 ##########################
 cast:
 ##########################
+##  GOOGLE CALENDAR     ##
+##########################
+google:
+  client_id: !secret gcp_oauth_client_id
+  client_secret: !secret gcp_oauth_client_secret
+##########################
 ##      INCLUDES        ##
 ##########################
 binary_sensor: !include binary_sensors.yaml
