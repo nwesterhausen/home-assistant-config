@@ -45,6 +45,8 @@ views:
             secondary_info: last-changed
           - entity: device_tracker.nickspixel
             secondary_info: last-changed
+          - entity: device_tracker.billies_phone
+            secondary_info: last-changed
 
 
       ## ##
