@@ -16,8 +16,7 @@
       entity_id:
         - device_tracker.kamspixel
         - device_tracker.nickspixel
-        - device_tracker.billies_htc
-        - binary_sensor.laundry_motion
+        - device_tracker.billies_phone
       value_template: >-
         {{ is_state('device_tracker.kamspixel', 'home')
            or is_state('device_tracker.nickspixel', 'home')
