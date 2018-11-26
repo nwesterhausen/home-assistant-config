@@ -140,6 +140,8 @@ nest:
 tts:
   - platform: voicerss
     api_key: !secret voicerss_api_key
+  - platform: google
+    base_url: !secret https_hass_url
 ##########################
 ##     PLEX / ROKU      ##
 ##########################
