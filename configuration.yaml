@@ -158,7 +158,15 @@ media_player:
 #     use_episode_art: true
 #     remove_unavailable_clients: true
 #     client_remove_interval: 600
-#   - platform: roku
+  - platform: roku
+    host: 172.18.16.23
+    name: Living Room TV
+  - platform: roku
+    host: 172.18.16.24
+    name: Rec Room TV
+  - platform: roku
+    host: 172.18.16.25
+    name: Small TV
 ##########################
 ##      CAST            ##
 ##########################
@@ -170,6 +178,7 @@ cast:
     - host: 172.18.16.33
     - host: 172.18.16.35
     - host: 172.18.16.36
+    - host: 172.18.16.40
 ##########################
 ##  GOOGLE CALENDAR     ##
 ##########################
