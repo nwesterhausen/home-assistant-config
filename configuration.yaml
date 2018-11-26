@@ -160,6 +160,17 @@ media_player:
 #     client_remove_interval: 600
 #   - platform: roku
 ##########################
+##      CAST            ##
+##########################
+cast:
+  media_player:
+    - host: 172.18.16.30
+    - host: 172.18.16.31
+    - host: 172.18.16.32
+    - host: 172.18.16.33
+    - host: 172.18.16.35
+    - host: 172.18.16.36
+##########################
 ##  GOOGLE CALENDAR     ##
 ##########################
 google:
