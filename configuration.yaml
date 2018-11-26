@@ -138,10 +138,8 @@ nest:
 ##       TTS            ##
 ##########################
 tts:
-  - platform: google
-    cache: true
-    cache_dir: /config/tts
-    time_memory: 300
+  - platform: voicerss
+    api_key: !secret voicerss_api_key
 ##########################
 ##     PLEX / ROKU      ##
 ##########################
