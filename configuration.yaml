@@ -160,13 +160,10 @@ media_player:
 #     client_remove_interval: 600
   - platform: roku
     host: 172.18.16.23
-    name: Living Room TV
   - platform: roku
     host: 172.18.16.24
-    name: Rec Room TV
   - platform: roku
     host: 172.18.16.25
-    name: Small TV
 ##########################
 ##      CAST            ##
 ##########################
