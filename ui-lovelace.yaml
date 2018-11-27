@@ -168,6 +168,7 @@ views:
           - entity: sensor.living_room_thermostat_humidity
             name: Humidity
           - entity: media_player.living_room
+          - entity: media_player.living_room_mini
 
       ## ##
       ## Avery's Room
