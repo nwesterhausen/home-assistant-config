@@ -8,3 +8,7 @@ google_actions:
       - light.bedroom_room_2
       - light.bedroom_bed_1
       - light.bedroom_bed_2
+      - switch.recroom_ceiling
+      - switch.recroom_corner
+      - light.all_bedroom_lights
+      - light.all_rec_room_lights
