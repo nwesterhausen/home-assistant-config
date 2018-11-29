@@ -31,3 +31,12 @@
 #   name: Grafana Accessible
 #   count: 2
 #   scan_interval: 30
+# DOOR SENSORS
+- platform: "mqtt"
+  state_topic: "zigbee2mqtt/front_door"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  name: "Front Door"
+  icon: "mdi:door"
+  json_attributes:
+    - "battery"
+    - "voltage"
