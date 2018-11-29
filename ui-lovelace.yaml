@@ -305,4 +305,4 @@ views:
   - icon: mdi:cctv
     id: cctv
     title: Camera Feeds
-    cards:
+    # cards:
