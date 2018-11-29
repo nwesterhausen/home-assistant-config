@@ -22,7 +22,7 @@ views:
 ########################################################
 
     # View tab title.
-  - icon: fas:home
+  - icon: mdi:home
     # Optional unique id for direct access /lovelace/${id}
     id: home
     # Each view can have a different theme applied. Theme should be defined in the frontend.
@@ -236,7 +236,7 @@ views:
 ###  Weather and Temperature
 ###
 ########################################################
-  - icon: fal:temperature-frigid
+  - icon: mdi:thermometer
     id: temperatures
     # Title of the view. Will be used as the tooltip for tab icon
     title: Weather and Temperatures
@@ -287,7 +287,7 @@ views:
 ###  Graphs and Trends
 ###
 ########################################################
-  - icon: fas:chart-line
+  - icon: mdi:chart-line
     id: trends
     title: Home Data Trends
     cards:
