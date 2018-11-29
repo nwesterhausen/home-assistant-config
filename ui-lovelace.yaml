@@ -67,6 +67,15 @@ views:
           title: Guests at home
 
       ## ##
+      ## Doors
+      ## ##
+      - type: entities
+        title: Door Status
+        id: doorcontrol
+        entities:
+          - entity: binary_sensor.front_door
+
+      ## ##
       ## BEDROOM
       ## ##
       - type: entities
