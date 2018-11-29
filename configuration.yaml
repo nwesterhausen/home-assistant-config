@@ -198,15 +198,15 @@ zone: !include_dir_merge_list zones
 sun:
 # Modify log errors
 logger:
-  default: info
+  default: warn
   logs:
     # ignore warnings like:
     # - Found malformed XML at http://123.123.123.123:9080: status=ok
     netdisco.ssdp: error
     # unifi hub loggin (for allowing it to be added..)
-    aiounifi: debug
-    homeassistant.components.unifi: debug
-    homeassistant.components.switch.unifi: debug
+    # aiounifi: debug
+    # homeassistant.components.unifi: debug
+    # homeassistant.components.switch.unifi: debug
 # Check for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
