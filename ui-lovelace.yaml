@@ -74,6 +74,8 @@ views:
         id: doorcontrol
         entities:
           - entity: binary_sensor.front_door
+          - entity: binary_sensor.back_door
+          - entity: binary_sensor.rec_room_door
 
       ## ##
       ## BEDROOM

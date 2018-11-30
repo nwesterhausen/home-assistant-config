@@ -40,3 +40,19 @@
   json_attributes:
     - "battery"
     - "voltage"
+- platform: "mqtt"
+  state_topic: "zigbee2mqtt/recroom_door"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  name: "Red Room Door"
+  icon: "mdi:door"
+  json_attributes:
+    - "battery"
+    - "voltage"
+- platform: "mqtt"
+  state_topic: "zigbee2mqtt/back_door"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  name: "Back Door"
+  icon: "mdi:door"
+  json_attributes:
+    - "battery"
+    - "voltage"

@@ -3,3 +3,7 @@ binary_sensor.floorplan:
   config: !include floorplan.yaml
 binary_sensor.front_door:
   device_class: door
+binary_sensor.rec_room_door:
+  device_class: door
+binary_sensor.back_door:
+  device_class: door
