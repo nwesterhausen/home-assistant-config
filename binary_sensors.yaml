@@ -37,7 +37,7 @@
   availability_topic: "zigbee2mqtt/bridge/state"
   name: "Front Door"
   icon: "mdi:door"
-  value_template: {{ value_json.contact }}
+  value_template: "{{ value_json.contact }}"
   payload_on: true
   payload_off: false
   json_attributes:
@@ -47,7 +47,7 @@
   availability_topic: "zigbee2mqtt/bridge/state"
   name: "Rec Room Door"
   icon: "mdi:door"
-  value_template: {{ value_json.contact }}
+  value_template: "{{ value_json.contact }}"
   payload_on: true
   payload_off: false
   json_attributes:
@@ -57,7 +57,7 @@
   availability_topic: "zigbee2mqtt/bridge/state"
   name: "Back Door"
   icon: "mdi:door"
-  value_template: {{ value_json.contact }}
+  value_template: "{{ value_json.contact }}"
   payload_on: true
   payload_off: false
   json_attributes:
