@@ -38,8 +38,8 @@
   name: "Front Door"
   icon: "mdi:door"
   value_template: "{{ value_json.contact }}"
-  payload_on: true
-  payload_off: false
+  payload_off: true
+  payload_on: false
   json_attributes:
     - "linkquality"
 - platform: "mqtt"
@@ -48,8 +48,8 @@
   name: "Rec Room Door"
   icon: "mdi:door"
   value_template: "{{ value_json.contact }}"
-  payload_on: true
-  payload_off: false
+  payload_off: true
+  payload_on: false
   json_attributes:
     - "linkquality"
 - platform: "mqtt"
@@ -58,7 +58,7 @@
   name: "Back Door"
   icon: "mdi:door"
   value_template: "{{ value_json.contact }}"
-  payload_on: true
-  payload_off: false
+  payload_off: true
+  payload_on: false
   json_attributes:
     - "linkquality"
