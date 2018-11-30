@@ -26,16 +26,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.62225397"
-     inkscape:cx="148.58396"
+     inkscape:cx="-37.031569"
      inkscape:cy="1142.0349"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="false"
      units="px"
-     inkscape:window-width="1680"
-     inkscape:window-height="987"
-     inkscape:window-x="1672"
-     inkscape:window-y="-8"
+     inkscape:window-width="2560"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="393"
      inkscape:window-maximized="1"
      inkscape:snap-page="false"
      inkscape:object-nodes="false"
@@ -422,8 +422,9 @@
      sodipodi:insensitive="true">
     <g
        transform="translate(0,211.00002)"
-       id="g4162"
-       style="fill:#212121;fill-opacity:1">
+       id="binary_sensor.back_door"
+       style="fill:#212121;fill-opacity:1"
+       inkscape:label="#g4162">
       <g
          style="fill:#212121;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
          transform="matrix(1.6665617,0,0,1.6665617,35.161706,-183.45504)"
@@ -451,8 +452,9 @@
     </g>
     <g
        transform="translate(0,211.00002)"
-       id="g4168"
-       style="fill:#212121;fill-opacity:1">
+       id="binary_sensor.rec_room_door"
+       style="fill:#212121;fill-opacity:1"
+       inkscape:label="#g4168">
       <g
          style="fill:#212121;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
          transform="matrix(1.6665617,0,0,1.6665617,216.20542,183.04548)"
@@ -480,8 +482,9 @@
     </g>
     <g
        transform="translate(0,211.00002)"
-       id="g4156"
-       style="fill:#212121;fill-opacity:1">
+       id="binary_sensor.front_door"
+       style="fill:#212121;fill-opacity:1"
+       inkscape:label="#g4156">
       <g
          style="fill:#212121;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
          transform="matrix(1.6665617,0,0,1.6665617,107.05128,-27.119827)"
@@ -824,7 +827,7 @@
          sodipodi:role="line"
          id="tspan5384"
          x="16.837122"
-         y="72.087761"
+         y="72.115479"
          style="font-size:11.28888893px;stroke-width:0.26458332" /></text>
     <text
        xml:space="preserve"
@@ -889,14 +892,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:1.25;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="257.00912"
-       y="140.09261"
+       x="251.48151"
+       y="140.51781"
        id="sensor.guest_room_temperature"
        inkscape:label="#text5390-2-0-1-8"><tspan
          sodipodi:role="line"
          id="tspan5388-3-9-6-8"
-         x="257.00912"
-         y="140.09261"
+         x="251.48151"
+         y="140.51781"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Agency FB';-inkscape-font-specification:'Agency FB';stroke-width:0.26458332">00F</tspan></text>
     <text
        xml:space="preserve"
@@ -949,14 +952,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:1.25;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="203.49113"
-       y="142.49792"
+       x="197.96352"
+       y="141.22232"
        id="sensor.guest_bathroom_temperature"
        inkscape:label="#text5390-2-0-1-8-2-4-5-6-8"><tspan
          sodipodi:role="line"
          id="tspan5388-3-9-6-8-4-1-3-0-4"
-         x="203.49113"
-         y="142.49792"
+         x="197.96352"
+         y="141.22232"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Agency FB';-inkscape-font-specification:'Agency FB';stroke-width:0.26458332">00F</tspan></text>
   </g>
   <g

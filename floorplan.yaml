@@ -46,6 +46,17 @@
           entities:
              -  sensor.dark_sky_temperature
           text_template: '${entity.state ? Math.ceil(entity.state) : "??"}°F'
+          
+        - name: Doors
+          entities:
+            - binary_sensor.front_door
+            - binary_sensor.rec_room_door
+            - binary_sensor.back_door
+          states:
+            - state: 'on'
+              class: 'red'
+            - state: 'off'
+              class: 'green'
 
         - name: Lights
           entities:
