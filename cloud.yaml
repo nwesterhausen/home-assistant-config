@@ -3,6 +3,7 @@ google_actions:
     include_domains:
       - switch
       - light
+      - script
     exclude_entities:
       - light.bedroom_room_1
       - light.bedroom_room_2
