@@ -1,0 +1,6 @@
+alias: Good Morning
+sequence:
+  - alias: Bedroom lights on
+    service: light.turn_on
+    data:
+      entity_id: group.bedroom_lights

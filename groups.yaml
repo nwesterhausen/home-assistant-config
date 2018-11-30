@@ -1,10 +1,18 @@
 recroom_lights:
   icon: mdi:lamp
   entities:
-      - switch.recroom_ceiling
-      - switch.recroom_corner
-      - light.recroom_table
-      - light.recroom_wall
+    - switch.recroom_ceiling
+    - switch.recroom_corner
+    - light.recroom_table
+    - light.recroom_wall
+
+bedroom_lights:
+  icon: mdi:lamp
+  entities:
+    - light.bedroom_bed_1
+    - light.bedroom_bed_2
+    - light.bedroom_room_1
+    - light.bedroom_room_2
 
 # rokus:
 #   entities:
