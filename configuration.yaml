@@ -59,11 +59,6 @@ http:
   trusted_networks:
     - !secret lannetwork
 ##########################
-##    OPENUV PLATFORM   ##
-##########################
-openuv:
-  api_key: !secret openuvkey
-##########################
 ##    NOTIFICATIONS     ##
 ##########################
 notify:
@@ -207,6 +202,7 @@ logger:
     # aiounifi: debug
     # homeassistant.components.unifi: debug
     # homeassistant.components.switch.unifi: debug
+    pytautulli: debug
 # Check for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
