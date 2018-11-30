@@ -19,6 +19,7 @@ deps
 tts
 www/people
 www/custom_icons
+custom_components
 
 .HA_VERSION
 .uuid
