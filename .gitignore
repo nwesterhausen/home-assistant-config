@@ -19,6 +19,7 @@ deps
 tts
 www/people
 www/custom_icons
+zones/kam_work
 custom_components
 
 .HA_VERSION
@@ -30,4 +31,3 @@ secrets.yaml
 known_devices.yaml
 google_calendars.yaml
 zones/personal.yaml
-zones/kam_work
