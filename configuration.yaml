@@ -118,6 +118,14 @@ device_tracker:
     new_device_defaults:
       track_new_devices: True
       hide_if_away: True
+  - platform: googlehome
+    host: 172.18.16.30
+  - platform: googlehome
+    host: 172.18.16.31
+  - platform: googlehome
+    host: 172.18.16.32
+  - platform: googlehome
+    host: 172.18.16.33
 ##########################
 ##       ZWAVE          ##
 ##########################
