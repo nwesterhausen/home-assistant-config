@@ -1,0 +1,4 @@
+- platform: tplink
+  host: 172.18.19.20
+- platform: tplink
+  host: 172.18.19.21
