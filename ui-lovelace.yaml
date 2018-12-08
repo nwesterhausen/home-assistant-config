@@ -301,11 +301,19 @@ views:
         image: /local/images/floorplan-walls.svg
         elements:
           - type: state-label
+            prefix: "Outside Temp "
             entity: sensor.dark_sky_temperature
             style:
-              bottom: 25%
+              bottom: 50%
               left: 20%
-              font-size: 12px
+              font-size: 26px
+          - type: state-icon
+            entity: binary_sensor.back_door
+            style:
+              top: 8%
+              left: 17%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
 
 
 
