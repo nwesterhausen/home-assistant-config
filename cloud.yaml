@@ -13,3 +13,10 @@ google_actions:
       - switch.recroom_corner
       - light.all_bedroom_lights
       - light.all_rec_room_lights
+  entity_config:
+    switch.tplink_switch_1:
+      name: Christmas Tree
+      room: Living Room
+    switch.tplink_switch_2:
+      name: Christmas Tree
+      room: Rec Room
