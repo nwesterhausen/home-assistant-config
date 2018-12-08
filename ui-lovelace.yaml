@@ -245,17 +245,9 @@ views:
       - type: thermostat
         id: thermostat
         entity: climate.living_room
-
-########################################################
-###
-###  Weather and Temperature
-###
-########################################################
-  - icon: mdi:thermometer
-    id: temperatures
-    # Title of the view. Will be used as the tooltip for tab icon
-    title: Weather and Temperatures
-    cards:
+      ### ##
+      ###  Weather and Temperature
+      ### ##
       - type: entities
         title: Home Temperatures
         id: hometemps
@@ -293,6 +285,27 @@ views:
         entity_forecast_icon_3: sensor.dark_sky_icon_3
         entity_forecast_icon_4: sensor.dark_sky_icon_4
         entity_forecast_icon_5: sensor.dark_sky_icon_5
+
+########################################################
+###
+###  Floorplan
+###
+########################################################
+  - icon: mdi:floorplan
+    id: floorplan
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Floorplan
+    panel: true
+    cards:
+      - type: picture-elements
+        image: /local/custom_ui/floorplan/floorplan.svg
+        elements:
+          - type: state-label
+            entity: sensor.dark_sky_temperature
+            style:
+              bottom: 25%
+              left: 20%
+              font-size: 12px
 
 
 
