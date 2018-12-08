@@ -304,7 +304,7 @@ views:
             prefix: "Outside Temp "
             entity: sensor.dark_sky_temperature
             style:
-              bottom: 45%
+              top: 55%
               left: 20%
               font-size: 1em
           - type: state-icon
@@ -324,11 +324,34 @@ views:
           - type: state-icon
             entity: binary_sensor.rec_room_door
             style:
-              bottom: 15%
-              right: 10%
+              top: 80%
+              left: 80%
               --iron-icon-height: 42px
               --iron-icon-width: 42px
-
+          - type: image
+            entity: switch.tplink_switch_1
+            image: /local/images/entities/christmas-tree.png
+            tap_action: toggle
+            state_filter:
+              "on": grayscale(0)
+              "off": grayscale(1)
+            style:
+              top: 20%
+              left: 60%
+              height: 42px
+              width: 36px
+          - type: image
+            entity: switch.tplink_switch_2
+            image: /local/images/entities/christmas-tree.png
+            tap_action: toggle
+            state_filter:
+              "on": grayscale(0)
+              "off": grayscale(1)
+            style:
+              bottom: 25%
+              left: 55%
+              height: 42px
+              width: 36px
 
 
     # Specify a tab icon if you want the view tab to be an icon.
