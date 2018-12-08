@@ -412,6 +412,56 @@ views:
               left: 25%
               --iron-icon-height: 42px
               --iron-icon-width: 42px
+          - type: state-label
+            entity: sensor.kitchen_temperature
+            style:
+              top: 12%
+              left: 10%
+          - type: state-label
+            entity: sensor.averys_room_temperature
+            style:
+              top: 15%
+              left: 75%
+          - type: state-label
+            entity: sensor.master_bedroom_temperature
+            style:
+              top: 35%
+              left: 15%
+          - type: state-label
+            entity: sensor.guest_bathroom_temperature
+            style:
+              top: 30%
+              left: 71%
+          - type: state-label
+            entity: sensor.recroom_temperature_sink
+            style:
+              top: 58%
+              left: 60%
+          - type: state-label
+            entity: sensor.recroom_temperature_southwall
+            style:
+              top: 78%
+              left: 70%
+          - type: state-label
+            entity: sensor.network_rack_temperature
+            style:
+              top: 40%
+              left: 85%
+          - type: state-label
+            entity: sensor.kams_desk_temperature
+            style:
+              top: 53%
+              left: 85%
+          - type: state-label
+            entity: sensor.guest_room_temperature
+            style:
+              top: 25%
+              left: 85%
+          - type: state-label
+            entity: sensor.living_room_thermostat_temperature
+            style:
+              top: 20%
+              left: 45%
 
 
     # Specify a tab icon if you want the view tab to be an icon.
