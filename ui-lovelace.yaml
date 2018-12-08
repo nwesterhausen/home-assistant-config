@@ -304,14 +304,28 @@ views:
             prefix: "Outside Temp "
             entity: sensor.dark_sky_temperature
             style:
-              bottom: 50%
+              bottom: 45%
               left: 20%
-              font-size: 26px
+              font-size: 1em
           - type: state-icon
             entity: binary_sensor.back_door
             style:
-              top: 8%
+              top: 7%
               left: 17%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
+          - type: state-icon
+            entity: binary_sensor.front_door
+            style:
+              top: 38%
+              left: 42%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
+          - type: state-icon
+            entity: binary_sensor.rec_room_door
+            style:
+              bottom: 15%
+              right: 10%
               --iron-icon-height: 42px
               --iron-icon-width: 42px
 
