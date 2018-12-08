@@ -352,6 +352,66 @@ views:
               left: 55%
               height: 42px
               width: 36px
+          - type: state-icon
+            entity: switch.recroom_corner
+            tap_action: toggle
+            style:
+              top: 75%
+              left: 55%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
+          - type: state-icon
+            entity: switch.recroom_ceiling
+            tap_action: toggle
+            style:
+              top: 70%
+              left: 70%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
+          - type: state-icon
+            entity: light.recroom_walls
+            tap_action: toggle
+            hold_action: more-info
+            style:
+              top: 60%
+              left: 80%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
+          - type: state-icon
+            entity: light.recroom_table
+            tap_action: toggle
+            hold_action: more-info
+            style:
+              top: 70%
+              left: 85%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
+          - type: state-icon
+            entity: switch.laundry_room
+            tap_action: toggle
+            style:
+              top: 30%
+              left: 55%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
+          - type: state-icon
+            entity: light.bedroom_bed_lights
+            tap_action: toggle
+            hold_action: more-info
+            style:
+              top: 40%
+              left: 10%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
+          - type: state-icon
+            entity: light.bedroom_room_lights
+            tap_action: toggle
+            hold_action: more-info
+            style:
+              top: 40%
+              left: 25%
+              --iron-icon-height: 42px
+              --iron-icon-width: 42px
 
 
     # Specify a tab icon if you want the view tab to be an icon.
