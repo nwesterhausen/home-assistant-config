@@ -75,6 +75,18 @@
           action:
             domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
             service: toggle
+        - name: Christmas Lights
+          entities:
+             - switch.tplink_switch_1
+             - switch.tplink_switch_2
+          states:
+            - state: 'on'
+              class: 'green'
+            - state: 'off'
+              class: 'gray'
+          action:
+            domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
+            service: toggle
 
         # - name: Switches
         #   entities:

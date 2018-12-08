@@ -26,17 +26,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.62225397"
-     inkscape:cx="-37.031569"
+     inkscape:cx="593.23323"
      inkscape:cy="1142.0349"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer4"
      showgrid="false"
      units="px"
-     inkscape:window-width="2560"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="393"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1066"
+     inkscape:window-height="821"
+     inkscape:window-x="73"
+     inkscape:window-y="468"
+     inkscape:window-maximized="0"
      inkscape:snap-page="false"
      inkscape:object-nodes="false"
      inkscape:snap-intersection-paths="true" />
@@ -553,7 +553,7 @@
       </g>
     </g>
     <g
-       transform="matrix(0.31410709,0,0,0.31410709,164.38337,371.07744)"
+       transform="matrix(0.31410709,0,0,0.31410709,167.35978,353.64418)"
        id="switch.recroom_ceiling"
        inkscape:label="#g5068-2-8">
       <g
@@ -764,7 +764,7 @@
       </g>
     </g>
     <g
-       id="switch.living_room_tvoutlet"
+       id="switch.tplink_switch_1"
        transform="matrix(1.3306521,0,0,1.3306521,161.99192,85.350479)"
        style="display:inline;fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
        inkscape:label="#g1065-0">
@@ -805,6 +805,55 @@
            x="0" />
         <rect
            id="rect1061-9"
+           class="si-glyph-fill"
+           height="0.98400003"
+           width="0.96899998"
+           y="8"
+           x="1" />
+      </g>
+    </g>
+    <g
+       id="switch.tplink_switch_2"
+       transform="matrix(1.3306521,0,0,1.3306521,144.61893,343.60267)"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:label="#g1065-0">
+      <g
+         id="g1063-0-5"
+         transform="translate(2,-0.005)"
+         style="fill:#434343">
+        <path
+           id="path1051-3-6"
+           class="si-glyph-fill"
+           d="M 4.781,3.986 6.002,3.05 7.219,3.986 6.754,2.47 7.973,1.532 H 6.467 L 6.002,0.016 5.535,1.532 H 4.028 l 1.22,0.938 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path1053-4-3"
+           class="si-glyph-fill"
+           d="M 8.984,11.984 10.918,12 8.016,7.969 H 10 L 5.985,3.985 2.031,8.001 H 4.062 L 1.015,11.954 H 3.031 L 0.015,15.97 11.992,15.953 Z M 4.016,15.016 H 2.969 v -1.062 h 1.047 z m 1,-4 H 3.969 V 9.954 h 1.047 z m 1.015,-4 H 4.969 V 5.954 h 1.062 z m 0.938,2.937 h 1.047 v 1.062 H 6.969 Z m 1,5.063 v -1.062 h 1.047 v 1.062 z"
+           inkscape:connector-curvature="0" />
+        <rect
+           id="rect1055-8-3"
+           class="si-glyph-fill"
+           height="0.98400003"
+           width="0.96899998"
+           y="8"
+           x="10" />
+        <rect
+           id="rect1057-6-7"
+           class="si-glyph-fill"
+           height="0.98400003"
+           width="0.96899998"
+           y="12"
+           x="11" />
+        <rect
+           id="rect1059-9-5"
+           class="si-glyph-fill"
+           height="0.98400003"
+           width="0.96899998"
+           y="12"
+           x="0" />
+        <rect
+           id="rect1061-9-5"
            class="si-glyph-fill"
            height="0.98400003"
            width="0.96899998"
