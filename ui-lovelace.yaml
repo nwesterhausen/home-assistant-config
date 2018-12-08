@@ -291,14 +291,14 @@ views:
 ###  Floorplan
 ###
 ########################################################
-  - icon: mdi:floorplan
+  - icon: mdi:floor-plan
     id: floorplan
     # Title of the view. Will be used as the tooltip for tab icon
-    title: Floorplan
+    title: Floor Plan
     panel: true
     cards:
       - type: picture-elements
-        image: /local/custom_ui/floorplan/floorplan.svg
+        image: /local/images/floorplan-walls.svg
         elements:
           - type: state-label
             entity: sensor.dark_sky_temperature
