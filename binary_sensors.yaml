@@ -26,6 +26,16 @@
   state_topic: dummy/floorplan/sensor
   name: Floorplan
 # PING SENSORS
+- platform: ping
+  host: 172.18.19.5
+  name: Rec Room AP
+  count: 3
+  scan_interval: 180
+- platform: ping
+  host: 172.18.19.6
+  name: Living Room AP
+  count: 3
+  scan_interval: 180
 # - platform: ping
 #   host: grafana
 #   name: Grafana Accessible

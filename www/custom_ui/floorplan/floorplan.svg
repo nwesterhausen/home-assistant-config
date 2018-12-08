@@ -26,16 +26,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.62225397"
-     inkscape:cx="593.23323"
-     inkscape:cy="1142.0349"
+     inkscape:cx="457.43659"
+     inkscape:cy="1334.8822"
      inkscape:document-units="px"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="layer9"
      showgrid="false"
      units="px"
-     inkscape:window-width="1066"
-     inkscape:window-height="821"
-     inkscape:window-x="73"
-     inkscape:window-y="468"
+     inkscape:window-width="684"
+     inkscape:window-height="405"
+     inkscape:window-x="294"
+     inkscape:window-y="649"
      inkscape:window-maximized="0"
      inkscape:snap-page="false"
      inkscape:object-nodes="false"
@@ -1412,9 +1412,10 @@
      inkscape:label="network"
      sodipodi:insensitive="true">
     <g
-       id="g1415-4-0"
+       id="binary_sensor.living_room_ap"
        transform="matrix(-0.00384312,-0.87914384,0.87914384,-0.00384312,83.557541,92.825194)"
-       style="display:inline;fill:#212121;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1">
+       style="display:inline;fill:#212121;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:label="#g1415-4-0">
       <g
          id="g1413-8-8"
          transform="translate(0,2)"
@@ -1453,9 +1454,10 @@
       </g>
     </g>
     <g
-       id="g1415-4"
+       id="binary_sensor.rec_room_ap"
        transform="matrix(0.87915225,0,0,0.87915225,220.03803,287.714)"
-       style="display:inline;fill:#212121;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1">
+       style="display:inline;fill:#212121;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:label="#g1415-4">
       <g
          id="g1413-8"
          transform="translate(0,2)"
