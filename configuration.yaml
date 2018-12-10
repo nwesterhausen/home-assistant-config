@@ -45,7 +45,7 @@ panel_custom:
 http:
   # We don't need to encrypt here because all traffic goes through a proxy
   #base_url: 0.0.0.0
-  #base_url: !secret hass_url
+  base_url: !secret hass_url
   #server_port: 443
   #ssl_certificate: !secret cert_loc
   #ssl_key: !secret key_loc
