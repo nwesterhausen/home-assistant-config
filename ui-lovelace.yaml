@@ -295,7 +295,7 @@ views:
     id: floorplan
     # Title of the view. Will be used as the tooltip for tab icon
     title: Floor Plan
-    panel: true
+    # panel: true
     cards:
       - type: picture-elements
         image: /local/images/floorplan-walls.svg
