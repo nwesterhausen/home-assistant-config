@@ -104,14 +104,14 @@ influxdb:
 ##########################
 device_tracker:
   - platform: gpslogger
-  # - platform: unifi
-  #   host: !secret unifi_ip
-  #   username: !secret unifi_user
-  #   password: !secret unifi_password
-  #   verify_ssl: false
-  #   new_device_defaults:
-  #     track_new_devices: False
-  #     hide_if_away: True
+  - platform: unifi
+    host: !secret unifi_ip
+    username: !secret unifi_user
+    password: !secret unifi_password
+    verify_ssl: false
+    new_device_defaults:
+      track_new_devices: False
+      hide_if_away: True
   # - platform: tile
   #   username: !secret tile_username
   #   password: !secret tile_password
