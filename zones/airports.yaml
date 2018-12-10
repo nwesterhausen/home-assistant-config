@@ -1,8 +1,8 @@
 # Generated with Zone.yaml Generator for Home Assistant, version 0.4
 - name: Indianapolis International Airport (IND)
-  latitude: 39.683963
-  longitude: -86.29476
-  radius: 500
+  latitude: 39.715028
+  longitude: -86.297667
+  radius: 750
   icon: mdi:airport
 - name: Hartsfield–Jackson Atlanta International Airport (ATL)
   latitude: 33.656824
