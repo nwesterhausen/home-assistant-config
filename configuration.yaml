@@ -33,12 +33,12 @@ map:
 #   title: 'Node Red'
 #   url: !secret node_red_url
 #   icon: 'mdi:arrow-decision'
-panel_custom:
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:floor-plan
-    url_path: floorplan
-    config: !include floorplan.yaml
+# panel_custom:
+#   - name: floorplan
+#     sidebar_title: Floorplan
+#     sidebar_icon: mdi:floor-plan
+#     url_path: floorplan
+#     config: !include floorplan.yaml
 ##########################
 ##        HTTP          ##
 ##########################
