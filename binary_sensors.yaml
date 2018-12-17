@@ -21,10 +21,6 @@
         {{ is_state('device_tracker.kamspixel', 'home')
            or is_state('device_tracker.nickspixel', 'home')
            or is_state('device_tracker.billies_phone', 'home') }}
-# DUMMY SENSOR FOR ha_floorplan
-- platform: mqtt
-  state_topic: dummy/floorplan/sensor
-  name: Floorplan
 # PING SENSORS
 - platform: ping
   host: 172.18.19.5
