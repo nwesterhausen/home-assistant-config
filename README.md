@@ -47,7 +47,7 @@ Here is a list of devices and quantity in my home.
 | ---    | ---      | ---
 | HomeSeer HSM200 Z-Wave Multisensor with LED Indicator | 1 | Mainly wanted it to provide stability to the Z-Wave network. As a bonus is more reliable than the battery-operated Zooz 4-in-1.
 | Xiaomi Mijia Temperature and Humidy Sensor | 9 | Cheap decent temperature sensor. I have a long house and one room isn't on central AC/Heat so wanted to be able to see room temperature differences.
-| Xiaomi Aqara Door/Window Sensor | 3 | Waiting on these to arrive. They'll go on the three main doors to the house.
+| Xiaomi Aqara Door/Window Sensor | 3 | Use these on our exterior doors. They work well.
 
 ### Google Home
 | Device | Quantity | Comment
