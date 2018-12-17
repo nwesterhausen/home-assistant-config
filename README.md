@@ -9,16 +9,16 @@ Some screenshots of what Home Assistant Looks like:
 ### Main Screen
 A control panel for the entire house, even though most of it is just temperature/humidity for the various rooms.
 
-![Main lovelace screen](www/github/lovelace-control.png)
+![Main lovelace screen](www/github/lovelace-dec2018-01.png)
 
 ### Floorplan
 
-![Floorplan](www/github/floorplan.png)
+![Floorplan](www/github/lovelace-dec2018-02.png)
 
 ### Trends
 I use Grafana to aid in visualizing trends from my Home Assistant data.
 
-![Trends lovelace screen](www/github/lovelace-trends.png)
+![Trends lovelace screen](www/github/lovelace-dec2018-03.png)
 
 ## Home Assistant Customizations
 One of the neat things I use Home Assistant for is notifying my wife and I when one of us arrives at a common destination, whether on errands or as part of the workday. I use a node-red flow to send a message to Discord when someone enters or leaves a zone. In the picture here, you can see where she dropped me off at work and my trip to Taco Bell the day before.
