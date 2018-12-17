@@ -7,11 +7,16 @@ Configuration files for my Home Assistant instance.
 Some screenshots of what Home Assistant Looks like:
 
 ### Main Screen
-A control panel for the entire house, even though most of it is just temperature/humidity for the various rooms.
+A control panel for the entire house, has everything in it!
 
 ![Main lovelace screen](www/github/lovelace-dec2018-01.png)
 
+I also have a panel that is just for turning lights on and off:
+
+![switch screen](www/github/lovelace-dec2018-04.png)
+
 ### Floorplan
+I'm using picture-elements for my floorplan. I have it displayed as a card because as a panel it would fill the entire width of my screen.
 
 ![Floorplan](www/github/lovelace-dec2018-02.png)
 
@@ -29,7 +34,7 @@ One of the neat things I use Home Assistant for is notifying my wife and I when 
 
 ![discord notify bot with Zones](www/github/discord-bot-zones.png)
 
-For my floorplan panel I use [ha-floorplan](https://github.com/pkozul/ha-floorplan) which works brilliantly. I also use the [animated darksky weather card](https://community.home-assistant.io/t/custom-dark-sky-animated-weather-card/59816) in my Lovelace UI.
+I use the [animated darksky weather card](https://community.home-assistant.io/t/custom-dark-sky-animated-weather-card/59816) in my Lovelace UI.
 
 My Xiaomi sensors record temperature in Celcius, so I template them into Fahrenheit.
 
@@ -66,6 +71,7 @@ Here is a list of devices and quantity in my home.
 | Roku LE | 1 | On auxillary TV
 | Roku Premier+ | 1 | On main TV
 | Insignia Roku TV | 1 | In living room
+| Chromecast | 2 | Transitioning from Roku
 
 ### PoE Cameras
 | Device | Quantity | Comment
