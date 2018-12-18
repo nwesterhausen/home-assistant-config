@@ -1,0 +1,22 @@
+weather_pics:
+  entities:
+    - camera.meteogram
+    - camera.wundergroundradar
+
+indoor_weather:
+  entities:
+    - sensor.living_room_thermostat_humidity
+    - sensor.living_room_thermostat_temperature
+    - sensor.laundry_room_humidity
+    - sensor.laundry_room_temperature
+    - sensor.network_rack_humidity
+    - sensor.network_rack_temperature
+
+allergy:
+  entities:
+    - sensor.allergy_index_forecasted_average
+    - sensor.allergy_index_historical_average
+    - sensor.allergy_index_today
+    - sensor.allergy_index_tomorrow
+    - sensor.allergy_index_yesterday
+    - sensor.cold__flu_forecasted_average

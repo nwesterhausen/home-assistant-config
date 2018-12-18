@@ -187,7 +187,7 @@ google:
 binary_sensor: !include binary_sensors.yaml
 camera: !include_dir_merge_list cameras
 cloud: !include cloud.yaml
-group: !include groups.yaml
+group: !include_dir_merge_named groups
 frontend: !include frontend.yaml
 light: !include lights.yaml
 sensor: !include_dir_list sensors
