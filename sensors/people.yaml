@@ -1,6 +1,6 @@
 platform: template
 sensors:
-  kamerie_location:
+  location_kam:
     friendly_name: "Kamerie's Location"
     value_template: >
       {% if is_state('device_tracker.kamspixel', 'home') or
@@ -10,7 +10,7 @@ sensors:
         {{ states('device_tracker.kamspixel') }}
       {% endif %}
     entity_picture_template: /local/people/kamerie.jpg
-  nick_location:
+  location_nick:
     friendly_name: "Nick's Location"
     value_template: >
       {% if is_state('device_tracker.nickspixel', 'home') or
