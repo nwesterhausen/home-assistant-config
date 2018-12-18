@@ -20,3 +20,12 @@ sensors:
         {{ states('device_tracker.nickspixel') }}
       {% endif %}
     entity_picture_template: /local/people/nick.png
+  location_billie:
+    friendly_name: "Billie's Location"
+    value_template: >
+      {% if is_state('device_tracker.billies_phone', 'home') %}
+        Home
+      {% else %}
+        {{ states('device_tracker.billies_phone') }}
+      {% endif %}
+    entity_picture_template: /local/people/billie.png
