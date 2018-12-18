@@ -1,0 +1,10 @@
+tracker_kamerie:
+  entities:
+    - device_tracker.kamspixel
+    - device_tracker.kameries_pixel
+    - device_tracker.kams_iphone
+
+tracker_nick:
+  entities:
+    - device_tracker.nickspixel
+    - device_tracker.nickspixel_wifi

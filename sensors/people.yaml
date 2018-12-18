@@ -1,0 +1,22 @@
+platform: template
+sensors:
+  kamerie_location:
+    friendly_name: "Kamerie's Location"
+    value_template: >
+      {% if is_state('device_tracker.kamspixel', 'home') or
+            is_state('device_tracker.kameries_pixel', 'home') %}
+        Home
+      {% else %}
+        {{ states('device_tracker.kamspixel') }}
+      {% endif %}
+    entity_picture_template: /local/people/kamerie.jpg
+  nick_location:
+    friendly_name: "Nick's Location"
+    value_template: >
+      {% if is_state('device_tracker.nickspixel', 'home') or
+            is_state('device_tracker.nickspixel_wifi', 'home') %}
+        Home
+      {% else %}
+        {{ states('device_tracker.nickspixel') }}
+      {% endif %}
+    entity_picture_template: /local/people/nick.png
