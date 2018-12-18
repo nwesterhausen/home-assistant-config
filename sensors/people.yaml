@@ -6,6 +6,8 @@ sensors:
       {% if is_state('device_tracker.kamspixel', 'home') or
             is_state('device_tracker.kameries_pixel', 'home') %}
         Home
+      {% elif is_state('device_tracker.kamspixel', 'not_home') %}
+        Away
       {% else %}
         {{ states('device_tracker.kamspixel') }}
       {% endif %}
@@ -16,6 +18,8 @@ sensors:
       {% if is_state('device_tracker.nickspixel', 'home') or
             is_state('device_tracker.nickspixel_wifi', 'home') %}
         Home
+      {% elif is_state('device_tracker.nickspixel', 'not_home') %}
+        Away
       {% else %}
         {{ states('device_tracker.nickspixel') }}
       {% endif %}
