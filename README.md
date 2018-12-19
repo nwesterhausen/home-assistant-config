@@ -20,6 +20,10 @@ I'm using picture-elements for my floorplan. I have it displayed as a card becau
 
 ![Floorplan](www/github/lovelace-dec2018-02.png)
 
+**Icon Attribution**
+
+* Security Camera by ProSymbols from the Noun Project
+
 ### Trends
 I use Grafana to aid in visualizing trends from my Home Assistant data.
 
