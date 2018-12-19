@@ -1,0 +1,9 @@
+- platform: ffmpeg
+  input: rtsp://172.18.19.11/user=admin_password=_channel=1_stream=0.sdp
+  name: Exterior Dome 1
+- platform: ffmpeg
+  input: rtsp://172.18.19.12/user=admin_password=_channel=1_stream=0.sdp
+  name: Exterior Dome 2
+- platform: ffmpeg
+  input: rtsp://172.18.19.13/user=admin_password=_channel=1_stream=0.sdp
+  name: Exterior Cam 1
