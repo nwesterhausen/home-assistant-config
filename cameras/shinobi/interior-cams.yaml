@@ -1,4 +1,4 @@
-- platform: ffmpeg
-  input: rtsp://172.18.19.10/user=admin_password=_channel=1_stream=0.sdp
+- platform: generic
   name: Interior Dome 1
+  still_image_url: !secret shinobi_int1_jpeg
   

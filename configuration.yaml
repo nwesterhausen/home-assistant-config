@@ -17,7 +17,6 @@ homeassistant:
   # Using Time-based One Time Passwords for additional security
   auth_mfa_modules:
     - type: totp
-ffmpeg:
 ##########################
 ##      NAV PANELS      ##
 ##########################
