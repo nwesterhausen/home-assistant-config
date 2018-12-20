@@ -21,7 +21,7 @@ homeassistant:
 ##      NAV PANELS      ##
 ##########################
 config:
-map:
+# map:
 # logbook: !include logbook.yaml
 # Custom Panels
 # panel_iframe:
