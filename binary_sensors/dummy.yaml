@@ -1,0 +1,5 @@
+## DUMMY for Garage Floorplan
+- platform: random
+  name: "Fake Workshop Door"
+- platform: random
+  name: "Fake Storage Door"

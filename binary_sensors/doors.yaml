@@ -1,0 +1,31 @@
+# DOOR SENSORS
+- platform: "mqtt"
+  state_topic: "zigbee2mqtt/front_door"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  name: "Front Door"
+  icon: "mdi:door"
+  value_template: "{{ value_json.contact }}"
+  payload_off: true
+  payload_on: false
+  json_attributes:
+    - "linkquality"
+- platform: "mqtt"
+  state_topic: "zigbee2mqtt/recroom_door"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  name: "Rec Room Door"
+  icon: "mdi:door"
+  value_template: "{{ value_json.contact }}"
+  payload_off: true
+  payload_on: false
+  json_attributes:
+    - "linkquality"
+- platform: "mqtt"
+  state_topic: "zigbee2mqtt/back_door"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  name: "Back Door"
+  icon: "mdi:door"
+  value_template: "{{ value_json.contact }}"
+  payload_off: true
+  payload_on: false
+  json_attributes:
+    - "linkquality"

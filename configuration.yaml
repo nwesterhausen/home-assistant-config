@@ -184,7 +184,7 @@ google:
 ##########################
 ##      INCLUDES        ##
 ##########################
-binary_sensor: !include binary_sensors.yaml
+binary_sensor: !include_dir_merge_list  binary_sensors
 camera: !include_dir_merge_list cameras
 cloud: !include cloud.yaml
 group: !include_dir_merge_named groups
