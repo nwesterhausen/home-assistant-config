@@ -1,4 +1,4 @@
-background: 'linear-gradient(#03A9F4, black)'
+#background: 'linear-gradient(#03A9F4, black)'
 excluded_entities:
   - group.darksky_sensors
 resources:
@@ -9,11 +9,11 @@ views:
   - badges: []
     cards:
       - entities:
-          - entity: device_tracker.kamspixel
+          - entity: sensor.location_kam
             secondary_info: last-changed
-          - entity: device_tracker.nickspixel
+          - entity: sensor.location_nick
             secondary_info: last-changed
-          - entity: device_tracker.billies_phone
+          - entity: sensor.location_billie
             secondary_info: last-changed
         id: whoswhere
         show_header_toggle: false
@@ -209,6 +209,69 @@ views:
     theme: dark-mode
   - cards:
       - elements:
+          - entity: camera.exterior_cam_3
+            image: /local/images/entities/mounted_cctv.png
+            style:
+              height: 28px
+              left: 90%
+              top: 5%
+              transform: rotate(20deg)
+              width: 28px
+            tap_action:
+              action: more-info
+            type: image
+          - entity: camera.exterior_cam_2
+            image: /local/images/entities/mounted_cctv.png
+            style:
+              height: 28px
+              left: 1%
+              top: 6%
+              transform: 'rotate(120deg) scale(1, -1)'
+              width: 28px
+            tap_action:
+              action: more-info
+            type: image
+          - entity: camera.exterior_cam_1
+            image: /local/images/entities/mounted_cctv.png
+            style:
+              height: 28px
+              left: 8%
+              top: 4%
+              transform: rotate(320deg)
+              width: 28px
+            tap_action:
+              action: more-info
+            type: image
+          - entity: camera.exterior_dome_2
+            image: /local/images/entities/dome_cctv.png
+            style:
+              height: 28px
+              left: 64%
+              top: 81%
+              width: 28px
+            tap_action:
+              action: more-info
+            type: image
+          - entity: camera.exterior_dome_1
+            image: /local/images/entities/dome_cctv.png
+            style:
+              height: 28px
+              left: 37%
+              top: 43%
+              width: 28px
+            tap_action:
+              action: more-info
+            type: image
+          - entity: camera.interior_dome_1
+            image: /local/images/entities/dome_cctv.png
+            style:
+              height: 28px
+              left: 55%
+              top: 48%
+              width: 28px
+            tap_action:
+              action: more-info
+            type: image
           - entity: sensor.dark_sky_temperature
             prefix: 'Outside Temp '
             style:
@@ -216,7 +279,6 @@ views:
               left: 20%
               text-align: left
               top: 55%
-            title: House
             type: state-label
           - entity: sensor.living_room_thermostat_target
             prefix: 'Thermostat Set to '
@@ -394,6 +456,25 @@ views:
               top: 20%
             type: state-label
         image: /local/images/floorplan-walls.svg
+        title: House
+        type: picture-elements
+      - elements:
+          - entity: binary_sensor.fake_workshop_door
+            style:
+              '--iron-icon-height': 42px
+              '--iron-icon-width': 42px
+              left: 67%
+              top: 66%
+            type: state-icon
+          - entity: binary_sensor.fake_storage_door
+            style:
+              '--iron-icon-height': 42px
+              '--iron-icon-width': 42px
+              left: 54%
+              top: 85%
+            type: state-icon
+        image: /local/images/garage-walls.svg
+        title: Garage
         type: picture-elements
     icon: 'mdi:floor-plan'
     id: floorplan
@@ -410,7 +491,26 @@ views:
     icon: 'mdi:chart-line'
     id: trends
     title: Home Data Trends
-  - icon: 'mdi:cctv'
+  - cards:
+      - entity: camera.interior_dome_1
+        show_state: false
+        type: picture-entity
+      - entity: camera.exterior_dome_1
+        show_state: false
+        type: picture-entity
+      - entity: camera.exterior_dome_2
+        show_state: false
+        type: picture-entity
+      - entity: camera.exterior_cam_1
+        show_state: false
+        type: picture-entity
+      - entity: camera.exterior_cam_2
+        show_state: false
+        type: picture-entity
+      - entity: camera.exterior_cam_3
+        show_state: false
+        type: picture-entity
+    icon: 'mdi:cctv'
     id: cctv
     title: Camera Feeds
   - badges: []
