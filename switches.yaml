@@ -1,3 +1,4 @@
+# TP-Link HS301s
 - platform: tplink
   host: 172.18.19.20
 - platform: tplink
