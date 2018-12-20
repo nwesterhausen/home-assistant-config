@@ -9,16 +9,16 @@ Some screenshots of what Home Assistant Looks like:
 ### Main Screen
 A control panel for the entire house, has everything in it!
 
-![Main lovelace screen](www/github/lovelace-dec2018-01.png)
+![Main lovelace screen](github/images/lovelace-dec2018-01.png)
 
 I also have a panel that is just for turning lights on and off:
 
-![switch screen](www/github/lovelace-dec2018-04.png)
+![switch screen](github/images/lovelace-dec2018-04.png)
 
 ### Floorplan
 I'm using picture-elements for my floorplan. I have it displayed as a card because as a panel it would fill the entire width of my screen.
 
-![Floorplan](www/github/lovelace-dec2018-02.png)
+![Floorplan](github/images/lovelace-dec2018-02.png)
 
 **Icon Attribution**
 
@@ -27,7 +27,7 @@ I'm using picture-elements for my floorplan. I have it displayed as a card becau
 ### Trends
 I use Grafana to aid in visualizing trends from my Home Assistant data.
 
-![Trends lovelace screen](www/github/lovelace-dec2018-03.png)
+![Trends lovelace screen](github/images/lovelace-dec2018-03.png)
 
 ### Room control panels
 
@@ -36,7 +36,7 @@ I created a separate panel for each room, you can see them [here](Room-Panels.md
 ## Home Assistant Customizations
 One of the neat things I use Home Assistant for is notifying my wife and I when one of us arrives at a common destination, whether on errands or as part of the workday. I use a node-red flow to send a message to Discord when someone enters or leaves a zone. In the picture here, you can see where she dropped me off at work and my trip to Taco Bell the day before.
 
-![discord notify bot with Zones](www/github/discord-bot-zones.png)
+![discord notify bot with Zones](github/images/discord-bot-zones.png)
 
 I use the [animated darksky weather card](https://community.home-assistant.io/t/custom-dark-sky-animated-weather-card/59816) in my Lovelace UI.
 
