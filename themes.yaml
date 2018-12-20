@@ -1,7 +1,7 @@
 Purple:
   ### Main Interface Colors ###
   primary-color: "#9C27B0"
-  light-primary-color: "#EA80FC"
+  light-primary-color: "#D500F9"
   dark-primary-color: "#4A148C"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
@@ -48,7 +48,7 @@ Purple:
 Amber:
   ### Main Interface Colors ###
   primary-color: "#FFC107"
-  light-primary-color: "#FFE57F"
+  light-primary-color: "#FFC400"
   dark-primary-color: "#FF6F00"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
@@ -95,7 +95,7 @@ Amber:
 Pink:
   ### Main Interface Colors ###
   primary-color: "#E91E63"
-  light-primary-color: "#FF80AB"
+  light-primary-color: "#F50057"
   dark-primary-color: "#880E4F"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
@@ -142,7 +142,7 @@ Pink:
 Red:
   ### Main Interface Colors ###
   primary-color: "#f44336"
-  light-primary-color: "#ff8a80"
+  light-primary-color: "#ff1744"
   dark-primary-color: "#b71c1c"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
@@ -189,7 +189,7 @@ Red:
 Blue:
   ### Main Interface Colors ###
   primary-color: "#2196F3"
-  light-primary-color: "#82B1FF"
+  light-primary-color: "#2979FF"
   dark-primary-color: "#0D47A1"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
@@ -236,7 +236,7 @@ Blue:
 Teal:
   ### Main Interface Colors ###
   primary-color: "#009688"
-  light-primary-color: "#A7FFEB"
+  light-primary-color: "#1DE9B6"
   dark-primary-color: "#004D40"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
@@ -283,7 +283,7 @@ Teal:
 Green:
   ### Main Interface Colors ###
   primary-color: "#4CAF50"
-  light-primary-color: "#B9F6CA"
+  light-primary-color: "#00E676"
   dark-primary-color: "#1B5E20"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
@@ -330,7 +330,7 @@ Green:
 Orange:
   ### Main Interface Colors ###
   primary-color: "#FF9800"
-  light-primary-color: "#FFD180"
+  light-primary-color: "#FF9100"
   dark-primary-color: "#E65100"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
@@ -377,7 +377,7 @@ Orange:
 Brown:
   ### Main Interface Colors ###
   primary-color: "#795548"
-  light-primary-color: "#A1887F"
+  light-primary-color: "#6D4C41"
   dark-primary-color: "#3E2723"
   primary-background-color: "#212121"
   secondary-background-color: "#263238"
