@@ -11,7 +11,7 @@ Purple:
 
   ### Text ###
   primary-text-color: "#FFFFFF"
-  secondary-text-color: var(--light-primary-color)
+  secondary-text-color: "#D500F9"
   text-primary-color: var(--primary-text-color)
   disabled-text-color: "#607D8B"
   ### Sidebar Menu ###
