@@ -1,18 +1,19 @@
 dark:
   ### Main Interface Colors ###
-  primary-color: "#2196F3"
-  light-primary-color: "#03A9F4"
-  primary-background-color: "#1F1F28"
-  secondary-background-color: var(--primary-background-color)
-  divider-color: "#2F2F3D"
+  primary-color: "#8e44ad"
+  light-primary-color: "#9b59b6"
+  dark-primary-color: "#8e44ad"
+  primary-background-color: "#212121"
+  secondary-background-color: "#303030"
+  divider-color: "#424242"
   ### Text ###
   primary-text-color: "#FFFFFF"
   secondary-text-color: var(--light-primary-color)
-  text-primary-color: "#FFFFFF"
-  disabled-text-color: "#4E4E66"
+  text-primary-color: var(--primary-text-color)
+  disabled-text-color: "#9E9E9E"
   ### Sidebar Menu ###
-  sidebar-icon-color: "#B6B6C1"
-  sidebar-text-color: "#F1F1F1"
+  sidebar-icon-color: var(--divider-color)
+  sidebar-text-color: var(--primary-text-color)
   sidebar-selected-background-color: var(--primary-background-color)
   sidebar-selected-icon-color: var(--light-primary-color)
   sidebar-selected-text-color: var(--sidebar-selected-icon-color)
@@ -27,17 +28,17 @@ dark:
   paper-slider-active-color: var(--paper-slider-knob-color)
   paper-slider-secondary-color: var(--light-primary-color)
   ### Labels ###
-  label-badge-background-color: "#23232E"
-  label-badge-text-color: "#F1F1F1"
+  label-badge-background-color: var(--divider-color)
+  label-badge-text-color: var(--primary-text-color)
   label-badge-red: var(--light-primary-color)
   ### Cards ###
-  paper-card-background-color: "#23232E"
-  paper-listbox-background-color: var(--primary-background-color)
+  paper-card-background-color: var(--primary-background-color)
+  paper-listbox-background-color: var(--secondary-background-color)
   ### Toggles ###
   paper-toggle-button-checked-button-color: var(--primary-color)
-  paper-toggle-button-checked-bar-color: "#03A9F4"
+  paper-toggle-button-checked-bar-color: var(--light-primary-color)
   paper-toggle-button-unchecked-button-color: var(--paper-toggle-button-checked-button-color)
-  paper-toggle-button-unchecked-bar-color: "#3E4756"
+  paper-toggle-button-unchecked-bar-color: var(--disabled-text-color)
   ### Table row ###
   table-row-background-color: var(--primary-background-color)
   table-row-alternative-background-color: var(--secondary-background-color)
