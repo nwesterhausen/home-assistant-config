@@ -189,7 +189,7 @@ camera: !include_dir_merge_list cameras
 cloud: !include cloud.yaml
 group: !include_dir_merge_named groups
 frontend: !include frontend.yaml
-light: !include lights.yaml
+light: !include_dir_merge_list lights
 sensor: !include_dir_list sensors
 zone: !include_dir_merge_list zones
 script: !include_dir_named scripts

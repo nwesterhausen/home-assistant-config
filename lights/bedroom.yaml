@@ -1,4 +1,3 @@
-## BEDROOM
 - platform: group
   name: All Bedroom Lights
   view: no
@@ -22,21 +21,3 @@
   entities:
     - light.bedroom_bed_1
     - light.bedroom_bed_2
-
-
-## RECROOM
-- platform: switch
-  name: Rec Room Ceiling Lights
-  entity_id: switch.recroom_ceiling
-
-- platform: switch
-  name: Rec Room Corner Lights
-  entity_id: switch.recroom_corner
-
-- platform: group
-  name: All Rec Room Lights
-  entities:
-      - light.rec_room_ceiling_lights
-      - light.rec_room_corner_corner_lights
-      - light.recroom_table
-      - light.recroom_wall
