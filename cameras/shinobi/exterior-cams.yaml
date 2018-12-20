@@ -7,3 +7,9 @@
 - platform: generic
   name: Exterior Cam 1
   still_image_url: !secret shinobi_ext3_jpeg
+- platform: generic
+  name: Exterior Cam 2
+  still_image_url: !secret shinobi_ext4_jpeg
+- platform: generic
+  name: Exterior Cam 3
+  still_image_url: !secret shinobi_ext5_jpeg
