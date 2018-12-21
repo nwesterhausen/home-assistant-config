@@ -5,30 +5,36 @@
     int_dome_01:
       device_class: connectivity
       entity_id: device_tracker.int_dome_01
-      friendly_name: Int Dome 01 Connected
+      friendly_name: Int Dome 01
       value_template: "{{ is_state('device_tracker.int_dome_01', 'home') }}"
+      icon_template: mdi:cctv
     ext_cam_01:
       device_class: connectivity
       entity_id: device_tracker.ext_cam_01
-      friendly_name: Ext Cam 01 Connected
+      friendly_name: Ext Cam 01
       value_template: "{{ is_state('device_tracker.ext_cam_01', 'home') }}"
+      icon_template: mdi:cctv
     ext_cam_02:
       device_class: connectivity
       entity_id: device_tracker.ext_cam_02
-      friendly_name: Ext Cam 02 Connected
+      friendly_name: Ext Cam 02
       value_template: "{{ is_state('device_tracker.ext_cam_02', 'home') }}"
+      icon_template: mdi:cctv
     ext_cam_03:
       device_class: connectivity
       entity_id: device_tracker.ext_cam_03
-      friendly_name: Ext Cam 03 Connected
+      friendly_name: Ext Cam 03
       value_template: "{{ is_state('device_tracker.ext_cam_03', 'home') }}"
+      icon_template: mdi:cctv
     ext_dome_01:
       device_class: connectivity
       entity_id: device_tracker.ext_dome_01
-      friendly_name: Ext Dome 01 Connected
+      friendly_name: Ext Dome 01
       value_template: "{{ is_state('device_tracker.ext_dome_01', 'home') }}"
+      icon_template: mdi:cctv
     ext_dome_02:
       device_class: connectivity
       entity_id: device_tracker.ext_dome_02
-      friendly_name: Ext Dome 02 Connected
+      friendly_name: Ext Dome 02
       value_template: "{{ is_state('device_tracker.ext_dome_02', 'home') }}"
+      icon_template: mdi:cctv

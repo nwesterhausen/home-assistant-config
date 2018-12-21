@@ -3,3 +3,13 @@
   name: "Fake Workshop Door"
 - platform: random
   name: "Fake Storage Door"
+- platform: random
+  name: "Workshop Lights"
+- platform: random
+  name: "Ceiling Lights 1"
+- platform: random
+  name: "Ceiling Lights 2"
+- platform: random
+  name: "Upper Level Lights"
+- platform: random
+  name: "Fake Garage Door"
