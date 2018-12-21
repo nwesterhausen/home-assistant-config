@@ -15,7 +15,7 @@
    version="1.1"
    id="svg1085"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="garage-walls.svg">
+   sodipodi:docname="garage-walls-white.svg">
   <defs
      id="defs1079" />
   <sodipodi:namedview
@@ -50,36 +50,36 @@
     </rdf:RDF>
   </metadata>
   <path
-     style="fill:none;stroke:#212121;stroke-width:1.58749998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+     style="fill:none;stroke:#ffffff;stroke-width:1.58749998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
      d="m 194.83871,145.21093 0,16.57391 m 0,24.60009 v 71.12633 H 24.470433 V 24.345202 H 194.83871 v 30.482722"
      id="path1655"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccccc" />
   <path
-     style="fill:none;stroke:#212121;stroke-width:1.58749998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+     style="fill:none;stroke:#ffffff;stroke-width:1.58749998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
      d="m 195.03571,219.22619 h -38.93155 v 10.38091 m 0,20.60988 0,7.56278"
      id="path1732"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccc" />
   <path
-     style="fill:none;stroke:#212121;stroke-width:1.5875;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+     style="fill:none;stroke:#ffffff;stroke-width:1.5875;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
      d="M 155.91518,224.70684 H 51.593749"
      id="path1734"
      inkscape:connector-curvature="0" />
   <g
      id="g1757"
      transform="matrix(0,-0.29692673,0.26265372,0,3.5256327,240.18149)"
-     style="fill:none;fill-rule:evenodd;stroke:#212121;stroke-width:1;stroke-opacity:1;fill-opacity:1">
+     style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1;stroke-opacity:1;fill-opacity:1">
     <g
        id="g1755"
        transform="matrix(0.03936306,6.8232623,-6.8232623,0.03936306,48.724787,76.918885)"
-       style="fill:none;fill-opacity:1;stroke:#212121;stroke-opacity:1">
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-opacity:1">
       <path
          id="path1751"
          class="si-glyph-fill"
          d="m 0.44946201,15.388503 0.0334126,-2.895808 1.99986689,0.02308 0.023202,-2.010866 1.9998668,0.02308 0.02319,-2.0098658 1.9998672,0.023075 0.023179,-2.0088663 1.9998669,0.023075 0.023213,-2.0118666 1.9998666,0.02308 0.02319,-2.009866 1.999867,0.02307 0.03486,-3.020799 2.917806,0.03367 -0.03341,2.895807 L 3.3669101,15.453167 Z"
          inkscape:connector-curvature="0"
-         style="fill:none;fill-opacity:1;stroke:#212121;stroke-opacity:1" />
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-opacity:1" />
     </g>
   </g>
 </svg>
