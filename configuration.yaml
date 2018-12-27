@@ -197,6 +197,8 @@ switch: !include switches.yaml
 ##########################
 ##        MISC          ##
 ##########################
+# Card Updater
+custom_updater:
 # Track the sun
 sun:
 # Modify log errors

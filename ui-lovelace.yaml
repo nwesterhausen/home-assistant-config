@@ -1,9 +1,10 @@
-#background: 'linear-gradient(#03A9F4, black)'
 excluded_entities:
   - group.darksky_sensors
 resources:
   - type: js
     url: /local/custom_ui/dark-sky-weather-card/dark-sky-weather-card.js?v=2
+  - url: /local/card-tools.js
+    type: js
 title: Home
 views:
   - badges: []
@@ -209,69 +210,11 @@ views:
     theme: dark-mode
   - cards:
       - elements:
-          - entity: camera.exterior_cam_3
-            image: /local/images/entities/mounted_cctv.png
+          - entity: sensor.dark_sky_icon
             style:
-              height: 28px
-              left: 90%
-              top: 5%
-              transform: rotate(20deg)
-              width: 28px
-            tap_action:
-              action: more-info
-            type: image
-          - entity: camera.exterior_cam_2
-            image: /local/images/entities/mounted_cctv.png
-            style:
-              height: 28px
-              left: 1%
-              top: 6%
-              transform: 'rotate(120deg) scale(1, -1)'
-              width: 28px
-            tap_action:
-              action: more-info
-            type: image
-          - entity: camera.exterior_cam_1
-            image: /local/images/entities/mounted_cctv.png
-            style:
-              height: 28px
-              left: 8%
-              top: 4%
-              transform: rotate(320deg)
-              width: 28px
-            tap_action:
-              action: more-info
-            type: image
-          - entity: camera.exterior_dome_2
-            image: /local/images/entities/dome_cctv.png
-            style:
-              height: 28px
-              left: 64%
-              top: 81%
-              width: 28px
-            tap_action:
-              action: more-info
-            type: image
-          - entity: camera.exterior_dome_1
-            image: /local/images/entities/dome_cctv.png
-            style:
-              height: 28px
-              left: 37%
-              top: 43%
-              width: 28px
-            tap_action:
-              action: more-info
-            type: image
-          - entity: camera.interior_dome_1
-            image: /local/images/entities/dome_cctv.png
-            style:
-              height: 28px
-              left: 55%
-              top: 48%
-              width: 28px
-            tap_action:
-              action: more-info
-            type: image
+              left: 20%
+              top: 50%
+            type: state-icon
           - entity: sensor.dark_sky_temperature
             prefix: 'Outside Temp '
             style:
@@ -455,25 +398,61 @@ views:
               left: 45%
               top: 20%
             type: state-label
-        image: /local/images/floorplan-walls.svg
+        image: /local/images/floorplan-walls-white.svg
         title: House
         type: picture-elements
       - elements:
+          - entity: binary_sensor.fake_garage_door
+            style:
+              '--iron-icon-height': 224px
+              '--iron-icon-width': 224px
+              left: 50%
+              top: 40%
+              transform: rotate(270deg)
+            type: state-icon
+          - entity: binary_sensor.upper_level_lights
+            style:
+              '--iron-icon-height': 42px
+              '--iron-icon-width': 42px
+              left: 25%
+              top: 84%
+            type: state-icon
+          - entity: binary_sensor.ceiling_lights_2
+            style:
+              '--iron-icon-height': 42px
+              '--iron-icon-width': 42px
+              left: 30%
+              top: 50%
+            type: state-icon
+          - entity: binary_sensor.ceiling_lights_1
+            style:
+              '--iron-icon-height': 42px
+              '--iron-icon-width': 42px
+              left: 30%
+              top: 40%
+            type: state-icon
+          - entity: binary_sensor.workshop_lights
+            style:
+              '--iron-icon-height': 42px
+              '--iron-icon-width': 42px
+              left: 45%
+              top: 75%
+            type: state-icon
           - entity: binary_sensor.fake_workshop_door
             style:
               '--iron-icon-height': 42px
               '--iron-icon-width': 42px
               left: 67%
-              top: 66%
+              top: 61%
             type: state-icon
           - entity: binary_sensor.fake_storage_door
             style:
               '--iron-icon-height': 42px
               '--iron-icon-width': 42px
               left: 54%
-              top: 85%
+              top: 84%
             type: state-icon
-        image: /local/images/garage-walls.svg
+        image: /local/images/garage-walls-white.svg
         title: Garage
         type: picture-elements
     icon: 'mdi:floor-plan'
@@ -492,6 +471,18 @@ views:
     id: trends
     title: Home Data Trends
   - cards:
+      - card:
+          title: ⚠ Camera Errors ⚠
+          type: glance
+        entities:
+          - entity: binary_sensor.ext_cam_01
+          - entity: binary_sensor.ext_dome_01
+          - entity: binary_sensor.ext_dome_02
+          - entity: binary_sensor.int_dome_01
+        show_empty: false
+        state_filter:
+          - 'off'
+        type: entity-filter
       - entity: camera.interior_dome_1
         show_state: false
         type: picture-entity
@@ -502,12 +493,6 @@ views:
         show_state: false
         type: picture-entity
       - entity: camera.exterior_cam_1
-        show_state: false
-        type: picture-entity
-      - entity: camera.exterior_cam_2
-        show_state: false
-        type: picture-entity
-      - entity: camera.exterior_cam_3
         show_state: false
         type: picture-entity
     icon: 'mdi:cctv'
@@ -601,6 +586,9 @@ views:
         type: entity-button
       - entity: binary_sensor.front_door
         type: entity-button
+      - entity: camera.exterior_dome_2
+        show_state: false
+        type: picture-entity
     icon: ''
     title: Living Room
   - badges: []
@@ -659,6 +647,9 @@ views:
         tap_action:
           action: toggle
         type: entity-button
+      - entity: camera.exterior_dome_1
+        show_state: false
+        type: picture-entity
     icon: ''
     title: Rec Room
   - badges: []
@@ -679,6 +670,9 @@ views:
         type: media-control
       - entity: binary_sensor.back_door
         type: entity-button
+      - entity: camera.exterior_cam_1
+        show_state: false
+        type: picture-entity
     icon: ''
     title: Kitchen
   - badges: []
@@ -711,4 +705,7 @@ views:
         name: Humidity
         type: gauge
         unit: '%'
+      - entity: camera.interior_dome_1
+        show_state: false
+        type: picture-entity
     title: Office
