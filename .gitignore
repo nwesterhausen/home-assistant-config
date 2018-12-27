@@ -19,7 +19,6 @@ deps
 tts
 www/people
 zones/kam_work
-custom_components
 
 .HA_VERSION
 .uuid
