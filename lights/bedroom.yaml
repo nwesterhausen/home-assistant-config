@@ -1,3 +1,12 @@
+- platform: yeelight
+  devices:
+    172.18.19.30:
+      name: Bedroom Nick
+      model: color2
+    172.18.19.31:
+      name: Bedroom Kam
+      model: color2
+
 - platform: group
   name: All Bedroom Lights
   view: no
@@ -5,8 +14,8 @@
   entities:
     - light.bedroom_room_1
     - light.bedroom_room_2
-    - light.bedroom_bed_1
-    - light.bedroom_bed_2
+    - light.bedroom_nick
+    - light.bedroom_kam
 
 - platform: group
   name: Bedroom Room Lights
@@ -19,5 +28,5 @@
   name: Bedroom Bed Lights
   icon: mdi:hotel
   entities:
-    - light.bedroom_bed_1
-    - light.bedroom_bed_2
+    - light.bedroom_nick
+    - light.bedroom_kam
