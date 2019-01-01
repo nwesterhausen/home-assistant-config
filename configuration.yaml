@@ -152,8 +152,8 @@ media_player:
 #     client_remove_interval: 600
   - platform: roku
     host: 172.18.16.23
-  - platform: roku
-    host: 172.18.16.24
+  # - platform: roku
+  #   host: 172.18.16.24
   - platform: roku
     host: 172.18.16.25
 ##########################
