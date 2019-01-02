@@ -19,7 +19,7 @@ deps
 tts
 www/people
 zones/kam_work
-custom_components/pycache
+custom_components/__pycache__/
 
 .HA_VERSION
 .uuid
