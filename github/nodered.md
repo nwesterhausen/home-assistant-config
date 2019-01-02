@@ -1,14 +1,14 @@
 # Flows
 Pictures right now, adding details soon..
 
-![tracked flight updates](github/images/nodered-flight-status.png)
+![tracked flight updates](images/nodered-flight-status.png)
 
-![theme at startup](github/images/nodered-hass-startup.png)
+![theme at startup](images/nodered-hass-startup.png)
 
-![location changes](github/images/nodered-location-changes.png)
+![location changes](images/nodered-location-changes.png)
 
-![push notifications](github/images/nodered-push-notification-handles.png)
+![push notifications](images/nodered-push-notification-handles.png)
 
-![sunset and door](github/images/nodered-sunset-doors.png)
+![sunset and door](images/nodered-sunset-doors.png)
 
-![trashday notify](github/images/nodered-trashday.png)
+![trashday notify](images/nodered-trashday.png)
