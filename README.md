@@ -50,10 +50,11 @@ Here is a list of devices and quantity in my home.
 ### Lights
 | Device | Quantity | Comment
 | ---    | ---      | ---
-| GoControl Z-Wave Dimmable LED Light Bulb, LB60Z-1 | 4 | Used in a ceiling fan so the fan can be on and the lights can be automatically controlled
+| GoControl Z-Wave Dimmable LED Light Bulb, LB60Z-1 | 4 | 2 are used in a ceiling fan so the fan can be on and the lights can be automatically controlled, one is in an entryway to turn on automatically when someone gets home. The last one is currently not in use (pending location)
 | GE Z-Wave Plus Smart Lighting Control Motion Sensor Switch | 2 | One is in our laundry room and the other the garage. I want to get a couple more to have on all the garage switches
 | GE Z-Wave Plus Smart Lighting Control Light Switch | 2 | Replaced two normal switches in our Rec Room
 | GE Z-Wave Plus Smart Lighting Control Light Dimmer Switch | 2 | Replaced two dimmer switches in our Rec Room
+| Yeelight LED Bulb (Color) YLDP06YL | 3 | Bought in a sale online, we use two of them for our 'bed' bedroom lights and one in my daughter's room.
 
 ### Sensors
 | Device | Quantity | Comment
