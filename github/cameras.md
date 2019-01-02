@@ -11,17 +11,12 @@ up a live view from the camera.
 
 ![cctv panel](images/cctv-panel.png)
 
-## Camera Event Cards
+## Camera Event Card
 There also are two [entity-filter]() cards which display only if they have something
 important to tell me about.
 
 ### Disconnected Camera Card
 I use device tracker which is tied into my unifi switch to determine if the cameras
-are online or not. 
+are online or not.
 
 ![camera disconnected panel](images/cctv-disconnected.png)
-
-### Motion Detected Card
-I have BlueIris use MQTT to say if there is motion detected or not on a camera.
-
-![camera motion detected card](images/cctv-motion.png)
