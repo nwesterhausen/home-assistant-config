@@ -4,39 +4,19 @@ Configuration files for my Home Assistant instance.
 [![Build Status](https://travis-ci.org/nwesterhausen/Home-Assistant-Config.svg?branch=master)](https://travis-ci.org/nwesterhausen/Home-Assistant-Config)
 
 ## Screenshots
-Some screenshots of what Home Assistant Looks like:
-
-### Main Screen
-A control panel for the entire house, has everything in it!
 
 ![Main lovelace screen](github/images/lovelace-dec2018-01.png)
 
-I also have a panel that is just for turning lights on and off:
+### More Screenshots
 
-![switch screen](github/images/lovelace-dec2018-04.png)
+I have a lot of [lovelace panels](github/room-panels.md)
 
-### Floorplan
-I'm using picture-elements for my floorplan. I have it displayed as a card because as a panel it would fill the entire width of my screen.
+One of which is a [floorplan panel](github/floorplans.md)
 
-![Floorplan](github/images/lovelace-dec2018-02.png)
-
-**Icon Attribution**
-
-* Security Camera by ProSymbols from the Noun Project
-
-### Trends
-I use Grafana to aid in visualizing trends from my Home Assistant data.
-
-![Trends lovelace screen](github/images/lovelace-dec2018-03.png)
-
-### Room control panels
-
-I created a separate panel for each room, you can see them [here](github/room-panels.md).
+I used grafana to [graph trends in temperature](github/trends.md)
 
 ## Home Assistant Customizations
-One of the neat things I use Home Assistant for is notifying my wife and I when one of us arrives at a common destination, whether on errands or as part of the workday. I use a node-red flow to send a message to Discord when someone enters or leaves a zone. In the picture here, you can see where she dropped me off at work and my trip to Taco Bell the day before.
-
-![discord notify bot with Zones](github/images/discord-bot-zones.png)
+I use a discord bot to serve as a notification system from Home Asistant ([more info](github/discord-bot.md))
 
 I use the [animated darksky weather card](https://community.home-assistant.io/t/custom-dark-sky-animated-weather-card/59816) in my Lovelace UI.
 
@@ -99,5 +79,5 @@ I have a server which I use as a Docker host. Alongside other fun things, it run
    - I store all sensor data into InfluxDB
 - Traefik (reverse-proxy based on Docker container labels, [official site](https://traefik.io))
 - Cloud9 IDE (For easily editing Home-Assistant configuration files, [docker hub](https://hub.docker.com/r/kdelfour/cloud9-docker/))
-- ShinobiPro NVR
+- BlueIris NVR
 - OPNSense router

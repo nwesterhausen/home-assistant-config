@@ -1,3 +1,8 @@
+# Light and Switch Control
+I have a panel that is just for turning lights on and off.
+
+![switch screen](github/images/lovelace-dec2018-04.png)
+
 # Room Panels
 Each room has it's own panel in lovelace.
 
