@@ -30,6 +30,7 @@ views:
           - home
         title: Guests
         type: entity-filter
+        show_empty: false
       - entities:
           - entity: binary_sensor.front_door
           - entity: binary_sensor.back_door
