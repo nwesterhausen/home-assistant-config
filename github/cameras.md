@@ -11,6 +11,7 @@ up a live view from the camera.
 
 ![cctv panel](images/cctv-panel.png)
 
+## Camera Event Cards
 There also are two [entity-filter]() cards which display only if they have something
 important to tell me about.
 
