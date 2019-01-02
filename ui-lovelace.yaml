@@ -520,8 +520,10 @@ views:
     title: Switch Panel
   - badges: []
     cards:
-      - entity: light.bedroom_bed_lights
-        type: light
+      - type: light
+        entity: light.bedroom_kam
+      - type: light
+        entity: light.bedroom_nick
       - entity: light.bedroom_room_lights
         type: light
       - entity: sensor.master_bedroom_temperature
@@ -542,6 +544,8 @@ views:
     title: Bedroom
   - badges: []
     cards:
+      - type: light
+        entity: light.averys_room
       - entity: sensor.averys_room_temperature
         max: 95
         min: 45
