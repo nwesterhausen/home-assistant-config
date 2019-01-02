@@ -1,0 +1,6 @@
+- platform: mjpeg
+  name: Interior 1
+  still_image_url: !secret blueiris_url_int01
+  username: !secret blueiris_password
+  password: !secret blueiris_user
+  authentication: basic

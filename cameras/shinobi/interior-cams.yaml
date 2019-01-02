@@ -1,4 +1,0 @@
-- platform: generic
-  name: Interior Dome 1
-  still_image_url: !secret shinobi_int1_jpeg
-  
