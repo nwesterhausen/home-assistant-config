@@ -1,0 +1,8 @@
+camera.exterior_1:
+  friendly_name: Rec Room Door
+camera.exterior_2:
+  friendly_name: Front Door
+camera.exterior_3:
+  friendly_name: Back Door
+camera.interior_1:
+  friendly_name: Dog Camera
