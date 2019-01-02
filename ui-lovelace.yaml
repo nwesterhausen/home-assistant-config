@@ -11,34 +11,33 @@ title: Home
 views:
   - badges: []
     cards:
-      - type: entities
-        entities:
+      - entities:
           - entity: sensor.location_kam
           - entity: sensor.location_nick
           - entity: sensor.location_billie
-        title: Who's Where
         show_header_toggle: false
+        title: Who's Where
+        type: entities
       - card:
+          show_header_toggle: false
           title: Guests at home
           type: entities
-          show_header_toggle: false
         entities:
           - entity: device_tracker.marks_iphone
           - entity: device_tracker.karens_iphone
           - entity: device_tracker.mercys_iphone
+        show_empty: false
         state_filter:
           - home
         title: Guests
         type: entity-filter
-        show_empty: false
       - entities:
           - entity: binary_sensor.front_door
           - entity: binary_sensor.back_door
           - entity: binary_sensor.rec_room_door
         title: Door Status
         type: glance
-      - type: entities
-        entities:
+      - entities:
           - entity: sensor.master_bedroom_temperature
             name: Temperature
           - entity: sensor.master_bedroom_humidity
@@ -48,8 +47,8 @@ views:
           - entity: light.bedroom_kam
           - entity: light.bedroom_room_lights
         title: Bedroom
-      - type: entities
-        entities:
+        type: entities
+      - entities:
           - entity: sensor.laundry_room_temperature
             name: Temperature
           - entity: sensor.laundry_room_humidity
@@ -57,10 +56,10 @@ views:
           - entity: switch.laundry_room
             icon: 'mdi:light-switch'
             name: Laundry Room Switch
-        title: Laundry Room
         show_header_toggle: false
-      - type: entities
-        entities:
+        title: Laundry Room
+        type: entities
+      - entities:
           - entity: sensor.network_rack_temperature
             name: Temperature (Network)
           - entity: sensor.network_rack_humidity
@@ -71,8 +70,9 @@ views:
             name: Humidity (Kam's Desk)
           - entity: media_player.office_mini
           - entity: media_player.office_audio
-        title: Office
         show_header_toggle: false
+        title: Office
+        type: entities
       - entities:
           - entity: group.recroom_lights
             name: All Recroom Lights
@@ -105,8 +105,7 @@ views:
         show_header_toggle: false
         title: Rec Room
         type: entities
-      - type: entities
-        entities:
+      - entities:
           - entity: sensor.living_room_thermostat_temperature
             name: Temperature
           - entity: sensor.living_room_thermostat_humidity
@@ -115,42 +114,43 @@ views:
           - entity: media_player.living_room_mini
           - entity: switch.tplink_switch_1
             name: Christmas Tree Lights
-        title: Living Room
         show_header_toggle: false
-      - type: entities
-        entities:
+        title: Living Room
+        type: entities
+      - entities:
           - entity: sensor.averys_room_temperature
             name: Temperature
           - entity: sensor.averys_room_humidity
             name: Humidity
           - entity: light.averys_room
-        title: Avery's Room
         show_header_toggle: false
-      - type: entities
-        entities:
+        title: Avery's Room
+        type: entities
+      - entities:
           - entity: sensor.kitchen_temperature
             name: Temperature
           - entity: sensor.kitchen_humidity
             name: Humidity
           - entity: media_player.kitchen_mini
-        title: Kitchen
         show_header_toggle: false
-      - type: entities
-        entities:
+        title: Kitchen
+        type: entities
+      - entities:
           - entity: sensor.guest_room_temperature
             name: Temperature
           - entity: sensor.guest_room_humidity
             name: Humidity
-        title: Guest Room
         show_header_toggle: false
-      - type: entities
-        entities:
+        title: Guest Room
+        type: entities
+      - entities:
           - entity: sensor.guest_bathroom_temperature
             name: Temperature
           - entity: sensor.guest_bathroom_humidity
             name: Humidity
-        title: Guest Bathroom
         show_header_toggle: false
+        title: Guest Bathroom
+        type: entities
       - entity: climate.living_room
         type: thermostat
       - entities:
@@ -192,12 +192,7 @@ views:
     id: home
     theme: dark-mode
   - cards:
-      - type: 'custom:card-modder'
-        style:
-          '--paper-card-background-color': '#E0E0E0'
-          '--paper-item-icon-color': black
-          '--primary-text-color': black
-        card:
+      - card:
           elements:
             - entity: sensor.dark_sky_daily_summary
               style:
@@ -390,12 +385,12 @@ views:
           image: /local/images/floorplan-walls.svg
           title: House
           type: picture-elements
-      - type: 'custom:card-modder'
         style:
           '--paper-card-background-color': '#E0E0E0'
           '--paper-item-icon-color': black
           '--primary-text-color': black
-        card:
+        type: 'custom:card-modder'
+      - card:
           elements:
             - entity: binary_sensor.fake_garage_door
               style:
@@ -450,6 +445,11 @@ views:
           image: /local/images/garage-walls.svg
           title: Garage
           type: picture-elements
+        style:
+          '--paper-card-background-color': '#E0E0E0'
+          '--paper-item-icon-color': black
+          '--primary-text-color': black
+        type: 'custom:card-modder'
     icon: 'mdi:floor-plan'
     id: floorplan
     title: Floor Plan
@@ -497,7 +497,8 @@ views:
     cards:
       - content: '# Switch Panel'
         type: markdown
-      - entities:
+      - type: entities
+        entities:
           - entity: light.bedroom_bed_1
           - entity: light.bedroom_bed_2
           - entity: light.bedroom_room_1
@@ -506,8 +507,10 @@ views:
           - entity: light.recroom_table
           - entity: light.rec_room_corner_lights
           - entity: light.rec_room_ceiling_lights
+          - entity: light.bedroom_nick
+          - entity: light.bedroom_kam
+          - entity: light.averys_room
         title: Lights
-        type: entities
       - entities:
           - entity: switch.tplink_switch_1
           - entity: switch.tplink_switch_2
