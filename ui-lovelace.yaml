@@ -3,33 +3,29 @@ excluded_entities:
 resources:
   - type: js
     url: /local/custom_ui/dark-sky-weather-card/dark-sky-weather-card.js?v=2
-  - url: /local/card-tools.js
-    type: js
+  - type: js
+    url: /local/card-tools.js
+  - type: js
+    url: /local/card-modder.js
 title: Home
 views:
   - badges: []
     cards:
-      - entities:
+      - type: entities
+        entities:
           - entity: sensor.location_kam
-            secondary_info: last-changed
           - entity: sensor.location_nick
-            secondary_info: last-changed
           - entity: sensor.location_billie
-            secondary_info: last-changed
-        id: whoswhere
-        show_header_toggle: false
         title: Who's Where
-        type: entities
+        show_header_toggle: false
       - card:
           title: Guests at home
           type: entities
+          show_header_toggle: false
         entities:
           - entity: device_tracker.marks_iphone
           - entity: device_tracker.karens_iphone
           - entity: device_tracker.mercys_iphone
-        id: guestsvisitng
-        show_empty: false
-        show_header_toggle: false
         state_filter:
           - home
         title: Guests
@@ -38,25 +34,21 @@ views:
           - entity: binary_sensor.front_door
           - entity: binary_sensor.back_door
           - entity: binary_sensor.rec_room_door
-        show_header_toggle: false
         title: Door Status
         type: glance
-      - entities:
-          - entity: light.bedroom_room_lights
-            name: Bedroom Lights (Room)
-          - entity: light.bedroom_bed_lights
-            name: Bedroom Lights (Bed)
-          - entity: light.all_bedroom_lights
-            name: Bedroom Lights (All)
+      - type: entities
+        entities:
           - entity: sensor.master_bedroom_temperature
             name: Temperature
           - entity: sensor.master_bedroom_humidity
             name: Humidity
           - entity: media_player.master_bedroom_speaker
-        id: bedroomcontrol
+          - entity: light.bedroom_nick
+          - entity: light.bedroom_kam
+          - entity: light.bedroom_room_lights
         title: Bedroom
-        type: entities
-      - entities:
+      - type: entities
+        entities:
           - entity: sensor.laundry_room_temperature
             name: Temperature
           - entity: sensor.laundry_room_humidity
@@ -64,11 +56,10 @@ views:
           - entity: switch.laundry_room
             icon: 'mdi:light-switch'
             name: Laundry Room Switch
-        id: laundrycontrol
-        show_header_toggle: false
         title: Laundry Room
-        type: entities
-      - entities:
+        show_header_toggle: false
+      - type: entities
+        entities:
           - entity: sensor.network_rack_temperature
             name: Temperature (Network)
           - entity: sensor.network_rack_humidity
@@ -79,10 +70,8 @@ views:
             name: Humidity (Kam's Desk)
           - entity: media_player.office_mini
           - entity: media_player.office_audio
-        id: officecontrol
-        show_header_toggle: false
         title: Office
-        type: entities
+        show_header_toggle: false
       - entities:
           - entity: group.recroom_lights
             name: All Recroom Lights
@@ -108,15 +97,15 @@ views:
             name: Humidity (Southwall)
           - entity: media_player.family_room_mini
           - entity: media_player.family_room_audio
-          - entity: media_player.family_room
+          - entity: media_player.rec_room_tv
           - entity: media_player.averys_room
           - entity: switch.tplink_switch_2
             name: Christmas Tree Lights
-        id: recroomcontrol
         show_header_toggle: false
         title: Rec Room
         type: entities
-      - entities:
+      - type: entities
+        entities:
           - entity: sensor.living_room_thermostat_temperature
             name: Temperature
           - entity: sensor.living_room_thermostat_humidity
@@ -125,48 +114,43 @@ views:
           - entity: media_player.living_room_mini
           - entity: switch.tplink_switch_1
             name: Christmas Tree Lights
-        id: livingroomcontrol
         title: Living Room
-        type: entities
-      - entities:
+        show_header_toggle: false
+      - type: entities
+        entities:
           - entity: sensor.averys_room_temperature
             name: Temperature
           - entity: sensor.averys_room_humidity
             name: Humidity
-        id: averyroomcontrol
-        show_header_toggle: false
+          - entity: light.averys_room
         title: Avery's Room
-        type: entities
-      - entities:
+        show_header_toggle: false
+      - type: entities
+        entities:
           - entity: sensor.kitchen_temperature
             name: Temperature
           - entity: sensor.kitchen_humidity
             name: Humidity
           - entity: media_player.kitchen_mini
-        id: kitchencontrol
-        show_header_toggle: false
         title: Kitchen
-        type: entities
-      - entities:
+        show_header_toggle: false
+      - type: entities
+        entities:
           - entity: sensor.guest_room_temperature
             name: Temperature
           - entity: sensor.guest_room_humidity
             name: Humidity
-        id: guestroomcontrol
-        show_header_toggle: false
         title: Guest Room
-        type: entities
-      - entities:
+        show_header_toggle: false
+      - type: entities
+        entities:
           - entity: sensor.guest_bathroom_temperature
             name: Temperature
           - entity: sensor.guest_bathroom_humidity
             name: Humidity
-        id: guestbathcontrol
-        show_header_toggle: false
         title: Guest Bathroom
-        type: entities
+        show_header_toggle: false
       - entity: climate.living_room
-        id: thermostat
         type: thermostat
       - entities:
           - entity: sensor.average_indoor_temperature
@@ -175,7 +159,6 @@ views:
             icon: 'fal:temperature-high'
           - entity: sensor.average_indoor_temperature_zone_b
             icon: 'fal:temperature-high'
-        id: hometemps
         show_header_toggle: false
         title: Home Temperatures
         type: entities
@@ -203,258 +186,269 @@ views:
         entity_visibility: sensor.dark_sky_visibility
         entity_wind_bearing: sensor.dark_sky_wind_bearing
         entity_wind_speed: sensor.dark_sky_wind_speed
-        id: weathercard
         type: 'custom:dark-sky-weather-card'
     icon: 'mdi:home'
     id: home
     theme: dark-mode
   - cards:
-      - elements:
-          - entity: sensor.dark_sky_icon
-            style:
-              left: 20%
-              top: 50%
-            type: state-icon
-          - entity: sensor.dark_sky_temperature
-            prefix: 'Outside Temp '
-            style:
-              font-size: 1em
-              left: 20%
-              text-align: left
-              top: 55%
-            type: state-label
-          - entity: sensor.living_room_thermostat_target
-            prefix: 'Thermostat Set to '
-            style:
-              font-size: 1em
-              left: 20%
-              text-align: left
-              top: 57%
-            type: state-label
-          - entity: binary_sensor.back_door
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 17%
-              top: 7%
-            type: state-icon
-          - entity: binary_sensor.front_door
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 42%
-              top: 38%
-            type: state-icon
-          - entity: binary_sensor.rec_room_door
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 80%
-              top: 80%
-            type: state-icon
-          - entity: switch.tplink_switch_1
-            image: /local/images/entities/christmas-tree.png
-            state_filter:
-              'off': grayscale(1)
-              'on': grayscale(0)
-            style:
-              height: 42px
-              left: 60%
-              top: 20%
-              width: 36px
-            tap_action:
-              action: toggle
-            type: image
-          - entity: switch.tplink_switch_2
-            image: /local/images/entities/christmas-tree.png
-            state_filter:
-              'off': grayscale(1)
-              'on': grayscale(0)
-            style:
-              bottom: 25%
-              height: 42px
-              left: 55%
-              width: 36px
-            tap_action:
-              action: toggle
-            type: image
-          - entity: switch.recroom_corner
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 55%
-              top: 75%
-            tap_action:
-              action: toggle
-            type: state-icon
-          - entity: switch.recroom_ceiling
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 70%
-              top: 70%
-            tap_action:
-              action: toggle
-            type: state-icon
-          - entity: light.recroom_walls
-            hold_action:
-              action: more-info
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 80%
-              top: 60%
-            tap_action: toggle
-            type: state-icon
-          - entity: light.recroom_table
-            hold_action:
-              action: more-info
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 85%
-              top: 70%
-            tap_action:
-              action: toggle
-            type: state-icon
-          - entity: switch.laundry_room
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 55%
-              top: 30%
-            tap_action:
-              action: toggle
-            type: state-icon
-          - entity: light.bedroom_bed_lights
-            hold_action:
-              action: more-info
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 10%
-              top: 40%
-            tap_action:
-              action: toggle
-            type: state-icon
-          - entity: light.bedroom_room_lights
-            hold_action:
-              action: more-info
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 25%
-              top: 40%
-            tap_action:
-              action: toggle
-            type: state-icon
-          - entity: sensor.kitchen_temperature
-            style:
-              left: 10%
-              top: 12%
-            type: state-label
-          - entity: sensor.averys_room_temperature
-            style:
-              left: 75%
-              top: 15%
-            type: state-label
-          - entity: sensor.master_bedroom_temperature
-            style:
-              left: 15%
-              top: 35%
-            type: state-label
-          - entity: sensor.guest_bathroom_temperature
-            style:
-              left: 71%
-              top: 30%
-            type: state-label
-          - entity: sensor.recroom_temperature_sink
-            style:
-              left: 60%
-              top: 58%
-            type: state-label
-          - entity: sensor.recroom_temperature_southwall
-            style:
-              left: 70%
-              top: 78%
-            type: state-label
-          - entity: sensor.network_rack_temperature
-            style:
-              left: 85%
-              top: 40%
-            type: state-label
-          - entity: sensor.kams_desk_temperature
-            style:
-              left: 85%
-              top: 53%
-            type: state-label
-          - entity: sensor.guest_room_temperature
-            style:
-              left: 85%
-              top: 25%
-            type: state-label
-          - entity: sensor.living_room_thermostat_temperature
-            style:
-              left: 45%
-              top: 20%
-            type: state-label
-        image: /local/images/floorplan-walls-white.svg
-        title: House
-        type: picture-elements
-      - elements:
-          - entity: binary_sensor.fake_garage_door
-            style:
-              '--iron-icon-height': 224px
-              '--iron-icon-width': 224px
-              left: 50%
-              top: 40%
-              transform: rotate(270deg)
-            type: state-icon
-          - entity: binary_sensor.upper_level_lights
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 25%
-              top: 84%
-            type: state-icon
-          - entity: binary_sensor.ceiling_lights_2
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 30%
-              top: 50%
-            type: state-icon
-          - entity: binary_sensor.ceiling_lights_1
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 30%
-              top: 40%
-            type: state-icon
-          - entity: binary_sensor.workshop_lights
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 45%
-              top: 75%
-            type: state-icon
-          - entity: binary_sensor.fake_workshop_door
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 67%
-              top: 61%
-            type: state-icon
-          - entity: binary_sensor.fake_storage_door
-            style:
-              '--iron-icon-height': 42px
-              '--iron-icon-width': 42px
-              left: 54%
-              top: 84%
-            type: state-icon
-        image: /local/images/garage-walls-white.svg
-        title: Garage
-        type: picture-elements
+      - type: 'custom:card-modder'
+        style:
+          '--paper-card-background-color': '#E0E0E0'
+          '--paper-item-icon-color': black
+          '--primary-text-color': black
+        card:
+          elements:
+            - entity: sensor.dark_sky_daily_summary
+              style:
+                left: 20%
+                top: 52%
+              type: state-icon
+            - entity: sensor.dark_sky_temperature
+              prefix: 'Outside Temp '
+              style:
+                font-size: 1em
+                left: 20%
+                text-align: left
+                top: 55%
+              type: state-label
+            - entity: sensor.living_room_thermostat_target
+              prefix: 'Thermostat Set to '
+              style:
+                font-size: 1em
+                left: 20%
+                text-align: left
+                top: 57%
+              type: state-label
+            - entity: binary_sensor.back_door
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 17%
+                top: 7%
+              type: state-icon
+            - entity: binary_sensor.front_door
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 42%
+                top: 38%
+              type: state-icon
+            - entity: binary_sensor.rec_room_door
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 80%
+                top: 80%
+              type: state-icon
+            - entity: switch.tplink_switch_1
+              image: /local/images/entities/christmas-tree.png
+              state_filter:
+                'off': grayscale(1)
+                'on': grayscale(0)
+              style:
+                height: 42px
+                left: 60%
+                top: 20%
+                width: 36px
+              tap_action:
+                action: toggle
+              type: image
+            - entity: switch.tplink_switch_2
+              image: /local/images/entities/christmas-tree.png
+              state_filter:
+                'off': grayscale(1)
+                'on': grayscale(0)
+              style:
+                bottom: 25%
+                height: 42px
+                left: 55%
+                width: 36px
+              tap_action:
+                action: toggle
+              type: image
+            - entity: switch.recroom_corner
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 55%
+                top: 75%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: switch.recroom_ceiling
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 70%
+                top: 70%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.recroom_walls
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 80%
+                top: 60%
+              tap_action: toggle
+              type: state-icon
+            - entity: light.recroom_table
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 85%
+                top: 70%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: switch.laundry_room
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 55%
+                top: 30%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.bedroom_bed_lights
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 10%
+                top: 40%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.bedroom_room_lights
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 25%
+                top: 40%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: sensor.kitchen_temperature
+              style:
+                left: 10%
+                top: 12%
+              type: state-label
+            - entity: sensor.averys_room_temperature
+              style:
+                left: 75%
+                top: 15%
+              type: state-label
+            - entity: sensor.master_bedroom_temperature
+              style:
+                left: 15%
+                top: 35%
+              type: state-label
+            - entity: sensor.guest_bathroom_temperature
+              style:
+                left: 71%
+                top: 30%
+              type: state-label
+            - entity: sensor.recroom_temperature_sink
+              style:
+                left: 60%
+                top: 58%
+              type: state-label
+            - entity: sensor.recroom_temperature_southwall
+              style:
+                left: 70%
+                top: 78%
+              type: state-label
+            - entity: sensor.network_rack_temperature
+              style:
+                left: 85%
+                top: 40%
+              type: state-label
+            - entity: sensor.kams_desk_temperature
+              style:
+                left: 85%
+                top: 53%
+              type: state-label
+            - entity: sensor.guest_room_temperature
+              style:
+                left: 85%
+                top: 25%
+              type: state-label
+            - entity: sensor.living_room_thermostat_temperature
+              style:
+                left: 45%
+                top: 20%
+              type: state-label
+          image: /local/images/floorplan-walls.svg
+          title: House
+          type: picture-elements
+      - type: 'custom:card-modder'
+        style:
+          '--paper-card-background-color': '#E0E0E0'
+          '--paper-item-icon-color': black
+          '--primary-text-color': black
+        card:
+          elements:
+            - entity: binary_sensor.fake_garage_door
+              style:
+                '--iron-icon-height': 224px
+                '--iron-icon-width': 224px
+                left: 50%
+                top: 40%
+                transform: rotate(270deg)
+              type: state-icon
+            - entity: binary_sensor.upper_level_lights
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 25%
+                top: 84%
+              type: state-icon
+            - entity: binary_sensor.ceiling_lights_2
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 30%
+                top: 50%
+              type: state-icon
+            - entity: binary_sensor.ceiling_lights_1
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 30%
+                top: 40%
+              type: state-icon
+            - entity: binary_sensor.workshop_lights
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 45%
+                top: 75%
+              type: state-icon
+            - entity: binary_sensor.fake_workshop_door
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 67%
+                top: 61%
+              type: state-icon
+            - entity: binary_sensor.fake_storage_door
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 54%
+                top: 84%
+              type: state-icon
+          image: /local/images/garage-walls.svg
+          title: Garage
+          type: picture-elements
     icon: 'mdi:floor-plan'
     id: floorplan
     title: Floor Plan
@@ -613,7 +607,7 @@ views:
         unit: '%'
       - entity: media_player.rec_room_tv
         type: media-control
-      - entity: media_player.family_room
+      - entity: media_player.rec_room_tv
         type: media-control
       - entity: media_player.family_room_audio
         type: media-control
