@@ -1,18 +1,18 @@
 - platform: mjpeg
   name: Exterior 1
-  still_image_url: !secret blueiris_url_ext01
+  mjpeg_url: !secret blueiris_url_ext01
   username: !secret blueiris_password
   password: !secret blueiris_user
   authentication: basic
 - platform: mjpeg
   name: Exterior 2
-  still_image_url: !secret blueiris_url_ext02
+  mjpeg_url: !secret blueiris_url_ext02
   username: !secret blueiris_password
   password: !secret blueiris_user
   authentication: basic
 - platform: mjpeg
   name: Exterior 3
-  still_image_url: !secret blueiris_url_ext03
+  mjpeg_url: !secret blueiris_url_ext03
   username: !secret blueiris_password
   password: !secret blueiris_user
   authentication: basic
