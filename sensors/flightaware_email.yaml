@@ -1,9 +1,0 @@
-platform: imap_email_content
-server: !secret imap_server
-port: 993
-name: FlightAware
-username: !secret imap_username
-password: !secret imap_password
-scan_interval: 10
-senders:
-  - alerts@flightaware.com

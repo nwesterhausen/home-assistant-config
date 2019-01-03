@@ -1,0 +1,20 @@
+# I have an old email that I now use just for Home Assistant.
+# The issue I had with the imap sensor with my main email is
+# that it would mark everything as read.. so I missed some emails.
+# With a specific Home Assistant email, I can set up alerts to
+# email to it and have them get handled with imap sensors.
+
+# Flightaware does excellent flight tracking. My wife travels for
+# work on occasion and it's nice to get flight updates right in
+# discord. I use Node-Red to parse and shorten the email alerts.
+# We use this for family that visit as well and it is nice.
+# You get 5 alerts for free, so there is some manual configuration.
+- platform: imap_email_content
+  server: !secret imap_server
+  port: 993
+  name: FlightAware
+  username: !secret imap_username
+  password: !secret imap_password
+  scan_interval: 10
+  senders:
+    - alerts@flightaware.com
