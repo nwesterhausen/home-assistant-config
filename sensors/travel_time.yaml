@@ -1,0 +1,19 @@
+# With the Google Travel Time, you use a placeid for the locations (or a device_tracker)
+- platform: google_travel_time
+  name: TravelTime Work to Home
+  api_key: !secret google_cloud_platform_key
+  origin: !secret work_placeid
+  destination: !secret home_placeid
+  scan_interval: 14400
+- platform: google_travel_time
+  name: TravelTime Nick to Home
+  api_key: !secret google_cloud_platform_key
+  origin: device_tracker.nickspixel
+  destination: !secret home_placeid
+  scan_interval: 14400
+- platform: google_travel_time
+  name: TravelTime Home to Work
+  api_key: !secret google_cloud_platform_key
+  destination: !secret work_placeid
+  origin: !secret home_placeid
+  scan_interval: 14400

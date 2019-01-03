@@ -1,8 +1,0 @@
-platform: min_max
-type: mean
-name: Average Indoor Temperature Zone B
-entity_ids:
-  - sensor.network_rack_temperature
-  - sensor.kams_desk_temperature
-  - sensor.recroom_temperature_sink
-  - sensor.laundry_room_temperature
