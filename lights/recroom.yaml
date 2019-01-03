@@ -1,11 +1,11 @@
+# Turning two zwave light switches into 'lights'
 - platform: switch
   name: RecRoom Ceiling
   entity_id: switch.recroom_ceiling_lights
-
 - platform: switch
   name: RecRoom Corner
   entity_id: switch.recroom_corner_lights
-
+# Providing a light group for lovelace and automations.
 - platform: group
   name: All Rec Room Lights
   entities:
