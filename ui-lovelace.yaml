@@ -53,7 +53,7 @@ views:
             name: Temperature
           - entity: sensor.laundry_room_humidity
             name: Humidity
-          - entity: switch.laundry_room
+          - entity: switch.laundry_room_light
             icon: 'mdi:light-switch'
             name: Laundry Room Switch
         show_header_toggle: false
@@ -78,15 +78,15 @@ views:
             name: All Recroom Lights
           - entity: sensor.recroom_temperature_sink
             name: Temperature
-          - entity: sensor.recroom_luminance
+          - entity: sensor.recroom_luminance_sink
             name: Light Level
-          - entity: switch.recroom_ceiling
+          - entity: light.recroom_ceiling
             icon: 'mdi:light-switch'
             name: Rec Room Ceiling Lights
-          - entity: switch.recroom_corner
+          - entity: light.recroom_corner
             icon: 'mdi:light-switch'
             name: Rec Room Corner Lights
-          - entity: light.recroom_walls
+          - entity: light.recroom_wall
             icon: 'mdi:light-switch'
             name: Rec Room Wall Lights
           - entity: light.recroom_table
@@ -163,37 +163,30 @@ views:
         show_header_toggle: false
         title: Home Temperatures
         type: entities
-      - entity_current_conditions: sensor.dark_sky_icon
-        entity_daily_summary: sensor.dark_sky_daily_summary
-        entity_forecast_high_temp_1: sensor.dark_sky_daytime_high_temperature_1
-        entity_forecast_high_temp_2: sensor.dark_sky_daytime_high_temperature_2
-        entity_forecast_high_temp_3: sensor.dark_sky_daytime_high_temperature_3
-        entity_forecast_high_temp_4: sensor.dark_sky_daytime_high_temperature_4
-        entity_forecast_high_temp_5: sensor.dark_sky_daytime_high_temperature_5
-        entity_forecast_icon_1: sensor.dark_sky_icon_1
-        entity_forecast_icon_2: sensor.dark_sky_icon_2
-        entity_forecast_icon_3: sensor.dark_sky_icon_3
-        entity_forecast_icon_4: sensor.dark_sky_icon_4
-        entity_forecast_icon_5: sensor.dark_sky_icon_5
-        entity_forecast_low_temp_1: sensor.dark_sky_overnight_low_temperature_1
-        entity_forecast_low_temp_2: sensor.dark_sky_overnight_low_temperature_2
-        entity_forecast_low_temp_3: sensor.dark_sky_overnight_low_temperature_3
-        entity_forecast_low_temp_4: sensor.dark_sky_overnight_low_temperature_4
-        entity_forecast_low_temp_5: sensor.dark_sky_overnight_low_temperature_5
-        entity_humidity: sensor.dark_sky_humidity
-        entity_pressure: sensor.dark_sky_pressure
-        entity_sun: sun.sun
-        entity_temperature: sensor.dark_sky_temperature
-        entity_visibility: sensor.dark_sky_visibility
-        entity_wind_bearing: sensor.dark_sky_wind_bearing
-        entity_wind_speed: sensor.dark_sky_wind_speed
-        type: 'custom:dark-sky-weather-card'
     icon: 'mdi:home'
     id: home
     theme: dark-mode
   - cards:
       - card:
           elements:
+            - entity: light.averys_room
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 75%
+                top: 13%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.dimmable_bulb
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 40%
+                top: 10%
+              tap_action:
+                action: toggle
+              type: state-icon
             - entity: sensor.dark_sky_daily_summary
               style:
                 left: 20%
@@ -262,7 +255,16 @@ views:
               tap_action:
                 action: toggle
               type: image
-            - entity: switch.recroom_corner
+            - entity: light.mudroom
+              style:
+                '--iron-icon-height': 28px
+                '--iron-icon-width': 28px
+                left: 80%
+                top: 75%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.recroom_corner
               style:
                 '--iron-icon-height': 42px
                 '--iron-icon-width': 42px
@@ -271,7 +273,7 @@ views:
               tap_action:
                 action: toggle
               type: state-icon
-            - entity: switch.recroom_ceiling
+            - entity: light.recroom_ceiling
               style:
                 '--iron-icon-height': 42px
                 '--iron-icon-width': 42px
@@ -280,7 +282,7 @@ views:
               tap_action:
                 action: toggle
               type: state-icon
-            - entity: light.recroom_walls
+            - entity: light.recroom_wall
               hold_action:
                 action: more-info
               style:
@@ -301,7 +303,7 @@ views:
               tap_action:
                 action: toggle
               type: state-icon
-            - entity: switch.laundry_room
+            - entity: light.laundry_room_light
               style:
                 '--iron-icon-height': 42px
                 '--iron-icon-width': 42px
@@ -310,14 +312,25 @@ views:
               tap_action:
                 action: toggle
               type: state-icon
-            - entity: light.bedroom_bed_lights
+            - entity: light.bedroom_nick
               hold_action:
                 action: more-info
               style:
-                '--iron-icon-height': 42px
-                '--iron-icon-width': 42px
+                '--iron-icon-height': 28px
+                '--iron-icon-width': 28px
                 left: 10%
-                top: 40%
+                top: 42%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.bedroom_kam
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 28px
+                '--iron-icon-width': 28px
+                left: 10%
+                top: 38%
               tap_action:
                 action: toggle
               type: state-icon
@@ -340,7 +353,7 @@ views:
             - entity: sensor.averys_room_temperature
               style:
                 left: 75%
-                top: 15%
+                top: 18%
               type: state-label
             - entity: sensor.master_bedroom_temperature
               style:
@@ -478,18 +491,23 @@ views:
         state_filter:
           - 'off'
         type: entity-filter
-      - entity: camera.interior_dome_1
+      - camera_image: camera.interior_1
+        entities:
+          - binary_sensor.int01_motion
         show_state: false
-        type: picture-entity
-      - entity: camera.exterior_dome_1
-        show_state: false
-        type: picture-entity
-      - entity: camera.exterior_dome_2
-        show_state: false
-        type: picture-entity
-      - entity: camera.exterior_cam_1
-        show_state: false
-        type: picture-entity
+        type: picture-glance
+      - camera_image: camera.exterior_1
+        entities:
+          - binary_sensor.ext01_motion
+        type: picture-glance
+      - camera_image: camera.exterior_2
+        entities:
+          - binary_sensor.ext02_motion
+        type: picture-glance
+      - camera_image: camera.exterior_3
+        entities:
+          - binary_sensor.ext03_motion
+        type: picture-glance
     icon: 'mdi:cctv'
     id: cctv
     title: Camera Feeds
@@ -497,20 +515,21 @@ views:
     cards:
       - content: '# Switch Panel'
         type: markdown
-      - type: entities
-        entities:
-          - entity: light.bedroom_bed_1
-          - entity: light.bedroom_bed_2
+      - entities:
+          - entity: light.mudroom
+          - entity: light.dimmable_bulb
           - entity: light.bedroom_room_1
           - entity: light.bedroom_room_2
-          - entity: light.recroom_walls
+          - entity: light.recroom_wall
           - entity: light.recroom_table
           - entity: light.rec_room_corner_lights
           - entity: light.rec_room_ceiling_lights
           - entity: light.bedroom_nick
           - entity: light.bedroom_kam
           - entity: light.averys_room
+          - entity: light.bedroom_bed_lights
         title: Lights
+        type: entities
       - entities:
           - entity: switch.tplink_switch_1
           - entity: switch.tplink_switch_2
@@ -520,10 +539,10 @@ views:
     title: Switch Panel
   - badges: []
     cards:
-      - type: light
-        entity: light.bedroom_kam
-      - type: light
-        entity: light.bedroom_nick
+      - entity: light.bedroom_kam
+        type: light
+      - entity: light.bedroom_nick
+        type: light
       - entity: light.bedroom_room_lights
         type: light
       - entity: sensor.master_bedroom_temperature
@@ -544,8 +563,8 @@ views:
     title: Bedroom
   - badges: []
     cards:
-      - type: light
-        entity: light.averys_room
+      - entity: light.averys_room
+        type: light
       - entity: sensor.averys_room_temperature
         max: 95
         min: 45
@@ -623,7 +642,7 @@ views:
         type: media-control
       - entity: light.recroom_table
         type: light
-      - entity: light.recroom_walls
+      - entity: light.recroom_wall
         type: light
       - entity: switch.recroom_ceiling
         hold_action:
