@@ -1,3 +1,6 @@
+# This sensor is True if someone is home, and false otherwise.
+# I am using the raw device trackers to do this just for reliability.
+# All it takes is one to be at home for someone to be home.
 - platform: template
   sensors:
     home_occupied:
