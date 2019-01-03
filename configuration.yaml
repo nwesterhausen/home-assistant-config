@@ -8,7 +8,7 @@ homeassistant:
   longitude: !secret longitude
   elevation: !secret altitude
   time_zone: !secret time_zone
-  # Customizations
+  # Customizations, I've split mine into separate files by category
   customize: !include_dir_merge_named customizations
   # Remember that "trusted_networks" bypasses TOTP
   auth_providers:
@@ -20,10 +20,19 @@ homeassistant:
 ##########################
 ##      NAV PANELS      ##
 ##########################
+# Can't get rid of the 'config' panel or you hinder your ability to manage
+# Home Assistant!
 config:
+# The map was not useful to me in it's current state, because it zooms out to
+# include ALL zones, which isn't very informative. Logbook just took ages to
+# load for the information it provided. Really just useful in debugging.
 # map:
 # logbook: !include logbook.yaml
-# Custom Panels
+#___________________#
+### Custom Panels ###
+# Was using custom panels to give access to both Node Red (for automations) and
+# Cloud9 IDE (for editing the config), but I can't limit them to only Admin users.
+# Until that happens, I do not have them listed as panels.
 # panel_iframe:
 # cloud9:
 #   title: 'Config Editor'
@@ -37,19 +46,26 @@ config:
 ##        HTTP          ##
 ##########################
 http:
-  # We don't need to encrypt here because all traffic goes through a proxy
-  #base_url: 0.0.0.0
   base_url: !secret hass_url
-  #server_port: 443
-  #ssl_certificate: !secret cert_loc
-  #ssl_key: !secret key_loc
+  # We don't need to encrypt here because all traffic goes through a proxy
+  # providing the HTTPS. Nothing accesses Home Assistant except via the proxy
+  # (besides other Docker Containers).
+# server_port: 443
+# ssl_certificate: !secret cert_loc
+# ssl_key: !secret key_loc
+  # I have Traefik configured to use x_forwarded_for to put the originating IP.
+  # Mostly it's useless though, because I also proxy via Cloudflare for public
+  # connections.
   use_x_forwarded_for: True
   trusted_proxies:
     - 127.0.0.1
     - ::1
     - !secret proxyip
+  # Fun story, I accidentally banned my proxy once.. that was a facepalm
   ip_ban_enabled: True
   login_attempts_threshold: 5
+  # You might be able to guess my LAN network from other configuration entries,
+  # but it'd be tough to get the entire subnet.
   trusted_networks:
     - !secret lannetwork
 ##########################
@@ -59,19 +75,6 @@ nest:
     client_id: !secret nest_id
     client_secret: !secret nest_secret
 ##########################
-##      INCLUDES        ##
-##########################
-binary_sensor: !include_dir_merge_list  binary_sensors
-camera: !include_dir_merge_list cameras
-cloud: !include cloud.yaml
-group: !include_dir_merge_named groups
-frontend: !include frontend.yaml
-light: !include_dir_merge_list lights
-sensor: !include_dir_list sensors
-zone: !include_dir_merge_list zones
-script: !include_dir_named scripts
-switch: !include switches.yaml
-##########################
 ##       ZWAVE          ##
 ##########################
 zwave:
@@ -79,12 +82,16 @@ zwave:
 ##########################
 ##       TTS            ##
 ##########################
+# I have to specify the 'https' url for hass otherwise the generated TTS links
+# will try and use http://hass_url:8123/ instead (which doesn't work!)
 tts:
   - platform: google
     base_url: !secret https_hass_url
 ##########################
 ##     PLEX / ROKU      ##
 ##########################
+# I have a plex.conf defined in my /config directory. I still have issues with
+# the Plex media_player component though. 
 media_player:
 #   - platform: plex
 #     entity_namespace: 'plex'
@@ -95,44 +102,68 @@ media_player:
 #     use_episode_art: true
 #     remove_unavailable_clients: true
 #     client_remove_interval: 600
+
+# One of these is our Living Room TV, the others are Rokus
+# that get plugged in. I am trying to get us to switch over
+# to Chromecasts due to the ease at which our guests can cast
+# content to them.
   - platform: roku
     host: 172.18.16.23
-  # - platform: roku
-  #   host: 172.18.16.24
+# - platform: roku
+#   host: 172.18.16.24
   - platform: roku
     host: 172.18.16.25
 ##########################
 ##      CAST            ##
 ##########################
+# The cast component includes both Video and Audio chromecasts.
 cast:
   media_player:
+    # Chromecast
     - host: 172.18.16.26
+    # Google Home minis.
     - host: 172.18.16.30
     - host: 172.18.16.31
     - host: 172.18.16.32
     - host: 172.18.16.33
+    # Chromecast Audio
     - host: 172.18.16.35
     - host: 172.18.16.36
+    # Insignia Google Home Speaker
     - host: 172.18.16.40
 ##########################
 ##        MQTT          ##
 ##########################
+# MQTT has been super reliable for my use cases. I use Zigbee2MQTT
+# to connect Zigbee sensors to Home Assistant. Never had an issue.
+# Now that I have BlueIris set up and running, it also alerts for
+# motion detected on cameras to MQTT and I interpret that as
+# binary_sensor in Home Assistant. As close to instant as I need.
 mqtt:
     broker: !secret mqtt_broker_url
     port: 1883
     client_id: docker--homeassistant
     username: !secret mqtt_user
     password: !secret mqtt_password
+    # These aren't talked about in the documentation, but I've seen
+    # other configuration files include them. If I wanted to tie in
+    # Home Assistant startup and shutdown, I could easily have Node-Red
+    # take a look here and do something!
     birth_message:
       topic: 'hass/status'
       payload: 'online'
     will_message:
       topic: 'hass/status'
       payload: 'offline'
+    # Using the discovery option will let Home Assistant add new devices
+    # that expose themselves on MQTT
     discovery: true
 ##########################
 ##    INFLUXDB          ##
 ##########################
+# I'm running influxDB and Grafana on my Docker Host and they work together
+# to provide visualization of the data gathered from Home Assistant. I should
+# also be able to look up historic data if I ever was curious.
 influxdb:
     host: influxdb
     username: !secret influxdb_user
@@ -147,6 +178,9 @@ influxdb:
 ##########################
 ##  GOOGLE CALENDAR     ##
 ##########################
+# Using specific key-words for events you want Home Assistant to
+# react to is great. I haven't quite tied it into actual events
+# yet.
 google:
   client_id: !secret gcp_oauth_client_id
   client_secret: !secret gcp_oauth_client_secret
@@ -154,10 +188,19 @@ google:
 ##    NOTIFICATIONS     ##
 ##########################
 notify:
+  # HTML5 notifications took a bit of work to get set up all the way
+  # (the documentation is pretty complete though). From my usage, the
+  # notifications go out right away. I've only partially messed with
+  # the actions you can do.
   - platform: html5
     name: HTML5 Notification
     gcm_api_key: !secret gcm_api_key
     gcm_sender_id: !secret gcm_sender_id
+  # Probably the most used copmonent. I have a channel that gets all
+  # door events, zone changes, camera motion events, and flight updates
+  # sent to it. Also, when Node Red makes an automation trigger, it
+  # sends a message to the channel as well, letting me know it did something
+  # on my behalf.
   - platform: discord
     token: !secret discord_bot_token
     name: Discord Notify
@@ -165,7 +208,19 @@ notify:
 ##    DEVICE TRACKER    ##
 ##########################
 device_tracker:
+  # GPSLogger has worked amazingly well. We were using Owntracks MQTT
+  # prior, but had a lot of issues with Owntracks deciding we suddenly
+  # were half a mile away from where we were at (stationary). I really
+  # like that GPSLogger stops sending updates when your phone is still.
+  # It uses barely any battery on top of the improved reliability.
   - platform: gpslogger
+  # I have a couple Unifi Switches and Unifi APs. I run a Unifi 
+  # Controller in a Docker Container and because all my devices are either
+  # plugged into a switch or connected to Wi-Fi, I get a complete
+  # view of my network using this device_tracker. The only annoying bit
+  # is the urllib3 spam about not verifying SSL, but I use Traefik to proxy
+  # any non-container access to the controller, so it seemed like a waste of
+  # time to put valid certificates on the controller.
   - platform: unifi
     host: !secret unifi_ip
     username: !secret unifi_user
@@ -174,29 +229,58 @@ device_tracker:
     new_device_defaults:
       track_new_devices: False
       hide_if_away: True
-  # - platform: tile
-  #   username: !secret tile_username
-  #   password: !secret tile_password
-  #   new_device_defaults:
-  #     track_new_devices: True
-  #     hide_if_away: True
-  # - platform: googlehome
-  #   host: 172.18.16.30
-  # - platform: googlehome
-  #   host: 172.18.16.31
-  # - platform: googlehome
-  #   host: 172.18.16.32
-  # - platform: googlehome
-  #   host: 172.18.16.33
+  # Tile is a neat idea in principle but in practice it was not.
+  # The updates were quite delayed and often came at useless times.
+  # There may be usefulness later, perhaps, but not sure at the moment.
+# - platform: tile
+#   username: !secret tile_username
+#   password: !secret tile_password
+#   new_device_defaults:
+#     track_new_devices: True
+#     hide_if_away: True
+  # I enabled the Google Home bluetooth device tracker for a
+  # little bit, but the absolute spam of unkonwn devices was
+  # a huge pain. The issue is not being able to see our devices
+  # bluetooth MAC addresses.. so any devices that I would want
+  # to use this with have to be trial and errored to be properly
+  # tracked this way. I like the idea though. Once I can get 
+  # my garage properly setup, it will provide an environment far
+  # enough away from the house that I should be able to isolate
+  # specific phones and other devices.
+# - platform: googlehome
+#   host: 172.18.16.30
+# - platform: googlehome
+#   host: 172.18.16.31
+# - platform: googlehome
+#   host: 172.18.16.32
+# - platform: googlehome
+#   host: 172.18.16.33
 ##########################
 ##      updates         ##
 ##########################
-# Checks for available updates
+# The updater is enabled by default. I just kept it.
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
 ##########################
 ##      logger          ##
 ##########################
+# Sometimes I have to change it to info or debug when trying to fix something.
 logger:
   default: warn
+##########################
+##      INCLUDES        ##
+##########################
+# I broke out anything with more than like 5 configurations into separate files.
+# Both for ease of editing and debugging (simply move the file out of the folder
+# to have Home Assistant ignore it).
+binary_sensor: !include_dir_merge_list  binary_sensors
+camera: !include_dir_merge_list cameras
+cloud: !include cloud.yaml
+group: !include_dir_merge_named groups
+frontend: !include frontend.yaml
+light: !include_dir_merge_list lights
+sensor: !include_dir_list sensors
+zone: !include_dir_merge_list zones
+script: !include_dir_named scripts
+switch: !include switches.yaml
