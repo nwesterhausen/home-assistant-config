@@ -282,5 +282,4 @@ frontend: !include frontend.yaml
 light: !include_dir_merge_list lights
 sensor: !include_dir_list sensors
 zone: !include_dir_merge_list zones
-script: !include_dir_named scripts
 switch: !include switches.yaml
