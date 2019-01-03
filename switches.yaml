@@ -1,4 +1,12 @@
-# TP-Link HS301s
+# This defines my switches. Since I only have two, I
+# don't have this setup with a 'switches' dir. But in
+# the future, I may have to break it out.
+
+# TP-Link HS301 Wi-Fi Switches (Plugs)
+# These work really well, as with all my infrastructure
+# these have DHCP Reservations that give them the same
+# IP Address when the connect to the wi-fi. So I can move
+# them around at will if I wanted.
 - platform: tplink
   host: 172.18.19.20
 - platform: tplink
