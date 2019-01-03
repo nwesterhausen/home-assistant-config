@@ -1,4 +1,5 @@
-## MQTT for BlueIris motion detection
+# Blue Iris is configured to send an alert to the MQTT topic for each camera when there is
+# motion detected on camera. This works really well. 
 - platform: mqtt
   name: "INT01 Motion"
   state_topic: blue_iris/binary_sensor/int01_motion/state
