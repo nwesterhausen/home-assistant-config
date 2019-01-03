@@ -1,0 +1,25 @@
+# Calculate some average temperatures for the house.
+# One overall temp and one for the south and north ends.
+- platform: min_max
+  type: mean
+  name: Average Indoor Temperature Zone A
+  entity_ids:
+    - sensor.averys_room_temperature
+    - sensor.guest_room_temperature
+    - sensor.guest_bathroom_temperature
+    - sensor.living_room_thermostat_temperature
+    - sensor.master_bedroom_temperature
+- platform: min_max
+  type: mean
+  name: Average Indoor Temperature Zone B
+  entity_ids:
+    - sensor.network_rack_temperature
+    - sensor.kams_desk_temperature
+    - sensor.recroom_temperature_sink
+    - sensor.laundry_room_temperature
+- platform: min_max
+  type: mean
+  name: Average Indoor Temperature
+  entity_ids:
+    - sensor.average_indoor_temperature_zone_a
+    - sensor.average_indoor_temperature_zone_b
