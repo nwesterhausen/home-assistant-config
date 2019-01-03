@@ -1,6 +1,0 @@
-platform: google_travel_time
-name: TravelTime Home to Work
-api_key: !secret google_cloud_platform_key
-destination: !secret work_placeid
-origin: !secret home_placeid
-scan_interval: 14400
