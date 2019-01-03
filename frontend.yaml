@@ -1,2 +1,3 @@
   javascript_version: latest
+  # Themes are so verbose, anything to get them out of here!
   themes: !include themes.yaml
