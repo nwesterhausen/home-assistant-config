@@ -1,3 +1,6 @@
-platform: seventeentrack
-username: !secret 17t_username
-password: !secret 17t_password
+# Using the 17Track sensor to track some packages.
+# I use these sensors mostly from Node-Red to notify in discord if something
+# will be delivered soon or if there's an update.
+- platform: seventeentrack
+  username: !secret 17t_username
+  password: !secret 17t_password
