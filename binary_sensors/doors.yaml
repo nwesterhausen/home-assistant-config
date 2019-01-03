@@ -1,4 +1,7 @@
-# DOOR SENSORS
+# I'm using Xiaomi door contact sensors via Zigbee2Mqtt
+# These work really well, respond seeminly instantly when a door is opened
+# or closed. It's tempting to get more just to put on other doors for the
+# information history lol.
 - platform: "mqtt"
   state_topic: "zigbee2mqtt/front_door"
   availability_topic: "zigbee2mqtt/bridge/state"
