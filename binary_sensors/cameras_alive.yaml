@@ -1,5 +1,8 @@
-## Binary Sensors based on the Router Device Tracker
-## Tells me if the router sees the camera connected or not!
+# Binary Sensors based on the Unifi Device Tracker
+# I use the home|not_home state of the cameras to determine if they
+# are online or not (since they should always be connected to the
+# PoE switch).
+# The value_template is simply (state === 'home') and so is True or False
 - platform: template
   sensors:
     int_dome_01:
