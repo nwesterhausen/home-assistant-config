@@ -9,7 +9,7 @@ recroom_lights:
 bedroom_lights:
   icon: mdi:lamp
   entities:
-    - light.bedroom_bed_1
-    - light.bedroom_bed_2
+    - light.bedroom_kam
+    - light.bedroom_nick
     - light.bedroom_room_1
     - light.bedroom_room_2

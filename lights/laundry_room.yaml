@@ -1,0 +1,4 @@
+
+- platform: switch
+  name: Laundry Room Light
+  entity_id: switch.laundry_room_light

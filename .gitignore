@@ -30,3 +30,4 @@ secrets.yaml
 known_devices.yaml
 google_calendars.yaml
 zones/personal.yaml
+zwave_device_config.yaml

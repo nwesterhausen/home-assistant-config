@@ -1,18 +1,20 @@
 google_actions:
   filter:
     include_domains:
-      - switch
       - light
       - script
     exclude_entities:
-      - light.bedroom_room_1
-      - light.bedroom_room_2
+      - light.recroom_lights
+      - light.bedroom_lights
       - light.bedroom_bed_1
       - light.bedroom_bed_2
-      - switch.recroom_ceiling
-      - switch.recroom_corner
       - light.all_bedroom_lights
       - light.all_rec_room_lights
+      - light.bedroom_room_lights
+      - light.bedroom_bed_lights
+    include_entities:
+      - switch.tplink_switch_1
+      - switch.tplink_switch_2
   entity_config:
     switch.tplink_switch_1:
       name: Christmas Tree
@@ -20,3 +22,9 @@ google_actions:
     switch.tplink_switch_2:
       name: Christmas Tree
       room: Rec Room
+    light.bedroom_nick:
+      name: Nick's Light
+      room: Bedoom
+    light.bedroom_kam:
+      name: Kamerie's Light
+      room: Bedoom

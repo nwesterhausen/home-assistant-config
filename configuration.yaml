@@ -53,84 +53,29 @@ http:
   trusted_networks:
     - !secret lannetwork
 ##########################
-##    NOTIFICATIONS     ##
-##########################
-notify:
-  - platform: html5
-    name: HTML5 Notification
-    gcm_api_key: !secret gcm_api_key
-    gcm_sender_id: !secret gcm_sender_id
-  - platform: discord
-    token: !secret discord_bot_token
-    name: Discord Notify
-##########################
-##        MQTT          ##
-##########################
-mqtt:
-    broker: !secret mqtt_broker_url
-    port: 1883
-    client_id: docker--homeassistant
-    username: !secret mqtt_user
-    password: !secret mqtt_password
-    birth_message:
-      topic: 'hass/status'
-      payload: 'online'
-    will_message:
-      topic: 'hass/status'
-      payload: 'offline'
-    discovery: true
-##########################
-##    INFLUXDB          ##
-##########################
-influxdb:
-    host: influxdb
-    username: !secret influxdb_user
-    password: !secret influxdb_password
-    tags:
-        instance: prod
-        source: hass
-    default_measurement: state
-    include:
-        domains:
-            - sensor
-##########################
-##    DEVICE TRACKER    ##
-##########################
-device_tracker:
-  - platform: gpslogger
-  - platform: unifi
-    host: !secret unifi_ip
-    username: !secret unifi_user
-    password: !secret unifi_password
-    verify_ssl: false
-    new_device_defaults:
-      track_new_devices: False
-      hide_if_away: True
-  # - platform: tile
-  #   username: !secret tile_username
-  #   password: !secret tile_password
-  #   new_device_defaults:
-  #     track_new_devices: True
-  #     hide_if_away: True
-  # - platform: googlehome
-  #   host: 172.18.16.30
-  # - platform: googlehome
-  #   host: 172.18.16.31
-  # - platform: googlehome
-  #   host: 172.18.16.32
-  # - platform: googlehome
-  #   host: 172.18.16.33
-##########################
-##       ZWAVE          ##
-##########################
-zwave:
-  usb_path: /dev/ttyACM0
-##########################
 ##       NEST           ##
 ##########################
 nest:
     client_id: !secret nest_id
     client_secret: !secret nest_secret
+##########################
+##      INCLUDES        ##
+##########################
+binary_sensor: !include_dir_merge_list  binary_sensors
+camera: !include_dir_merge_list cameras
+cloud: !include cloud.yaml
+group: !include_dir_merge_named groups
+frontend: !include frontend.yaml
+light: !include_dir_merge_list lights
+sensor: !include_dir_list sensors
+zone: !include_dir_merge_list zones
+script: !include_dir_named scripts
+switch: !include switches.yaml
+##########################
+##       ZWAVE          ##
+##########################
+zwave:
+  usb_path: /dev/ttyACM0
 ##########################
 ##       TTS            ##
 ##########################
@@ -170,53 +115,88 @@ cast:
     - host: 172.18.16.36
     - host: 172.18.16.40
 ##########################
+##        MQTT          ##
+##########################
+mqtt:
+    broker: !secret mqtt_broker_url
+    port: 1883
+    client_id: docker--homeassistant
+    username: !secret mqtt_user
+    password: !secret mqtt_password
+    birth_message:
+      topic: 'hass/status'
+      payload: 'online'
+    will_message:
+      topic: 'hass/status'
+      payload: 'offline'
+    discovery: true
+##########################
+##    INFLUXDB          ##
+##########################
+influxdb:
+    host: influxdb
+    username: !secret influxdb_user
+    password: !secret influxdb_password
+    tags:
+        instance: prod
+        source: hass
+    default_measurement: state
+    include:
+        domains:
+            - sensor
+##########################
 ##  GOOGLE CALENDAR     ##
 ##########################
 google:
   client_id: !secret gcp_oauth_client_id
   client_secret: !secret gcp_oauth_client_secret
 ##########################
-##      INCLUDES        ##
+##    NOTIFICATIONS     ##
 ##########################
-binary_sensor: !include_dir_merge_list  binary_sensors
-camera: !include_dir_merge_list cameras
-cloud: !include cloud.yaml
-group: !include_dir_merge_named groups
-frontend: !include frontend.yaml
-light: !include_dir_merge_list lights
-sensor: !include_dir_list sensors
-zone: !include_dir_merge_list zones
-script: !include_dir_named scripts
-switch: !include switches.yaml
+notify:
+  - platform: html5
+    name: HTML5 Notification
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
+  - platform: discord
+    token: !secret discord_bot_token
+    name: Discord Notify
 ##########################
-##        MISC          ##
+##    DEVICE TRACKER    ##
 ##########################
-# Card Updater
-custom_updater:
-# Track the sun
-sun:
-# Modify log errors
-logger:
-  default: warn
-  logs:
-    # ignore warnings like:
-    # - Found malformed XML at http://123.123.123.123:9080: status=ok
-    netdisco.ssdp: error
-    # unifi hub loggin (for allowing it to be added..)
-    # aiounifi: debug
-    # homeassistant.components.unifi: debug
-    # homeassistant.components.switch.unifi: debug
-    # pytautulli: debug
-# Check for available updates
-# Note: This component will send some information about your system to
-# the developers to assist with development of Home Assistant.
-# For more information, please see:
-# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+device_tracker:
+  - platform: gpslogger
+  - platform: unifi
+    host: !secret unifi_ip
+    username: !secret unifi_user
+    password: !secret unifi_password
+    verify_ssl: false
+    new_device_defaults:
+      track_new_devices: False
+      hide_if_away: True
+  # - platform: tile
+  #   username: !secret tile_username
+  #   password: !secret tile_password
+  #   new_device_defaults:
+  #     track_new_devices: True
+  #     hide_if_away: True
+  # - platform: googlehome
+  #   host: 172.18.16.30
+  # - platform: googlehome
+  #   host: 172.18.16.31
+  # - platform: googlehome
+  #   host: 172.18.16.32
+  # - platform: googlehome
+  #   host: 172.18.16.33
+##########################
+##      updates         ##
+##########################
+# Checks for available updates
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
-# Discover some devices automatically
-# discovery:
-# Record a small history (3 days at most)
-recorder:
-  purge_keep_days: 3
+##########################
+##      logger          ##
+##########################
+logger:
+  default: warn
