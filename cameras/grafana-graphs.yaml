@@ -1,3 +1,7 @@
+# Generic cameras which grab the generated graph image from grafana.
+# I could have used secrets for each image URL, but that would have
+# saved me pretty much nothing. Grafana is just in another Docker
+# Container so is accessible by container_name.
 - platform: generic
   still_image_url: 'http://grafana:3000/render/d-solo/MTH6SJxmz/edgewood?orgId=1&panelId=12&width=500&height=500&tz=America%2FIndianapolis'
   username: !secret grafana_user
