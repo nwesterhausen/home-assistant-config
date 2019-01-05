@@ -1,0 +1,10 @@
+# Aqara Zibgee Motion Sensor
+- platform: mqtt
+  state_topic: "zigbee2mqtt/motion_1"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  name: "recroom_north_doorway"
+  class: motion
+  value_template: "{{ boolean(value_json.occupancy) }}"
+  json_attributes:
+  - "illuminance"
+  - "occupancy"
