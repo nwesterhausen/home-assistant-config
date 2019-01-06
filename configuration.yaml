@@ -91,7 +91,7 @@ tts:
 ##     PLEX / ROKU      ##
 ##########################
 # I have a plex.conf defined in my /config directory. I still have issues with
-# the Plex media_player component though. 
+# the Plex media_player component though.
 media_player:
 #   - platform: plex
 #     entity_namespace: 'plex'
@@ -122,7 +122,7 @@ cast:
     # Chromecast
     - host: 172.18.16.26
     # Google Home minis.
-    - host: 172.18.16.30
+#    - host: 172.18.16.30
     - host: 172.18.16.31
     - host: 172.18.16.32
     - host: 172.18.16.33
@@ -214,7 +214,7 @@ device_tracker:
   # like that GPSLogger stops sending updates when your phone is still.
   # It uses barely any battery on top of the improved reliability.
   - platform: gpslogger
-  # I have a couple Unifi Switches and Unifi APs. I run a Unifi 
+  # I have a couple Unifi Switches and Unifi APs. I run a Unifi
   # Controller in a Docker Container and because all my devices are either
   # plugged into a switch or connected to Wi-Fi, I get a complete
   # view of my network using this device_tracker. The only annoying bit
@@ -243,18 +243,18 @@ device_tracker:
   # a huge pain. The issue is not being able to see our devices
   # bluetooth MAC addresses.. so any devices that I would want
   # to use this with have to be trial and errored to be properly
-  # tracked this way. I like the idea though. Once I can get 
+  # tracked this way. I like the idea though. Once I can get
   # my garage properly setup, it will provide an environment far
   # enough away from the house that I should be able to isolate
   # specific phones and other devices.
-# - platform: googlehome
-#   host: 172.18.16.30
-# - platform: googlehome
-#   host: 172.18.16.31
-# - platform: googlehome
-#   host: 172.18.16.32
-# - platform: googlehome
-#   host: 172.18.16.33
+#  - platform: googlehome
+#    host: 172.18.16.30
+  - platform: googlehome
+    host: 172.18.16.31
+  - platform: googlehome
+    host: 172.18.16.32
+  - platform: googlehome
+    host: 172.18.16.33
 ##########################
 ##      updates         ##
 ##########################

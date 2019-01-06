@@ -1,15 +1,15 @@
 - platform: switch
-  name: Rec Room Ceiling Lights
-  entity_id: switch.recroom_ceiling
+  name: Recroom Ceiling
+  entity_id: switch.recroom_ceiling_lights
 
 - platform: switch
-  name: Rec Room Corner Lights
-  entity_id: switch.recroom_corner
+  name: Recroom Corner
+  entity_id: switch.recroom_corner_lights
 
 - platform: group
   name: All Rec Room Lights
   entities:
-      - light.rec_room_ceiling_lights
-      - light.rec_room_corner_corner_lights
+      - light.recroom_ceiling
+      - light.recroom_corner
       - light.recroom_table
       - light.recroom_wall
