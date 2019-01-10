@@ -1,0 +1,50 @@
+### Xiaomi WSDCGQ01LM Sensors
+# You can see the configuration where the sensors are populated via mqtt in the
+# xiaomi.yaml file.
+- platform: "template"
+  sensors:
+    averys_room_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Avery's Room Temperature"
+      value_template: '{{ ((float(state_attr("sensor.averys_room_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'
+    master_bedroom_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Master Bedroom Temperature"
+      value_template: '{{ ((float(state_attr("sensor.master_bedroom_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'
+    guest_room_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Guest Room Temperature"
+      value_template: '{{ ((float(state_attr("sensor.guest_room_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'
+    guest_bathroom_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Guest Bathroom Temperature"
+      value_template: '{{ ((float(state_attr("sensor.guest_bathroom_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'
+    kitchen_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Kitchen Temperature"
+      value_template: '{{ ((float(state_attr("sensor.kitchen_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'
+    laundry_room_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Laundry Room Temperature"
+      value_template: '{{ ((float(state_attr("sensor.laundry_room_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'
+    network_rack_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Network Rack Temperature"
+      value_template: '{{ ((float(state_attr("sensor.network_rack_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'
+    recroom_southwall_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Recroom South-end Temperature"
+      value_template: '{{ ((float(state_attr("sensor.recroom_southwall_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'
+    kams_desk_temperature:
+      device_class: "temperature"
+      unit_of_measurement: "°F"
+      friendly_name: "Office Temperature"
+      value_template: '{{ ((float(state_attr("sensor.kams_desk_WSDCGQ01LM","temperature")) * 9 / 5 )  +  32) | round(1) }}'

@@ -1,0 +1,9 @@
+### Xiaomi RTCGQ11LM Sensors
+# You can see the configuration where the sensors are populated via mqtt in the
+# xiaomi.yaml file.
+- platform: "template"
+  sensors:
+    recroom_north_illuminance:
+      device_class: "illuminance"
+      friendly_name: "Recroom North-end Illumiance"
+      value_template: '{{ state_attr("sensor.recroom_northdoorway_RTCGQ11LM","illuminance") }}'

@@ -1,0 +1,50 @@
+### Xiaomi WSDCGQ01LM Sensors
+# You can see the configuration where the sensors are populated via mqtt in the
+# xiaomi.yaml file.
+- platform: "template"
+  sensors:
+    averys_room_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Avery's Room Humidity"
+      value_template: '{{ state_attr("sensor.averys_room_WSDCGQ01LM","humidity") }}'
+    master_bedroom_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Master Bedroom Humidity"
+      value_template: '{{ state_attr("sensor.master_bedroom_WSDCGQ01LM","humidity") }}'
+    guest_room_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Guest Room Humidity"
+      value_template: '{{ state_attr("sensor.guest_room_WSDCGQ01LM","humidity") }}'
+    guest_bathroom_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Guest Bathroom Humidity"
+      value_template: '{{ state_attr("sensor.guest_bathroom_WSDCGQ01LM","humidity") }}'
+    kitchen_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Kitchen Humidity"
+      value_template: '{{ state_attr("sensor.kitchen_WSDCGQ01LM","humidity") }}'
+    laundry_room_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Laundry Room Humidity"
+      value_template: '{{ state_attr("sensor.laundry_room_WSDCGQ01LM","humidity") }}'
+    network_rack_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Network Rack Humidity"
+      value_template: '{{ state_attr("sensor.network_rack_WSDCGQ01LM","humidity") }}'
+    recroom_southwall_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Recroom South-end Humidity"
+      value_template: '{{ state_attr("sensor.recroom_southwall_WSDCGQ01LM","humidity") }}'
+    kams_desk_humidity:
+      device_class: "humidity"
+      unit_of_measurement: "%"
+      friendly_name: "Office Humidity"
+      value_template: '{{ state_attr("sensor.kams_desk_WSDCGQ01LM","humidity") }}'
