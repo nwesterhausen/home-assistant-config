@@ -63,11 +63,12 @@ http:
     - !secret proxyip
   # Fun story, I accidentally banned my proxy once.. that was a facepalm
   ip_ban_enabled: True
-  login_attempts_threshold: 5
+  login_attempts_threshold: 3
   # You might be able to guess my LAN network from other configuration entries,
   # but it'd be tough to get the entire subnet.
   trusted_networks:
     - !secret lannetwork
+    - 184.18.47.22/32
 ##########################
 ##       NEST           ##
 ##########################
