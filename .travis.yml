@@ -6,7 +6,7 @@ python:
 # It's important to have your own secrets hidden and not public.
 before_install:
   - mv travis_secrets.yaml secrets.yaml
-  - touch tensorflow/frozen_inference_graph.pb
+  - touch /config/tensorflow/frozen_inference_graph.pb
 install:
   - pip3 install homeassistant
 script:
