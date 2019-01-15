@@ -20,9 +20,9 @@ I use a discord bot to serve as a notification system from Home Asistant ([more 
 
 I use the [animated darksky weather card](https://community.home-assistant.io/t/custom-dark-sky-animated-weather-card/59816) in my Lovelace UI.
 
-My Xiaomi sensors record temperature in Celcius, so I template them into Fahrenheit.
-
 I have a custom "home occupancy" sensor which combines a few device trackers to see if at least one person is home.
+
+Tensorflow model is `ssd_mobilenet_v1_fpn_coco ☆` from the [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
 
 ## Devices
 Here is a list of devices and quantity in my home.
