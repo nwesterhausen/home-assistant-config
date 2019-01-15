@@ -24,11 +24,13 @@ certs
 deps
 tts
 custom_components/__pycache__/
+tensorflow/object_detection
 
 # Ignore some directories that have personally sensitive files/info
 www/people
 zones/kam_work
 zones/personal.yaml
+tensorflow/images
 
 # And finally, ignore some specific files that sit in the root /config directory
 .HA_VERSION
@@ -40,3 +42,4 @@ secrets.yaml
 known_devices.yaml
 google_calendars.yaml
 zwave_device_config.yaml
+tensorflow/frozen_inference_graph.pb
