@@ -285,3 +285,4 @@ sensor: !include_dir_merge_list sensors
 zone: !include_dir_merge_list zones
 switch: !include switches.yaml
 image_processing: !include_dir_merge_list tensorflow
+script: !include scripts.yaml
