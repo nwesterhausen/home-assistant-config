@@ -23,11 +23,7 @@ google_actions:
       - switch.tp_link_switch_2
       - switch.tp_link_switch_3
       - switch.tp_link_switch_4
-  # In entity config, you could set information for all your included entities.
-  # Recently I had to re-setup Home Assistant because of a ZWave issue preventing
-  # HTTP from starting... but if I had configured all my entities here, I could
-  # have saved around 5 minutes of putting things back into rooms.
-  # Overall, it's too much overhead for that.
+  # In entity config, you can set information for all your included entities.
   entity_config:
     # Right now, my two tplink switches are on Christmas tree lights.
     switch.tp_link_switch_1:
@@ -51,6 +47,23 @@ google_actions:
     light.bedroom_kam:
       name: Kam's Light
       room: Bedoom
+    # Fixing the name for the 3rd yeelight
     light.bedroom_avery:
       name: Avery's Light
       room: Avery's Room
+    # Recroom Lights
+    light.recroom_ceiling:
+      name: Ceiling Lights
+      room: Rec Room
+    light.recroom_wall:
+      name: Wall Lights
+      room: Rec Room
+    light.recroom_table:
+      name: Table Lights
+      room: Rec Room
+    light.recroom_corner:
+      name: Corner Lights
+      room: Rec Room
+    light.mudroom_light:
+      name: Mudroom Light
+      room: Rec Room
