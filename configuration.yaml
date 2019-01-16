@@ -68,7 +68,6 @@ http:
   # but it'd be tough to get the entire subnet.
   trusted_networks:
     - !secret lannetwork
-    - 184.18.47.22/32
 ##########################
 ##       NEST           ##
 ##########################
@@ -109,11 +108,11 @@ media_player:
 # to Chromecasts due to the ease at which our guests can cast
 # content to them.
   - platform: roku
-    host: 172.18.16.23
-# - platform: roku
-#   host: 172.18.16.24
+    host: 172.18.16.40
   - platform: roku
-    host: 172.18.16.25
+    host: 172.18.16.41
+  - platform: roku
+    host: 172.18.16.42
 ##########################
 ##      CAST            ##
 ##########################
@@ -121,17 +120,18 @@ media_player:
 cast:
   media_player:
     # Chromecast
-    - host: 172.18.16.26
-    # Google Home minis.
-#    - host: 172.18.16.30
-    - host: 172.18.16.31
-    - host: 172.18.16.32
-    - host: 172.18.16.33
+    - host: 172.18.16.50
     # Chromecast Audio
-    - host: 172.18.16.35
-    - host: 172.18.16.36
+    - host: 172.18.16.60
+    - host: 172.18.16.61
+    # Google Home minis.
+#    - host: 172.18.16.70
+    - host: 172.18.16.71
+    - host: 172.18.16.72
+    - host: 172.18.16.73
+    - host: 172.18.16.74
     # Insignia Google Home Speaker
-    - host: 172.18.16.40
+    - host: 172.18.16.75
 ##########################
 ##        MQTT          ##
 ##########################
@@ -249,13 +249,15 @@ device_tracker:
   # enough away from the house that I should be able to isolate
   # specific phones and other devices.
 #  - platform: googlehome
-#    host: 172.18.16.30
+#    host: 172.18.16.70
   - platform: googlehome
-    host: 172.18.16.31
+    host: 172.18.16.71
   - platform: googlehome
-    host: 172.18.16.32
+    host: 172.18.16.72
   - platform: googlehome
-    host: 172.18.16.33
+    host: 172.18.16.73
+  - platform: googlehome
+    host: 172.18.16.74
 ##########################
 ##      updates         ##
 ##########################

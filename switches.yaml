@@ -8,10 +8,10 @@
 # IP Address when the connect to the wi-fi. So I can move
 # them around at will if I wanted.
 - platform: tplink
-  host: 172.18.19.20
+  host: 172.18.19.40
 - platform: tplink
-  host: 172.18.19.21
+  host: 172.18.19.41
 - platform: tplink
-  host: 172.18.19.22
+  host: 172.18.19.42
 - platform: tplink
-  host: 172.18.19.23
+  host: 172.18.19.43
