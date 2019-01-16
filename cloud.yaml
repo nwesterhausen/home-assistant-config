@@ -19,8 +19,10 @@ google_actions:
     # Because I don't include ALL my switches, I manually include the ones
     # that Google should be able to turn on or off.
     include_entities:
-      - switch.tplink_switch_1
-      - switch.tplink_switch_2
+      - switch.tp_link_switch_1
+      - switch.tp_link_switch_2
+      - switch.tp_link_switch_3
+      - switch.tp_link_switch_4
   # In entity config, you could set information for all your included entities.
   # Recently I had to re-setup Home Assistant because of a ZWave issue preventing
   # HTTP from starting... but if I had configured all my entities here, I could
@@ -28,12 +30,18 @@ google_actions:
   # Overall, it's too much overhead for that.
   entity_config:
     # Right now, my two tplink switches are on Christmas tree lights.
-    switch.tplink_switch_1:
+    switch.tp_link_switch_1:
       name: Christmas Tree
       room: Living Room
-    switch.tplink_switch_2:
+    switch.tp_link_switch_2:
+      name: Heater
+      room: Bedroom
+    switch.tp_link_switch_3:
       name: Christmas Tree
       room: Rec Room
+    switch.tp_link_switch_4:
+      name: Black Light
+      room: Avery's Room
     # My two yeelights in the bedroom are descriptively named in Home Assistant,
     # but it's silly to tell Google to turn on "Bedroom Nick" so instead I rename
     # them here.
@@ -41,5 +49,5 @@ google_actions:
       name: Nick's Light
       room: Bedoom
     light.bedroom_kam:
-      name: Kamerie's Light
+      name: Kam's Light
       room: Bedoom

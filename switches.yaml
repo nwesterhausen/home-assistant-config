@@ -11,3 +11,7 @@
   host: 172.18.19.20
 - platform: tplink
   host: 172.18.19.21
+- platform: tplink
+  host: 172.18.19.22
+- platform: tplink
+  host: 172.18.19.23
