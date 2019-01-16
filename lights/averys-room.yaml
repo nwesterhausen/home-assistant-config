@@ -7,5 +7,5 @@
 - platform: yeelight
   devices:
     172.18.19.32:
-      name: Avery's Room
+      name: Bedroom Avery
       model: color2

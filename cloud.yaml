@@ -51,3 +51,6 @@ google_actions:
     light.bedroom_kam:
       name: Kam's Light
       room: Bedoom
+    light.bedroom_avery:
+      name: Avery's Light
+      room: Avery's Room
