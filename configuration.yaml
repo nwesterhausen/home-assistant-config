@@ -109,10 +109,14 @@ media_player:
 # content to them.
   - platform: roku
     host: 172.18.16.40
-  - platform: roku
-    host: 172.18.16.41
+  # Recroom Roku WLAN IP
+#  - platform: roku
+#    host: 172.18.16.41
   - platform: roku
     host: 172.18.16.42
+  # Recroom Roku LAN IP
+  - platform: roku
+    host: 172.18.16.43
 ##########################
 ##      CAST            ##
 ##########################
@@ -120,17 +124,29 @@ media_player:
 cast:
   media_player:
     # Chromecast
+    # Recroom Big TV
     - host: 172.18.16.50
     # Chromecast Audio
+    # Recroom
     - host: 172.18.16.60
+    # Office
     - host: 172.18.16.61
+    # Living Room
+#    - host: 172.18.16.62
+    # Garage
+#    - host: 172.18.16.63
     # Google Home minis.
+    # Garage
 #    - host: 172.18.16.70
+    # Office
     - host: 172.18.16.71
+    # Recroom
     - host: 172.18.16.72
+    # Kitchen
     - host: 172.18.16.73
+    # Avery's Room
     - host: 172.18.16.74
-    # Insignia Google Home Speaker
+    # Insignia Google Home Speaker (Bedroom)
     - host: 172.18.16.75
 ##########################
 ##        MQTT          ##
@@ -248,14 +264,19 @@ device_tracker:
   # my garage properly setup, it will provide an environment far
   # enough away from the house that I should be able to isolate
   # specific phones and other devices.
+  # Garage
 #  - platform: googlehome
 #    host: 172.18.16.70
+  # Office
   - platform: googlehome
     host: 172.18.16.71
+  # Recroom
   - platform: googlehome
     host: 172.18.16.72
+  # Kitchen
   - platform: googlehome
     host: 172.18.16.73
+  # Avery's Room
   - platform: googlehome
     host: 172.18.16.74
 ##########################
