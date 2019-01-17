@@ -34,7 +34,6 @@ tensorflow/images
 tensorflow/frozen_graphs
 
 # And finally, ignore some specific files that sit in the root /config directory
-.HA_VERSION
 .uuid
 .google.token
 .spotify-token-cache
