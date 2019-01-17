@@ -31,6 +31,7 @@ www/people
 zones/kam_work
 zones/personal.yaml
 tensorflow/images
+tensorflow/frozen_graphs
 
 # And finally, ignore some specific files that sit in the root /config directory
 .HA_VERSION
@@ -42,4 +43,3 @@ secrets.yaml
 known_devices.yaml
 google_calendars.yaml
 zwave_device_config.yaml
-tensorflow/frozen_inference_graph.pb
