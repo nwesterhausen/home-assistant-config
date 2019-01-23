@@ -32,9 +32,9 @@ views:
         title: Guests
         type: entity-filter
       - entities:
-          - entity: binary_sensor.front_door
-          - entity: binary_sensor.back_door
-          - entity: binary_sensor.rec_room_door
+          - entity: binary_sensor.front_door_contact
+          - entity: binary_sensor.back_door_contact
+          - entity: binary_sensor.recroom_door_contact
         title: Door Status
         type: glance
       - entities:
@@ -46,6 +46,7 @@ views:
           - entity: light.bedroom_nick
           - entity: light.bedroom_kam
           - entity: light.bedroom_room_lights
+          - entity: switch.tp_link_switch_2
         title: Bedroom
         type: entities
       - entities:
@@ -92,16 +93,16 @@ views:
           - entity: light.recroom_table
             icon: 'mdi:light-switch'
             name: Rec Room Table Lights
-          - entity: sensor.recroom_temperature_southwall
+          - entity: sensor.recroom_southwall_temperature
             name: Temperature (Southwall)
-          - entity: sensor.recroom_humidity_southwall
+          - entity: sensor.recroom_southwall_humidity
             name: Humidity (Southwall)
-          - entity: media_player.family_room_mini
-          - entity: media_player.family_room_audio
+          - entity: media_player.rec_room_mini
           - entity: media_player.rec_room_tv
-          - entity: media_player.averys_room
-          - entity: switch.tplink_switch_2
-            name: Christmas Tree Lights
+          - entity: media_player.rec_room_tv
+          - entity: media_player.rec_room_small_tv
+          - entity: sensor.motion_1_illuminance
+          - entity: switch.tp_link_switch_3
         show_header_toggle: false
         title: Rec Room
         type: entities
@@ -110,9 +111,9 @@ views:
             name: Temperature
           - entity: sensor.living_room_thermostat_humidity
             name: Humidity
-          - entity: media_player.living_room
+          - entity: media_player.living_room_tv
           - entity: media_player.living_room_mini
-          - entity: switch.tplink_switch_1
+          - entity: switch.tp_link_switch_1
             name: Christmas Tree Lights
         show_header_toggle: false
         title: Living Room
@@ -122,7 +123,8 @@ views:
             name: Temperature
           - entity: sensor.averys_room_humidity
             name: Humidity
-          - entity: light.averys_room
+          - entity: light.bedroom_avery
+          - entity: switch.tp_link_switch_4
         show_header_toggle: false
         title: Avery's Room
         type: entities
@@ -131,7 +133,6 @@ views:
             name: Temperature
           - entity: sensor.kitchen_humidity
             name: Humidity
-          - entity: media_player.kitchen_mini
         show_header_toggle: false
         title: Kitchen
         type: entities
@@ -163,13 +164,15 @@ views:
         show_header_toggle: false
         title: Home Temperatures
         type: entities
+      - entity: camera.wundergroundradar
+        type: picture-entity
     icon: 'mdi:home'
     id: home
     theme: dark-mode
   - cards:
       - card:
           elements:
-            - entity: light.averys_room
+            - entity: light.avery_s_room
               style:
                 '--iron-icon-height': 42px
                 '--iron-icon-width': 42px
@@ -208,28 +211,28 @@ views:
                 text-align: left
                 top: 57%
               type: state-label
-            - entity: binary_sensor.back_door
+            - entity: binary_sensor.back_door_contact
               style:
                 '--iron-icon-height': 42px
                 '--iron-icon-width': 42px
                 left: 17%
                 top: 7%
               type: state-icon
-            - entity: binary_sensor.front_door
+            - entity: binary_sensor.front_door_contact
               style:
                 '--iron-icon-height': 42px
                 '--iron-icon-width': 42px
                 left: 42%
                 top: 38%
               type: state-icon
-            - entity: binary_sensor.rec_room_door
+            - entity: binary_sensor.recroom_door_contact
               style:
                 '--iron-icon-height': 42px
                 '--iron-icon-width': 42px
                 left: 80%
                 top: 80%
               type: state-icon
-            - entity: switch.tplink_switch_1
+            - entity: switch.tp_link_switch_1
               image: /local/images/entities/christmas-tree.png
               state_filter:
                 'off': grayscale(1)
@@ -242,7 +245,7 @@ views:
               tap_action:
                 action: toggle
               type: image
-            - entity: switch.tplink_switch_2
+            - entity: switch.tp_link_switch_3
               image: /local/images/entities/christmas-tree.png
               state_filter:
                 'off': grayscale(1)
@@ -467,8 +470,6 @@ views:
     id: floorplan
     title: Floor Plan
   - cards:
-      - content: '# Home Trends'
-        type: markdown
       - entity: camera.indoor_vs_outdoor_temperatures
         id: temptrends
         name: Home vs Outside Temperatures Past 24h
@@ -508,13 +509,15 @@ views:
         entities:
           - binary_sensor.ext03_motion
         type: picture-glance
+      - camera_image: camera.interior_2
+        entities:
+          - binary_sensor.ext03_motion
+        type: picture-glance
     icon: 'mdi:cctv'
     id: cctv
     title: Camera Feeds
   - badges: []
     cards:
-      - content: '# Switch Panel'
-        type: markdown
       - entities:
           - entity: light.mudroom
           - entity: light.dimmable_bulb
@@ -522,82 +525,122 @@ views:
           - entity: light.bedroom_room_2
           - entity: light.recroom_wall
           - entity: light.recroom_table
-          - entity: light.rec_room_corner_lights
-          - entity: light.rec_room_ceiling_lights
+          - entity: light.recroom_corner
+          - entity: light.recroom_ceiling
           - entity: light.bedroom_nick
           - entity: light.bedroom_kam
-          - entity: light.averys_room
+          - entity: light.bedroom_avery
           - entity: light.bedroom_bed_lights
         title: Lights
         type: entities
       - entities:
-          - entity: switch.tplink_switch_1
-          - entity: switch.tplink_switch_2
+          - entity: switch.tp_link_switch_1
+          - entity: switch.tp_link_switch_2
+          - entity: switch.tp_link_switch_3
+          - entity: switch.tp_link_switch_4
         title: Switches
         type: entities
     icon: 'mdi:tune'
     title: Switch Panel
   - badges: []
     cards:
-      - entity: light.bedroom_kam
-        type: light
-      - entity: light.bedroom_nick
-        type: light
-      - entity: light.bedroom_room_lights
-        type: light
-      - entity: sensor.master_bedroom_temperature
-        max: 95
-        min: 45
-        name: Temp
-        type: gauge
-        unit: °F
-      - entity: sensor.master_bedroom_humidity
-        max: 80
-        min: 20
-        name: Humidity
-        type: gauge
-        unit: '%'
+      - type: horizontal-stack
+        cards:
+        - entity: light.bedroom_kam
+          type: light
+        - entity: light.bedroom_nick
+          type: light
+      - type: horizontal-stack
+        cards:
+        - entity: light.bedroom_room_1
+          type: light
+        - entity: light.bedroom_room_1
+          type: light
+      - type: horizontal-stack
+        cards:
+          - entity: sensor.master_bedroom_temperature
+            max: 95
+            min: 0
+            name: Temp
+            type: gauge
+            unit: °F
+            severity: null
+            green: 0
+            yellow: 0
+            red: 0
+            theme: default
+          - entity: sensor.master_bedroom_humidity
+            max: 80
+            min: 0
+            name: Humidity
+            type: gauge
+            unit: '%'
+            severity: null
+            green: 0
+            yellow: 0
+            red: 0
+            theme: default
       - entity: media_player.master_bedroom_speaker
         type: media-control
+      - entity: switch.tp_link_switch_2
+        hold_action:
+          action: more-info
+        icon: 'mdi:fire'
+        name: Heater
+        tap_action:
+          action: toggle
+        type: entity-button
     icon: ''
     title: Bedroom
   - badges: []
     cards:
-      - entity: light.averys_room
+      - entity: light.bedroom_avery
         type: light
-      - entity: sensor.averys_room_temperature
-        max: 95
-        min: 45
-        name: Temp
-        type: gauge
-        unit: °F
-      - entity: sensor.averys_room_humidity
-        max: 80
-        min: 20
-        name: Humidity
-        type: gauge
-        unit: '%'
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.averys_room_temperature
+          max: 95
+          min: 45
+          name: Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.averys_room_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+      - entity: switch.tp_link_switch_4
+        hold_action:
+          action: more-info
+        icon: 'mdi:lightbulb'
+        name: Black Light
+        tap_action:
+          action: toggle
+        type: entity-button
     icon: ''
     title: Avery's Room
   - badges: []
     cards:
-      - entity: sensor.living_room_thermostat_temperature
-        max: 95
-        min: 45
-        name: Temp
-        type: gauge
-        unit: °F
-      - entity: sensor.living_room_thermostat_humidity
-        max: 80
-        min: 20
-        name: Humidity
-        type: gauge
-        unit: '%'
-      - entity: media_player.living_room
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.living_room_thermostat_temperature
+          max: 95
+          min: 45
+          name: Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.living_room_thermostat_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+      - entity: media_player.living_room_tv
         type: media-control
       - entity: media_player.living_room_mini
         type: media-control
-      - entity: switch.tplink_switch_1
+      - entity: switch.tp_link_switch_1
         hold_action:
           action: more-info
         icon: 'mdi:pine-tree'
@@ -605,93 +648,105 @@ views:
         tap_action:
           action: toggle
         type: entity-button
-      - entity: binary_sensor.front_door
+      - entity: binary_sensor.front_door_contact
         type: entity-button
-      - entity: camera.exterior_dome_2
+      - entity: camera.exterior_2
         show_state: false
         type: picture-entity
+      - entity: light.dimmable_bulb
+        type: light
     icon: ''
     title: Living Room
   - badges: []
     cards:
-      - entity: sensor.recroom_temperature_southwall
-        max: 95
-        min: 45
-        name: Southwall Temp
-        type: gauge
-        unit: °F
-      - entity: sensor.recroom_temperature_sink
-        max: 95
-        min: 45
-        name: Kitchen Temp
-        type: gauge
-        unit: °F
-      - entity: sensor.recroom_humidity_southwall
-        max: 80
-        min: 20
-        name: Humidity
-        type: gauge
-        unit: '%'
-      - entity: media_player.rec_room_tv
-        type: media-control
-      - entity: media_player.rec_room_tv
-        type: media-control
-      - entity: media_player.family_room_audio
-        type: media-control
-      - entity: media_player.family_room_mini
-        type: media-control
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.recroom_southwall_temperature
+          max: 95
+          min: 45
+          name: Southwall Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.recroom_temperature_sink
+          max: 95
+          min: 45
+          name: Kitchen Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.recroom_southwall_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+      - type: vertical-stack
+        cards:
+        - entity: media_player.rec_room_tv
+          type: media-control
+        - entity: media_player.rec_room_tv
+          type: media-control
+        - entity: media_player.rec_room_audio
+          type: media-control
+        - entity: media_player.rec_room_mini
+          type: media-control
       - entity: light.recroom_table
         type: light
       - entity: light.recroom_wall
         type: light
-      - entity: switch.recroom_ceiling
+      - entity: light.recroom_ceiling
         hold_action:
           action: more-info
         icon: 'mdi:lightbulb'
         tap_action:
           action: toggle
         type: entity-button
-      - entity: switch.recroom_corner
+      - entity: light.recroom_corner
         hold_action:
           action: more-info
         icon: 'mdi:lightbulb'
         tap_action:
           action: toggle
         type: entity-button
-      - entity: binary_sensor.rec_room_door
+      - entity: binary_sensor.recroom_door_contact
         type: entity-button
-      - entity: switch.tplink_switch_2
+      - entity: camera.exterior_1
+        show_state: false
+        type: picture-entity
+      - entity: binary_sensor.motion_1_occupancy
+        type: entity-button
+      - entity: switch.tp_link_switch_3
         hold_action:
           action: more-info
         icon: 'mdi:pine-tree'
-        name: Christmas Tree Lights
+        name: Chistmas Tree
         tap_action:
           action: toggle
         type: entity-button
-      - entity: camera.exterior_dome_1
-        show_state: false
-        type: picture-entity
+      - camera_image: camera.interior_2
+        entities:
+          - binary_sensor.ext03_motion
+        type: picture-glance
     icon: ''
     title: Rec Room
   - badges: []
     cards:
-      - entity: sensor.kitchen_temperature
-        max: 95
-        min: 45
-        name: Temp
-        type: gauge
-        unit: °F
-      - entity: sensor.kitchen_humidity
-        max: 80
-        min: 20
-        name: Humidity
-        type: gauge
-        unit: '%'
-      - entity: media_player.kitchen_mini
-        type: media-control
-      - entity: binary_sensor.back_door
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.kitchen_temperature
+          max: 95
+          min: 45
+          name: Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.kitchen_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+      - entity: binary_sensor.back_door_contact
         type: entity-button
-      - entity: camera.exterior_cam_1
+      - entity: camera.exterior_3
         show_state: false
         type: picture-entity
     icon: ''
@@ -702,31 +757,58 @@ views:
         type: media-control
       - entity: media_player.office_mini
         type: media-control
-      - entity: sensor.network_rack_temperature
-        max: 95
-        min: 45
-        name: Network Temp
-        type: gauge
-        unit: °F
-      - entity: sensor.kams_desk_temperature
-        max: 95
-        min: 45
-        name: Temp
-        type: gauge
-        unit: °F
-      - entity: sensor.network_rack_humidity
-        max: 80
-        min: 20
-        name: Network Humidity
-        type: gauge
-        unit: '%'
-      - entity: sensor.kams_desk_humidity
-        max: 80
-        min: 20
-        name: Humidity
-        type: gauge
-        unit: '%'
-      - entity: camera.interior_dome_1
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.network_rack_temperature
+          max: 95
+          min: 45
+          name: Network Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.network_rack_humidity
+          max: 80
+          min: 20
+          name: Network Humidity
+          type: gauge
+          unit: '%'
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.kams_desk_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+        - entity: sensor.kams_desk_temperature
+          max: 95
+          min: 45
+          name: Temp
+          type: gauge
+          unit: °F
+      - entity: camera.interior_1
         show_state: false
         type: picture-entity
     title: Office
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.pi_hole_dns_unique_clients
+          - entity: sensor.pi_hole_dns_queries_today
+          - entity: sensor.pi_hole_ads_blocked_today
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+          - entity: sensor.pi_hole_dns_queries_cached
+          - entity: sensor.pi_hole_dns_queries_forwarded
+          - entity: sensor.pi_hole_domains_blocked
+        show_header_toggle: false
+        title: Pi-Hole DNS Status
+        type: entities
+      - entity: camera.docker_host_memory_usage
+        type: picture-entity
+      - entity: camera.docker_container_memory_usage
+        type: picture-entity
+      - entities:
+          - entity: sensor.remove_excess_latest_jpgs
+        show_header_toggle: false
+        type: entities
+    icon: 'mdi:server'
+    title: Infrastructure Status
