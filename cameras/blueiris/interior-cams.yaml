@@ -6,3 +6,6 @@
 - platform: mjpeg
   name: Interior 1
   mjpeg_url: !secret blueiris_url_int01
+- platform: mjpeg
+  name: Interior 2
+  mjpeg_url: !secret blueiris_url_int02
