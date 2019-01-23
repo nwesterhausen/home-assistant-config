@@ -1,0 +1,4 @@
+- platform: command_line
+  name: Remove excess latest jpgs
+  command: "rm -v /config/tensorflow/images/*_latest.jpg"
+  scan_interval: 3600
