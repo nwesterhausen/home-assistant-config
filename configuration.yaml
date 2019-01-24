@@ -90,22 +90,6 @@ tts:
   - platform: google
     base_url: !secret https_hass_url
 ##########################
-##     PLEX             ##
-##########################
-# I have a plex.conf defined in my /config directory. I still have issues with
-# the Plex media_player component though.
-#media_player:
-#   - platform: plex
-#     entity_namespace: 'plex'
-#     include_non_clients: true
-#     scan_interval: 5
-#     show_all_controls: false
-#     use_custom_entity_ids: true
-#     use_episode_art: true
-#     remove_unavailable_clients: true
-#     client_remove_interval: 600
-
-##########################
 ##      ROKU            ##
 ##########################
 # As of 0.86, there is a Roku component which will nicely handle
@@ -211,12 +195,6 @@ notify:
 ##    DEVICE TRACKER    ##
 ##########################
 device_tracker:
-  # GPSLogger has worked amazingly well. We were using Owntracks MQTT
-  # prior, but had a lot of issues with Owntracks deciding we suddenly
-  # were half a mile away from where we were at (stationary). I really
-  # like that GPSLogger stops sending updates when your phone is still.
-  # It uses barely any battery on top of the improved reliability.
-  # - platform: gpslogger
   # I have a couple Unifi Switches and Unifi APs. I run a Unifi
   # Controller in a Docker Container and because all my devices are either
   # plugged into a switch or connected to Wi-Fi, I get a complete
@@ -232,24 +210,9 @@ device_tracker:
     new_device_defaults:
       track_new_devices: False
       hide_if_away: True
-  # Tile is a neat idea in principle but in practice it was not.
-  # The updates were quite delayed and often came at useless times.
-  # There may be usefulness later, perhaps, but not sure at the moment.
-# - platform: tile
-#   username: !secret tile_username
-#   password: !secret tile_password
-#   new_device_defaults:
-#     track_new_devices: True
-#     hide_if_away: True
-  # I enabled the Google Home bluetooth device tracker for a
-  # little bit, but the absolute spam of unkonwn devices was
-  # a huge pain. The issue is not being able to see our devices
-  # bluetooth MAC addresses.. so any devices that I would want
-  # to use this with have to be trial and errored to be properly
-  # tracked this way. I like the idea though. Once I can get
-  # my garage properly setup, it will provide an environment far
-  # enough away from the house that I should be able to isolate
-  # specific phones and other devices.
+  # I like the idea of the room-based tracker. This is pretty close. The only
+  # real pain is that you have to fix things by their bluetooth MAC which is
+  # not as trivial as you might imagine.
 #  - platform: googlehome
 #    host: 172.18.16.70  # Garage Google Mini
   - platform: googlehome
