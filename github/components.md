@@ -5,41 +5,40 @@ Here is a long list of the Home Assistant Components I use, and my thoughts.
   - GPSLogger
   - Unifi
   - Tile
-  - Google home BLE
+  - Google Home BLE
 - Image Processing
-  - tensorflow
+  - Tensorflow
 - Sensors
-  - seventeentrack
-  - min_max
+  - 17Track
   - command_line
-  - darksky
+  - Darksky
   - imap_email_content
-  - pi_hole
-  - tautulli
+  - min_max
   - Moon
-  - Season
-  - Template
-    - People Location
-  - Version
   - Nest
-  - zigbee2mqtt (temp humidity)
-  - Z-Wave (temp humidity)
+  - pi_hole
+  - Season
+  - Tautulli
+  - Template
+  - Version
+  - zigbee2mqtt
+  - Z-Wave
 - Media Players
   - Roku
   - Google Cast
 - Lights
+  - Yeelight
   - Z-Wave
-  - TP Link (wifi)
 - Switches
-  - Z-Wave
+  - TP Link
   - zigbee2mqtt
-  - TP Link (wifi)
+  - Z-Wave
 - Binary Sensors
-  - zigbee2mqtt (doors, motion)
-  - Blue Iris via MQTT (motion)
+  - MQTT
+  - zigbee2mqtt
 - Cameras
   - Generic
-  - MJPEG (Blue Iris)
+  - MJPEG 
 - Cloud
   - Google Assistant
 
