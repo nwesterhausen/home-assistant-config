@@ -23,10 +23,12 @@ homeassistant:
 # Can't get rid of the 'config' panel or you hinder your ability to manage
 # Home Assistant!
 config:
+#___________________#
 # The map was not useful to me in it's current state, because it zooms out to
-# include ALL zones, which isn't very informative. Logbook just took ages to
-# load for the information it provided. Really just useful in debugging.
+# include ALL zones, which isn't very informative.
 # map:
+# Logbook just took ages to load for the information it provided.
+# Really just useful in debugging.
 # logbook: !include logbook.yaml
 #___________________#
 ### Custom Panels ###
@@ -88,7 +90,7 @@ tts:
   - platform: google
     base_url: !secret https_hass_url
 ##########################
-##     PLEX / ROKU      ##
+##     PLEX             ##
 ##########################
 # I have a plex.conf defined in my /config directory. I still have issues with
 # the Plex media_player component though.
@@ -107,43 +109,31 @@ tts:
 ##      ROKU            ##
 ##########################
 # As of 0.86, there is a Roku component which will nicely handle
-# rokus. Using this instead of the media player platform.
+# rokus. Using this instead of the media player platform. It says
+# that they are discoverable using the discovery component but in
+# my setup that didn't work.
 roku:
-  - host: 172.18.16.40
-  - host: 172.18.16.41
-  - host: 172.18.16.42
-  - host: 172.18.16.43
+  - host: 172.18.16.40  # Living room TV
+  - host: 172.18.16.42  # Rec room small TV (roku mini)
+#  - host: 172.18.16.41  # Rec room TV wlan
+  - host: 172.18.16.43  # Rec room TV lan
 ##########################
 ##      CAST            ##
 ##########################
-# The cast component includes both Video and Audio chromecasts.
+# The cast component is for Google Devices
 cast:
   media_player:
-    # Chromecast
-    # Recroom Big TV
-    - host: 172.18.16.50
-    # Chromecast Audio
-    # Recroom
-    - host: 172.18.16.60
-    # Office
-    - host: 172.18.16.61
-    # Living Room
-#    - host: 172.18.16.62
-    # Garage
-#    - host: 172.18.16.63
-    # Google Home minis.
-    # Garage
-#    - host: 172.18.16.70
-    # Office
-    - host: 172.18.16.71
-    # Recroom
-    - host: 172.18.16.72
-    # Kitchen
-    - host: 172.18.16.73
-    # Avery's Room
-    - host: 172.18.16.74
-    # Insignia Google Home Speaker (Bedroom)
-    - host: 172.18.16.75
+    - host: 172.18.16.50  # Recroom TV (Chromecast)
+    - host: 172.18.16.60  # Recroom Audio (Chromecast)
+    - host: 172.18.16.61  # office Audio (Chromecast)
+#    - host: 172.18.16.62  # Living Room Audio (not setup yet) (Chromecast)
+#    - host: 172.18.16.63  # Garage Audio (not setup yet) (Chromecast)
+#    - host: 172.18.16.70  # Garage Google Mini
+    - host: 172.18.16.71  # Office Google Mini
+    - host: 172.18.16.72  # Recroom Google Mini
+    - host: 172.18.16.73  # Kitchen Google Mini
+    - host: 172.18.16.74  # Avery's Room Google Mini
+    - host: 172.18.16.75  # Bedroom Google Mini
 ##########################
 ##        MQTT          ##
 ##########################
@@ -169,7 +159,7 @@ mqtt:
       topic: 'hass/status'
       payload: 'offline'
     # Using the discovery option will let Home Assistant add new devices
-    # that expose themselves on MQTT
+    # that expose themselves on MQTT, used with Zigbee2MQTT in my case.
     discovery: true
 ##########################
 ##    INFLUXDB          ##
@@ -226,7 +216,7 @@ device_tracker:
   # were half a mile away from where we were at (stationary). I really
   # like that GPSLogger stops sending updates when your phone is still.
   # It uses barely any battery on top of the improved reliability.
-  - platform: gpslogger
+  # - platform: gpslogger
   # I have a couple Unifi Switches and Unifi APs. I run a Unifi
   # Controller in a Docker Container and because all my devices are either
   # plugged into a switch or connected to Wi-Fi, I get a complete
@@ -260,21 +250,16 @@ device_tracker:
   # my garage properly setup, it will provide an environment far
   # enough away from the house that I should be able to isolate
   # specific phones and other devices.
-  # Garage
 #  - platform: googlehome
-#    host: 172.18.16.70
-  # Office
+#    host: 172.18.16.70  # Garage Google Mini
   - platform: googlehome
-    host: 172.18.16.71
-  # Recroom
+    host: 172.18.16.71  # Office Google Mini
   - platform: googlehome
-    host: 172.18.16.72
-  # Kitchen
+    host: 172.18.16.72  # Recroom Google Mini
   - platform: googlehome
-    host: 172.18.16.73
-  # Avery's Room
+    host: 172.18.16.73  # Kitchen Google Mini
   - platform: googlehome
-    host: 172.18.16.74
+    host: 172.18.16.74  # Avery's Room Google Mini
 ##########################
 ##      updates         ##
 ##########################
