@@ -92,7 +92,7 @@ tts:
 ##########################
 # I have a plex.conf defined in my /config directory. I still have issues with
 # the Plex media_player component though.
-media_player:
+#media_player:
 #   - platform: plex
 #     entity_namespace: 'plex'
 #     include_non_clients: true
@@ -103,20 +103,16 @@ media_player:
 #     remove_unavailable_clients: true
 #     client_remove_interval: 600
 
-# One of these is our Living Room TV, the others are Rokus
-# that get plugged in. I am trying to get us to switch over
-# to Chromecasts due to the ease at which our guests can cast
-# content to them.
-  - platform: roku
-    host: 172.18.16.40
-  # Recroom Roku WLAN IP
-#  - platform: roku
-#    host: 172.18.16.41
-  - platform: roku
-    host: 172.18.16.42
-  # Recroom Roku LAN IP
-  - platform: roku
-    host: 172.18.16.43
+##########################
+##      ROKU            ##
+##########################
+# As of 0.86, there is a Roku component which will nicely handle
+# rokus. Using this instead of the media player platform.
+roku:
+  - host: 172.18.16.40
+  - host: 172.18.16.41
+  - host: 172.18.16.42
+  - host: 172.18.16.43
 ##########################
 ##      CAST            ##
 ##########################
