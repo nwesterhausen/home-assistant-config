@@ -7,6 +7,7 @@ google_actions:
     include_domains:
       - light
       - script
+      - fan
     # I exclude some entities, because they are light groups that I use
     # in my lovelace UI but would be redundant for Google.
     exclude_entities:
@@ -33,7 +34,7 @@ google_actions:
       name: Heater
       room: Bedroom
     switch.tp_link_switch_3:
-      name: Christmas Tree
+      name: Wall Plug
       room: Rec Room
     switch.tp_link_switch_4:
       name: Black Light
@@ -66,4 +67,7 @@ google_actions:
       room: Rec Room
     light.mudroom_light:
       name: Mudroom Light
+      room: Rec Room
+    fan.recroom:
+      name: Fan
       room: Rec Room
