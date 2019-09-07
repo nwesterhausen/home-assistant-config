@@ -1,0 +1,16 @@
+- platform: tensorflow
+  source:
+    - entity_id: camera.interior_1
+    - entity_id: camera.interior_2
+    - entity_id: camera.exterior_1
+    - entity_id: camera.exterior_2
+    - entity_id: camera.exterior_3
+  file_out:
+    - "/config/tensorflow/images/{{ camera_entity.split('.')[1] }}_latest.jpg"
+    - "/config/tensorflow/images/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"
+  scan_interval: 604800
+  model:
+    graph: !secret tf_inference_graph
+    categories:
+      - person
+      - dog

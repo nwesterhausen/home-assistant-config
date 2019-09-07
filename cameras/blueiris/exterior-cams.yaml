@@ -1,0 +1,14 @@
+# I'm using the blue-iris/mjpg/camera web stream for these.
+# I whitelisted Home Assistant so it doesn't need auth to
+# access the streams. These work nicely, they are updated
+# once a minute on the preview but you can click them to 
+# view close-to-live.
+- platform: mjpeg
+  name: Exterior 1
+  mjpeg_url: !secret blueiris_url_ext01
+- platform: mjpeg
+  name: Exterior 2
+  mjpeg_url: !secret blueiris_url_ext02
+- platform: mjpeg
+  name: Exterior 3
+  mjpeg_url: !secret blueiris_url_ext03

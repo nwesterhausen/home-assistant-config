@@ -1,0 +1,814 @@
+excluded_entities:
+  - group.darksky_sensors
+resources:
+  - type: js
+    url: /local/custom_ui/dark-sky-weather-card/dark-sky-weather-card.js?v=2
+  - type: js
+    url: /local/card-tools.js
+  - type: js
+    url: /local/card-modder.js
+title: Home
+views:
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.location_kam
+          - entity: sensor.location_nick
+          - entity: sensor.location_billie
+        show_header_toggle: false
+        title: Who's Where
+        type: entities
+      - card:
+          show_header_toggle: false
+          title: Guests at home
+          type: entities
+        entities:
+          - entity: device_tracker.marks_iphone
+          - entity: device_tracker.karens_iphone
+          - entity: device_tracker.mercys_iphone
+        show_empty: false
+        state_filter:
+          - home
+        title: Guests
+        type: entity-filter
+      - entities:
+          - entity: binary_sensor.front_door_contact
+          - entity: binary_sensor.back_door_contact
+          - entity: binary_sensor.recroom_door_contact
+        title: Door Status
+        type: glance
+      - entities:
+          - entity: sensor.master_bedroom_temperature
+            name: Temperature
+          - entity: sensor.master_bedroom_humidity
+            name: Humidity
+          - entity: media_player.master_bedroom_speaker
+          - entity: light.bedroom_nick
+          - entity: light.bedroom_kam
+          - entity: light.bedroom_room_lights
+          - entity: switch.tp_link_switch_2
+        title: Bedroom
+        type: entities
+      - entities:
+          - entity: sensor.laundry_room_temperature
+            name: Temperature
+          - entity: sensor.laundry_room_humidity
+            name: Humidity
+          - entity: switch.laundry_room_light
+            icon: 'mdi:light-switch'
+            name: Laundry Room Switch
+        show_header_toggle: false
+        title: Laundry Room
+        type: entities
+      - entities:
+          - entity: sensor.network_rack_temperature
+            name: Temperature (Network)
+          - entity: sensor.network_rack_humidity
+            name: Humidity (Network)
+          - entity: sensor.kams_desk_temperature
+            name: Temperature (Kam's Desk)
+          - entity: sensor.kams_desk_humidity
+            name: Humidity (Kam's Desk)
+          - entity: media_player.office_mini
+          - entity: media_player.office_audio
+        show_header_toggle: false
+        title: Office
+        type: entities
+      - entities:
+          - entity: group.recroom_lights
+            name: All Recroom Lights
+          - entity: sensor.recroom_temperature_sink
+            name: Temperature
+          - entity: sensor.recroom_luminance_sink
+            name: Light Level
+          - entity: light.recroom_ceiling
+            icon: 'mdi:light-switch'
+            name: Rec Room Ceiling Lights
+          - entity: light.recroom_corner
+            icon: 'mdi:light-switch'
+            name: Rec Room Corner Lights
+          - entity: light.recroom_wall
+            icon: 'mdi:light-switch'
+            name: Rec Room Wall Lights
+          - entity: light.recroom_table
+            icon: 'mdi:light-switch'
+            name: Rec Room Table Lights
+          - entity: sensor.recroom_southwall_temperature
+            name: Temperature (Southwall)
+          - entity: sensor.recroom_southwall_humidity
+            name: Humidity (Southwall)
+          - entity: media_player.rec_room_mini
+          - entity: media_player.rec_room_tv
+          - entity: media_player.rec_room_tv
+          - entity: media_player.rec_room_small_tv
+          - entity: sensor.motion_1_illuminance
+          - entity: switch.tp_link_switch_3
+        show_header_toggle: false
+        title: Rec Room
+        type: entities
+      - entities:
+          - entity: sensor.living_room_thermostat_temperature
+            name: Temperature
+          - entity: sensor.living_room_thermostat_humidity
+            name: Humidity
+          - entity: media_player.living_room_tv
+          - entity: media_player.living_room_mini
+          - entity: switch.tp_link_switch_1
+            name: Christmas Tree Lights
+        show_header_toggle: false
+        title: Living Room
+        type: entities
+      - entities:
+          - entity: sensor.averys_room_temperature
+            name: Temperature
+          - entity: sensor.averys_room_humidity
+            name: Humidity
+          - entity: light.bedroom_avery
+          - entity: switch.tp_link_switch_4
+        show_header_toggle: false
+        title: Avery's Room
+        type: entities
+      - entities:
+          - entity: sensor.kitchen_temperature
+            name: Temperature
+          - entity: sensor.kitchen_humidity
+            name: Humidity
+        show_header_toggle: false
+        title: Kitchen
+        type: entities
+      - entities:
+          - entity: sensor.guest_room_temperature
+            name: Temperature
+          - entity: sensor.guest_room_humidity
+            name: Humidity
+        show_header_toggle: false
+        title: Guest Room
+        type: entities
+      - entities:
+          - entity: sensor.guest_bathroom_temperature
+            name: Temperature
+          - entity: sensor.guest_bathroom_humidity
+            name: Humidity
+        show_header_toggle: false
+        title: Guest Bathroom
+        type: entities
+      - entity: climate.living_room
+        type: thermostat
+      - entities:
+          - entity: sensor.average_indoor_temperature
+            icon: 'fal:temperature-high'
+          - entity: sensor.average_indoor_temperature_zone_a
+            icon: 'fal:temperature-high'
+          - entity: sensor.average_indoor_temperature_zone_b
+            icon: 'fal:temperature-high'
+        show_header_toggle: false
+        title: Home Temperatures
+        type: entities
+      - entity: camera.wundergroundradar
+        type: picture-entity
+    icon: 'mdi:home'
+    id: home
+    theme: dark-mode
+  - cards:
+      - card:
+          elements:
+            - entity: light.avery_s_room
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 75%
+                top: 13%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.dimmable_bulb
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 40%
+                top: 10%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: sensor.dark_sky_daily_summary
+              style:
+                left: 20%
+                top: 52%
+              type: state-icon
+            - entity: sensor.dark_sky_temperature
+              prefix: 'Outside Temp '
+              style:
+                font-size: 1em
+                left: 20%
+                text-align: left
+                top: 55%
+              type: state-label
+            - entity: sensor.living_room_thermostat_target
+              prefix: 'Thermostat Set to '
+              style:
+                font-size: 1em
+                left: 20%
+                text-align: left
+                top: 57%
+              type: state-label
+            - entity: binary_sensor.back_door_contact
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 17%
+                top: 7%
+              type: state-icon
+            - entity: binary_sensor.front_door_contact
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 42%
+                top: 38%
+              type: state-icon
+            - entity: binary_sensor.recroom_door_contact
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 80%
+                top: 80%
+              type: state-icon
+            - entity: switch.tp_link_switch_1
+              image: /local/images/entities/christmas-tree.png
+              state_filter:
+                'off': grayscale(1)
+                'on': grayscale(0)
+              style:
+                height: 42px
+                left: 60%
+                top: 20%
+                width: 36px
+              tap_action:
+                action: toggle
+              type: image
+            - entity: switch.tp_link_switch_3
+              image: /local/images/entities/christmas-tree.png
+              state_filter:
+                'off': grayscale(1)
+                'on': grayscale(0)
+              style:
+                bottom: 25%
+                height: 42px
+                left: 55%
+                width: 36px
+              tap_action:
+                action: toggle
+              type: image
+            - entity: light.mudroom
+              style:
+                '--iron-icon-height': 28px
+                '--iron-icon-width': 28px
+                left: 80%
+                top: 75%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.recroom_corner
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 55%
+                top: 75%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.recroom_ceiling
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 70%
+                top: 70%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.recroom_wall
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 80%
+                top: 60%
+              tap_action: toggle
+              type: state-icon
+            - entity: light.recroom_table
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 85%
+                top: 70%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.laundry_room_light
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 55%
+                top: 30%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.bedroom_nick
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 28px
+                '--iron-icon-width': 28px
+                left: 10%
+                top: 42%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.bedroom_kam
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 28px
+                '--iron-icon-width': 28px
+                left: 10%
+                top: 38%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: light.bedroom_room_lights
+              hold_action:
+                action: more-info
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 25%
+                top: 40%
+              tap_action:
+                action: toggle
+              type: state-icon
+            - entity: sensor.kitchen_temperature
+              style:
+                left: 10%
+                top: 12%
+              type: state-label
+            - entity: sensor.averys_room_temperature
+              style:
+                left: 75%
+                top: 18%
+              type: state-label
+            - entity: sensor.master_bedroom_temperature
+              style:
+                left: 15%
+                top: 35%
+              type: state-label
+            - entity: sensor.guest_bathroom_temperature
+              style:
+                left: 71%
+                top: 30%
+              type: state-label
+            - entity: sensor.recroom_temperature_sink
+              style:
+                left: 60%
+                top: 58%
+              type: state-label
+            - entity: sensor.recroom_temperature_southwall
+              style:
+                left: 70%
+                top: 78%
+              type: state-label
+            - entity: sensor.network_rack_temperature
+              style:
+                left: 85%
+                top: 40%
+              type: state-label
+            - entity: sensor.kams_desk_temperature
+              style:
+                left: 85%
+                top: 53%
+              type: state-label
+            - entity: sensor.guest_room_temperature
+              style:
+                left: 85%
+                top: 25%
+              type: state-label
+            - entity: sensor.living_room_thermostat_temperature
+              style:
+                left: 45%
+                top: 20%
+              type: state-label
+          image: /local/images/floorplan-walls.svg
+          title: House
+          type: picture-elements
+        style:
+          '--paper-card-background-color': '#E0E0E0'
+          '--paper-item-icon-color': black
+          '--primary-text-color': black
+        type: 'custom:card-modder'
+      - card:
+          elements:
+            - entity: binary_sensor.fake_garage_door
+              style:
+                '--iron-icon-height': 224px
+                '--iron-icon-width': 224px
+                left: 50%
+                top: 40%
+                transform: rotate(270deg)
+              type: state-icon
+            - entity: binary_sensor.upper_level_lights
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 25%
+                top: 84%
+              type: state-icon
+            - entity: binary_sensor.ceiling_lights_2
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 30%
+                top: 50%
+              type: state-icon
+            - entity: binary_sensor.ceiling_lights_1
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 30%
+                top: 40%
+              type: state-icon
+            - entity: binary_sensor.workshop_lights
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 45%
+                top: 75%
+              type: state-icon
+            - entity: binary_sensor.fake_workshop_door
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 67%
+                top: 61%
+              type: state-icon
+            - entity: binary_sensor.fake_storage_door
+              style:
+                '--iron-icon-height': 42px
+                '--iron-icon-width': 42px
+                left: 54%
+                top: 84%
+              type: state-icon
+          image: /local/images/garage-walls.svg
+          title: Garage
+          type: picture-elements
+        style:
+          '--paper-card-background-color': '#E0E0E0'
+          '--paper-item-icon-color': black
+          '--primary-text-color': black
+        type: 'custom:card-modder'
+    icon: 'mdi:floor-plan'
+    id: floorplan
+    title: Floor Plan
+  - cards:
+      - entity: camera.indoor_vs_outdoor_temperatures
+        id: temptrends
+        name: Home vs Outside Temperatures Past 24h
+        show_name: false
+        show_state: false
+        type: picture-entity
+    icon: 'mdi:chart-line'
+    id: trends
+    title: Home Data Trends
+  - cards:
+      - card:
+          title: ⚠ Camera Errors ⚠
+          type: glance
+        entities:
+          - entity: binary_sensor.ext_cam_01
+          - entity: binary_sensor.ext_dome_01
+          - entity: binary_sensor.ext_dome_02
+          - entity: binary_sensor.int_dome_01
+        show_empty: false
+        state_filter:
+          - 'off'
+        type: entity-filter
+      - camera_image: camera.interior_1
+        entities:
+          - binary_sensor.int01_motion
+        show_state: false
+        type: picture-glance
+      - camera_image: camera.exterior_1
+        entities:
+          - binary_sensor.ext01_motion
+        type: picture-glance
+      - camera_image: camera.exterior_2
+        entities:
+          - binary_sensor.ext02_motion
+        type: picture-glance
+      - camera_image: camera.exterior_3
+        entities:
+          - binary_sensor.ext03_motion
+        type: picture-glance
+      - camera_image: camera.interior_2
+        entities:
+          - binary_sensor.ext03_motion
+        type: picture-glance
+    icon: 'mdi:cctv'
+    id: cctv
+    title: Camera Feeds
+  - badges: []
+    cards:
+      - entities:
+          - entity: light.mudroom
+          - entity: light.dimmable_bulb
+          - entity: light.bedroom_room_1
+          - entity: light.bedroom_room_2
+          - entity: light.recroom_wall
+          - entity: light.recroom_table
+          - entity: light.recroom_corner
+          - entity: light.recroom_ceiling
+          - entity: light.bedroom_nick
+          - entity: light.bedroom_kam
+          - entity: light.bedroom_avery
+          - entity: light.bedroom_bed_lights
+        title: Lights
+        type: entities
+      - entities:
+          - entity: switch.tp_link_switch_1
+          - entity: switch.tp_link_switch_2
+          - entity: switch.tp_link_switch_3
+          - entity: switch.tp_link_switch_4
+        title: Switches
+        type: entities
+    icon: 'mdi:tune'
+    title: Switch Panel
+  - badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+        - entity: light.bedroom_kam
+          type: light
+        - entity: light.bedroom_nick
+          type: light
+      - type: horizontal-stack
+        cards:
+        - entity: light.bedroom_room_1
+          type: light
+        - entity: light.bedroom_room_1
+          type: light
+      - type: horizontal-stack
+        cards:
+          - entity: sensor.master_bedroom_temperature
+            max: 95
+            min: 0
+            name: Temp
+            type: gauge
+            unit: °F
+            severity: null
+            green: 0
+            yellow: 0
+            red: 0
+            theme: default
+          - entity: sensor.master_bedroom_humidity
+            max: 80
+            min: 0
+            name: Humidity
+            type: gauge
+            unit: '%'
+            severity: null
+            green: 0
+            yellow: 0
+            red: 0
+            theme: default
+      - entity: media_player.master_bedroom_speaker
+        type: media-control
+      - entity: switch.tp_link_switch_2
+        hold_action:
+          action: more-info
+        icon: 'mdi:fire'
+        name: Heater
+        tap_action:
+          action: toggle
+        type: entity-button
+    icon: ''
+    title: Bedroom
+  - badges: []
+    cards:
+      - entity: light.bedroom_avery
+        type: light
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.averys_room_temperature
+          max: 95
+          min: 45
+          name: Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.averys_room_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+      - entity: switch.tp_link_switch_4
+        hold_action:
+          action: more-info
+        icon: 'mdi:lightbulb'
+        name: Black Light
+        tap_action:
+          action: toggle
+        type: entity-button
+    icon: ''
+    title: Avery's Room
+  - badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.living_room_thermostat_temperature
+          max: 95
+          min: 45
+          name: Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.living_room_thermostat_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+      - entity: media_player.living_room_tv
+        type: media-control
+      - entity: media_player.living_room_mini
+        type: media-control
+      - entity: switch.tp_link_switch_1
+        hold_action:
+          action: more-info
+        icon: 'mdi:pine-tree'
+        name: Christmas Tree Lights
+        tap_action:
+          action: toggle
+        type: entity-button
+      - entity: binary_sensor.front_door_contact
+        type: entity-button
+      - entity: camera.exterior_2
+        show_state: false
+        type: picture-entity
+      - entity: light.dimmable_bulb
+        type: light
+    icon: ''
+    title: Living Room
+  - badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.recroom_southwall_temperature
+          max: 95
+          min: 45
+          name: Southwall Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.recroom_temperature_sink
+          max: 95
+          min: 45
+          name: Kitchen Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.recroom_southwall_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+      - type: vertical-stack
+        cards:
+        - entity: media_player.rec_room_tv
+          type: media-control
+        - entity: media_player.rec_room_tv
+          type: media-control
+        - entity: media_player.rec_room_audio
+          type: media-control
+        - entity: media_player.rec_room_mini
+          type: media-control
+      - entity: light.recroom_table
+        type: light
+      - entity: light.recroom_wall
+        type: light
+      - entity: light.recroom_ceiling
+        hold_action:
+          action: more-info
+        icon: 'mdi:lightbulb'
+        tap_action:
+          action: toggle
+        type: entity-button
+      - entity: light.recroom_corner
+        hold_action:
+          action: more-info
+        icon: 'mdi:lightbulb'
+        tap_action:
+          action: toggle
+        type: entity-button
+      - entity: binary_sensor.recroom_door_contact
+        type: entity-button
+      - entity: camera.exterior_1
+        show_state: false
+        type: picture-entity
+      - entity: binary_sensor.motion_1_occupancy
+        type: entity-button
+      - entity: switch.tp_link_switch_3
+        hold_action:
+          action: more-info
+        icon: 'mdi:pine-tree'
+        name: Chistmas Tree
+        tap_action:
+          action: toggle
+        type: entity-button
+      - camera_image: camera.interior_2
+        entities:
+          - binary_sensor.ext03_motion
+        type: picture-glance
+    icon: ''
+    title: Rec Room
+  - badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.kitchen_temperature
+          max: 95
+          min: 45
+          name: Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.kitchen_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+      - entity: binary_sensor.back_door_contact
+        type: entity-button
+      - entity: camera.exterior_3
+        show_state: false
+        type: picture-entity
+    icon: ''
+    title: Kitchen
+  - badges: []
+    cards:
+      - entity: media_player.office_audio
+        type: media-control
+      - entity: media_player.office_mini
+        type: media-control
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.network_rack_temperature
+          max: 95
+          min: 45
+          name: Network Temp
+          type: gauge
+          unit: °F
+        - entity: sensor.network_rack_humidity
+          max: 80
+          min: 20
+          name: Network Humidity
+          type: gauge
+          unit: '%'
+      - type: horizontal-stack
+        cards:
+        - entity: sensor.kams_desk_humidity
+          max: 80
+          min: 20
+          name: Humidity
+          type: gauge
+          unit: '%'
+        - entity: sensor.kams_desk_temperature
+          max: 95
+          min: 45
+          name: Temp
+          type: gauge
+          unit: °F
+      - entity: camera.interior_1
+        show_state: false
+        type: picture-entity
+    title: Office
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.pi_hole_dns_unique_clients
+          - entity: sensor.pi_hole_dns_queries_today
+          - entity: sensor.pi_hole_ads_blocked_today
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+          - entity: sensor.pi_hole_dns_queries_cached
+          - entity: sensor.pi_hole_dns_queries_forwarded
+          - entity: sensor.pi_hole_domains_blocked
+        show_header_toggle: false
+        title: Pi-Hole DNS Status
+        type: entities
+      - entity: camera.docker_host_memory_usage
+        type: picture-entity
+      - entity: camera.docker_container_memory_usage
+        type: picture-entity
+      - entities:
+          - entity: sensor.remove_excess_latest_jpgs
+        show_header_toggle: false
+        type: entities
+    icon: 'mdi:server'
+    title: Infrastructure Status

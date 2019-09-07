@@ -1,0 +1,18 @@
+# I don't have network connectivity out at my garage yet. But I wanted to get a floorplan
+# made for it, and to fill out that floorplan I created some dummy sensors. I customize 
+# these to make them have appropriate icons, but they just go on and off randomly which
+# is fun. The name is descriptive.
+- platform: random
+  name: "Fake Workshop Door"
+- platform: random
+  name: "Fake Storage Door"
+- platform: random
+  name: "Workshop Lights"
+- platform: random
+  name: "Ceiling Lights 1"
+- platform: random
+  name: "Ceiling Lights 2"
+- platform: random
+  name: "Upper Level Lights"
+- platform: random
+  name: "Fake Garage Door"

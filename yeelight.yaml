@@ -1,0 +1,11 @@
+# Broken out into its own component in 0.91
+  devices:
+    172.18.19.67:
+      name: Bedroom Avery
+      model: color2
+    172.18.19.65:
+      name: Bedroom Nick
+      model: color2
+    172.18.19.66:
+      name: Bedroom Kam
+      model: color2

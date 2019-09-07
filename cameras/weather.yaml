@@ -1,0 +1,4 @@
+# Weather radar of the tri-state area
+- platform: generic
+  still_image_url: 'https://icons.wxug.com/data/weather-maps/radar/united-states/dayton-ohio-region-current-radar-animation.gif'
+  name: WundergroundRadar

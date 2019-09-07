@@ -1,0 +1,11 @@
+# Replaced the two bulbs in the ceiling light with just this one Yeelight.
+# Overall, provides plenty of light and she has fun changing the color by
+# saying "Hey Google"
+# As with all WiFi IoT, there is a DHCP reservation in place for this light.
+# If someone ends up turning off the light switch or something, it will come
+# back up.
+# - platform: yeelight
+#   devices:
+#     172.18.19.67:
+#       name: Bedroom Avery
+#       model: color2

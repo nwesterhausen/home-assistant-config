@@ -1,0 +1,11 @@
+# Make sure those doors are treated like doors!
+binary_sensor.front_door:
+  device_class: door
+binary_sensor.rec_room_door:
+  device_class: door
+binary_sensor.back_door:
+  device_class: door
+binary_sensor.fake_workshop_door:
+  device_class: door
+binary_sensor.fake_storage_door:
+  device_class: door

@@ -1,0 +1,21 @@
+# Generated with Zone.yaml Generator for Home Assistant, version 0.4
+- name: Indianapolis International Airport (IND)
+  latitude: 39.715028
+  longitude: -86.297667
+  radius: 750
+  icon: mdi:airport
+- name: Hartsfield–Jackson Atlanta International Airport (ATL)
+  latitude: 33.656824
+  longitude: -84.423648
+  radius: 500
+  icon: mdi:airport
+- name: Nashville International Airport (BNA)
+  latitude: 36.1353353
+  longitude: -86.6661079
+  radius: 500
+  icon: mdi:airport
+- name: Fort Lauderdale–Hollywood International Airport (FLL)
+  latitude: 26.069706
+  longitude: -80.136955
+  radius: 500
+  icon: mdi:airport

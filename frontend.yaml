@@ -1,0 +1,6 @@
+  javascript_version: latest
+  # Themes are so verbose, anything to get them out of here!
+  # I really will split them out if I can into a 'themes' dir,
+  # but when I was editing them all, it was easier to find/replace
+  # with one file instead of many.
+  themes: !include themes.yaml

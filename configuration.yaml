@@ -1,0 +1,229 @@
+homeassistant:
+  name: !secret home_name
+  # "Localization"
+  unit_system: imperial
+  # Location, used for sunrise/sunset etc
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret altitude
+  time_zone: !secret time_zone
+  # Customizations, I've split mine into separate files by category
+  customize: !include_dir_merge_named customizations
+  # Remember that "trusted_networks" bypasses TOTP
+  auth_providers:
+    - type: homeassistant
+  # Using Time-based One Time Passwords for additional security
+  auth_mfa_modules:
+    - type: totp
+system_health:
+##########################
+##      NAV PANELS      ##
+##########################
+# Can't get rid of the 'config' panel or you hinder your ability to manage
+# Home Assistant!
+config:
+#___________________#
+# The map was not useful to me in it's current state, because it zooms out to
+# include ALL zones, which isn't very informative.
+# map:
+# Logbook just took ages to load for the information it provided.
+# Really just useful in debugging.
+# logbook: !include logbook.yaml
+#___________________#
+### Custom Panels ###
+panel_iframe:
+  grocy:
+    title: Grocy
+    icon: mdi:fridge-outline
+    url: https://home-assistant.westerhausen.me:9192/
+  phlex:
+    title: Phlex
+    icon: mdi:microphone
+    url: https://home-assistant.westerhausen.me:1778/
+##########################
+##        HTTP          ##
+##########################
+http:
+  base_url: !secret hass_url
+  # Using zerotierone to provide VPN-like access to home-assistant
+  # So when I'm not at home, using the zerotier-one network is the only way
+  # to access Home Assistant.
+  server_port: 443
+  ssl_certificate: !secret cert_loc
+  ssl_key: !secret key_loc
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+##########################
+##       NEST           ##
+##########################
+nest:
+    client_id: !secret nest_id
+    client_secret: !secret nest_secret
+##########################
+##       ZWAVE          ##
+##########################
+zwave:
+  usb_path: /dev/ttyACM0
+##########################
+##       TTS            ##
+##########################
+tts:
+  - platform: google_translate
+##########################
+##      ROKU            ##
+##########################
+# As of 0.86, there is a Roku component which will nicely handle
+# rokus. Using this instead of the media player platform. It says
+# that they are discoverable using the discovery component but in
+# my setup that didn't work.
+roku:
+  - host: 172.18.16.81  # Living room TV
+#  - host: 172.18.16.82  # Rec room small TV (roku mini)
+#  - host: 172.18.16.84  # Rec room TV wlan
+  - host: 172.18.16.83  # Rec room TV lan
+##########################
+##      CAST            ##
+##########################
+# The cast component is for Google Devices
+cast:
+  media_player:
+    - host: 172.18.16.97  # Recroom TV (Chromecast)
+    - host: 172.18.16.105  # Recroom Audio (Chromecast)
+    - host: 172.18.16.106  # office Audio (Chromecast)
+#    - host: 172.18.16.62  # Living Room Audio (not setup yet) (Chromecast)
+#    - host: 172.18.16.63  # Garage Audio (not setup yet) (Chromecast)
+#    - host: 172.18.16.129  # Garage Google Mini
+    - host: 172.18.16.130  # Office Google Mini
+    - host: 172.18.16.131  # Recroom Google Mini
+    - host: 172.18.16.132  # Kitchen Google Mini
+    - host: 172.18.16.133  # Avery's Room Google Mini
+    - host: 172.18.16.134  # Bedroom Google Mini
+##########################
+##   CUSTOM COMPONENTS  ##
+##########################
+spotcast:
+  username: !secret spotify_username
+  password: !secret spotify_password
+##########################
+##        MQTT          ##
+##########################
+# MQTT has been super reliable for my use cases. I use Zigbee2MQTT
+# to connect Zigbee sensors to Home Assistant. Never had an issue.
+# Now that I have BlueIris set up and running, it also alerts for
+# motion detected on cameras to MQTT and I interpret that as
+# binary_sensor in Home Assistant. As close to instant as I need.
+# :: I'm using the Hass.io Add-on for MQTT ::
+##########################
+##    INFLUXDB          ##
+##########################
+# I'm running influxDB and Grafana on my Docker Host and they work together
+# to provide visualization of the data gathered from Home Assistant. I should
+# also be able to look up historic data if I ever was curious.
+influxdb:
+    host: 172.18.18.6
+    username: !secret influxdb_user
+    password: !secret influxdb_password
+    database: home-assistant
+    tags:
+        source: hass
+    default_measurement: state
+    include:
+        domains:
+            - sensor
+##########################
+##  GOOGLE CALENDAR     ##
+##########################
+# Using specific key-words for events you want Home Assistant to
+# react to is great. I haven't quite tied it into actual events
+# yet.
+google:
+  client_id: !secret gcp_oauth_client_id
+  client_secret: !secret gcp_oauth_client_secret
+##########################
+##    NOTIFICATIONS     ##
+##########################
+notify:
+  # HTML5 notifications took a bit of work to get set up all the way
+  # (the documentation is pretty complete though). From my usage, the
+  # notifications go out right away. I've only partially messed with
+  # the actions you can do.
+  - platform: html5
+    name: HTML5 Notification
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
+  # Probably the most used copmonent. I have a channel that gets all
+  # door events, zone changes, camera motion events, and flight updates
+  # sent to it. Also, when Node Red makes an automation trigger, it
+  # sends a message to the channel as well, letting me know it did something
+  # on my behalf.
+  - platform: discord
+    token: !secret discord_bot_token
+    name: Discord Notify
+##########################
+##    DEVICE TRACKER    ##
+##########################
+device_tracker:
+  # I have a couple Unifi Switches and Unifi APs. I run a Unifi
+  # Controller in a Docker Container and because all my devices are either
+  # plugged into a switch or connected to Wi-Fi, I get a complete
+  # view of my network using this device_tracker. The only annoying bit
+  # is the urllib3 spam about not verifying SSL, but I use Traefik to proxy
+  # any non-container access to the controller, so it seemed like a waste of
+  # time to put valid certificates on the controller.
+  - platform: unifi
+    host: !secret unifi_ip
+    username: !secret unifi_user
+    password: !secret unifi_password
+    port: 8443
+    verify_ssl: true
+    new_device_defaults:
+      track_new_devices: False
+      hide_if_away: True
+  # I like the idea of the room-based tracker. This is pretty close. The only
+  # real pain is that you have to fix things by their bluetooth MAC which is
+  # not as trivial as you might imagine.
+googlehome:
+  devices:
+#   - host: 172.18.16.129  # Garage Google Mini
+  - host: 172.18.16.130  # Office Google Mini
+  - host: 172.18.16.131  # Recroom Google Mini
+  - host: 172.18.16.132  # Kitchen Google Mini
+  - host: 172.18.16.133  # Avery's Room Google Mini
+##########################
+##        HACS          ##
+##########################
+hacs:
+  token: 19a0a4d474ebcf7fbd7f43e60bf2a1c72c5adc57
+  theme: True
+breaking_changes:
+##########################
+##      updates         ##
+##########################
+# The updater is enabled by default. I just kept it.
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+##########################
+##      logger          ##
+##########################
+# Sometimes I have to change it to info or debug when trying to fix something.
+logger:
+  default: warn
+##########################
+##      INCLUDES        ##
+##########################
+# I broke out anything with more than like 5 configurations into separate files.
+# Both for ease of editing and debugging (simply move the file out of the folder
+# to have Home Assistant ignore it).
+binary_sensor: !include_dir_merge_list  binary_sensors
+camera: !include_dir_merge_list cameras
+cloud: !include cloud.yaml
+group: !include_dir_merge_named groups
+frontend: !include frontend.yaml
+light: !include_dir_merge_list lights
+sensor: !include_dir_merge_list sensors
+zone: !include_dir_merge_list zones
+#image_processing: !include_dir_merge_list tensorflow
+script: !include scripts.yaml
+tplink: !include tplink.yaml
+yeelight: !include yeelight.yaml

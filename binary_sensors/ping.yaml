@@ -1,0 +1,14 @@
+# I was going to use this for the floorplan, but I 
+# am likely to switch this out with a template like
+# I use for my cameras, since I already have a home|not_home
+# state for these devices thanks to Unifi.
+- platform: ping
+  host: 172.18.19.5
+  name: Rec Room AP
+  count: 3
+  scan_interval: 180
+- platform: ping
+  host: 172.18.19.6
+  name: Living Room AP
+  count: 3
+  scan_interval: 180

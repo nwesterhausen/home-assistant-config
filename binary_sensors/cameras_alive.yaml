@@ -1,0 +1,43 @@
+# Binary Sensors based on the Unifi Device Tracker
+# I use the home|not_home state of the cameras to determine if they
+# are online or not (since they should always be connected to the
+# PoE switch).
+# The value_template is simply (state === 'home') and so is True or False
+- platform: template
+  sensors:
+    int_dome_01:
+      device_class: connectivity
+      entity_id: device_tracker.camera_interior_01
+      friendly_name: Int Cam 01
+      value_template: "{{ is_state('device_tracker.camera_interior_01', 'home') }}"
+      icon_template: mdi:cctv
+    ext_cam_01:
+      device_class: connectivity
+      entity_id: device_tracker.camera_exterior_03
+      friendly_name: Ext Cam 03
+      value_template: "{{ is_state('device_tracker.camera_exterior_03', 'home') }}"
+      icon_template: mdi:cctv
+    ext_cam_02:
+      device_class: connectivity
+      entity_id: device_tracker.camera_exterior_04
+      friendly_name: Ext Cam 04
+      value_template: "{{ is_state('device_tracker.camera_exterior_04', 'home') }}"
+      icon_template: mdi:cctv
+    ext_cam_03:
+      device_class: connectivity
+      entity_id: device_tracker.camera_exterior_05
+      friendly_name: Ext Cam 05
+      value_template: "{{ is_state('device_tracker.camera_exterior_05', 'home') }}"
+      icon_template: mdi:cctv
+    ext_dome_01:
+      device_class: connectivity
+      entity_id: device_tracker.camera_exterior_02
+      friendly_name: Ext Cam 01
+      value_template: "{{ is_state('device_tracker.camera_exterior_02', 'home') }}"
+      icon_template: mdi:cctv
+    ext_dome_02:
+      device_class: connectivity
+      entity_id: device_tracker.camera_exterior_02
+      friendly_name: Ext Cam 02
+      value_template: "{{ is_state('device_tracker.camera_exterior_02', 'home') }}"
+      icon_template: mdi:cctv

@@ -1,0 +1,12 @@
+# The fake sensors created for the garage floorplan.
+# Have icons that match what they are "pretending" to be
+binary_sensor.workshop_lights:
+  icon: mdi:flash
+binary_sensor.ceiling_lights_1:
+  icon: mdi:flash
+binary_sensor.ceiling_lights_2:
+  icon: mdi:flash
+binary_sensor.upper_level_lights:
+  icon: mdi:flash
+binary_sensor.fake_garage_door:
+  icon: mdi:garage

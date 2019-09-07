@@ -1,0 +1,15 @@
+recroom_lights:
+  icon: mdi:lamp
+  entities:
+    - switch.recroom_ceiling
+    - switch.recroom_corner
+    - light.recroom_table
+    - light.recroom_wall
+
+bedroom_lights:
+  icon: mdi:lamp
+  entities:
+    - light.bedroom_kam
+    - light.bedroom_nick
+    - light.bedroom_room_1
+    - light.bedroom_room_2

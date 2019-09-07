@@ -1,0 +1,15 @@
+- platform: switch
+  name: Recroom Ceiling
+  entity_id: switch.recroom_ceiling_lights
+
+- platform: switch
+  name: Recroom Corner
+  entity_id: switch.recroom_corner_lights
+
+- platform: group
+  name: All Rec Room Lights
+  entities:
+      - light.recroom_ceiling
+      - light.recroom_corner
+      - light.recroom_table
+      - light.recroom_wall

@@ -1,0 +1,11 @@
+# I set friendly names here, but I want to be able
+# to use the exterior/interior name since that is
+# tied to the shortname used in BlueIris.
+camera.exterior_1:
+  friendly_name: Rec Room Door
+camera.exterior_2:
+  friendly_name: Front Door
+camera.exterior_3:
+  friendly_name: Back Door
+camera.interior_1:
+  friendly_name: Dog Camera

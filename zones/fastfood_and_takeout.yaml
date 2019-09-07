@@ -1,0 +1,126 @@
+
+## Fast Food or Take Out
+# McDonalds
+- name: McDonald's on E Main
+  latitude: 39.614802
+  longitude: -86.079275
+  radius: 25
+  icon: mdi:food
+- name: McDonalds on Southport
+  latitude: 39.665407
+  longitude: -86.083196
+  radius: 25
+  icon: mdi:food
+- name: McDonald's on Gray Rd
+  latitude: 39.665936
+  longitude: -86.098022
+  radius: 25
+  icon: mdi:food
+- name: McDonald's on Thompson
+  latitude: 39.700766
+  longitude: -86.081559
+  radius: 25
+  icon: mdi:food
+# Taco Bell
+- name: Taco Bell on E Main
+  latitude: 39.613942
+  longitude: -86.080034
+  radius: 25
+  icon: mdi:food
+- name: Taco Bell on County Line
+  latitude: 39.636976
+  longitude: -86.083730
+  radius: 25
+  icon: mdi:food
+- name: Taco Bell on Southport
+  latitude: 39.666410
+  longitude: -86.078049
+  radius: 25
+  icon: mdi:food
+- name: Taco Bell on Thompson
+  latitude: 39.694260
+  longitude: -86.075006
+  radius: 25
+  icon: mdi:food
+# Buffalo Wild Wings
+- name: Buffalo Wild Wings on County Line
+  latitude: 39.635836
+  longitude: -86.078337
+  radius: 25
+  icon: mdi:food
+# Panda Express
+- name: Panda Express on Southport
+  latitude: 39.665308
+  longitude: -86.083698
+  radius: 25
+  icon: mdi:food
+# Wendy's
+- name: Wendy's on Southport
+  latitude: 39.665153
+  longitude: -86.092889
+  radius: 25
+  icon: mdi:food
+- name: Wendy's on Thompson
+  latitude: 39.695026
+  longitude: -86.079172
+  radius: 25
+  icon: mdi:food
+# Steak n Shake
+- name: Steak 'n Shake
+  latitude: 39.664770
+  longitude: -86.094210
+  radius: 25
+  icon: mdi:food
+# Burger King
+- name: Burger King on Gray Rd
+  latitude: 39.666775
+  longitude: -86.095733
+  radius: 25
+  icon: mdi:food
+# Panera
+- name: Panera Bread
+  latitude: 39.665493
+  longitude: -86.076893
+  radius: 25
+  icon: mdi:food
+# Jimmy Johns
+- name: Jimmy Johns
+  latitude: 39.665604
+  longitude: -86.076302
+  radius: 25
+  icon: mdi:food
+# Rally's
+- name: Rally's
+  latitude: 39.665538
+  longitude: -86.078653
+  radius: 25
+  icon: mdi:food
+# Chick-fil-A
+- name: Chick-fil-A
+  latitude: 39.666438
+  longitude: -86.078659
+  radius: 25
+  icon: mdi:food
+# Arby's
+- name: Arby's on Southport
+  latitude: 39.665500
+  longitude: -86.080665
+  radius: 25
+  icon: mdi:food
+- name: Arby's on Emerson
+  latitude: 39.695663
+  longitude: -86.081934
+  radius: 25
+  icon: mdi:food
+# Subway
+- name: Subway on Thompson
+  latitude: 39.694925
+  longitude: -86.081324
+  radius: 25
+  icon: mdi:food
+# Wings Etc
+- name: Wings Etc
+  latitude: 39.695750
+  longitude: -86.081344
+  radius: 25
+  icon: mdi:food

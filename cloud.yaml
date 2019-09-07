@@ -1,0 +1,73 @@
+# Set which items get synced with Google Home
+google_actions:
+  filter:
+    # I really want to be able to have Google turn my lights on and aff.
+    # Right now I just have one script, but if I every make a useful one,
+    # I want to be able to call it with Google.
+    include_domains:
+      - light
+      - script
+      - fan
+    # I exclude some entities, because they are light groups that I use
+    # in my lovelace UI but would be redundant for Google.
+    exclude_entities:
+      - light.recroom_lights
+      - light.bedroom_lights
+      - light.all_bedroom_lights
+      - light.all_rec_room_lights
+      - light.bedroom_room_lights
+      - light.bedroom_bed_lights
+    # Because I don't include ALL my switches, I manually include the ones
+    # that Google should be able to turn on or off.
+    include_entities:
+      - switch.tp_link_switch_1
+      - switch.tp_link_switch_2
+      - switch.tp_link_switch_3
+      - switch.tp_link_switch_4
+  # In entity config, you can set information for all your included entities.
+  entity_config:
+    # Right now, my two tplink switches are on Christmas tree lights.
+    switch.tp_link_switch_1:
+      name: Christmas Tree
+      room: Living Room
+    switch.tp_link_switch_2:
+      name: Heater
+      room: Bedroom
+    switch.tp_link_switch_3:
+      name: Wall Plug
+      room: Rec Room
+    switch.tp_link_switch_4:
+      name: Black Light
+      room: Avery's Room
+    # My two yeelights in the bedroom are descriptively named in Home Assistant,
+    # but it's silly to tell Google to turn on "Bedroom Nick" so instead I rename
+    # them here.
+    light.bedroom_nick:
+      name: Nick's Light
+      room: Bedoom
+    light.bedroom_kam:
+      name: Kam's Light
+      room: Bedoom
+    # Fixing the name for the 3rd yeelight
+    light.bedroom_avery:
+      name: Avery's Light
+      room: Avery's Room
+    # Recroom Lights
+    light.recroom_ceiling:
+      name: Ceiling Lights
+      room: Rec Room
+    light.recroom_wall:
+      name: Wall Lights
+      room: Rec Room
+    light.recroom_table:
+      name: Table Lights
+      room: Rec Room
+    light.recroom_corner:
+      name: Corner Lights
+      room: Rec Room
+    light.mudroom_light:
+      name: Mudroom Light
+      room: Rec Room
+    fan.recroom:
+      name: Fan
+      room: Rec Room

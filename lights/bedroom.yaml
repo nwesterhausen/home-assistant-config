@@ -1,0 +1,33 @@
+# Used 2 yeelight LED bulbs to be in the Four-bulb fan light. One points to my
+# side of the bed and the other points to my wife's (and the other 2 bulbs light
+# up the rest of the room -- they are zwave bulbs).
+# As with all WiFi IoT, there is a DHCP reservation in place for this light.
+# If someone ends up turning off the light switch or something, it will come
+# back up.
+# - platform: yeelight
+#   devices:
+#     172.18.19.65:
+#       name: Bedroom Nick
+#       model: color2
+#     172.18.19.66:
+#       name: Bedroom Kam
+#       model: color2
+      
+# Using light groups in lovelace and/or automations to provide cleaner control.
+- platform: group
+  name: All Bedroom Lights
+  entities:
+    - light.bedroom_room_1
+    - light.bedroom_room_2
+    - light.bedroom_nick
+    - light.bedroom_kam
+- platform: group
+  name: Bedroom Room Lights
+  entities:
+    - light.bedroom_room_1
+    - light.bedroom_room_2
+- platform: group
+  name: Bedroom Bed Lights
+  entities:
+    - light.bedroom_nick
+    - light.bedroom_kam

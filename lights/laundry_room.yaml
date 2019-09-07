@@ -1,0 +1,4 @@
+# Turn the zwave switch entity into a 'light'
+- platform: switch
+  name: Laundry Room Light
+  entity_id: switch.laundry_room_light

@@ -1,0 +1,18 @@
+# This sensor is True if someone is home, and false otherwise.
+# I am using the raw device trackers to do this just for reliability.
+# All it takes is one to be at home for someone to be home.
+- platform: template
+  sensors:
+    home_occupied:
+      entity_id:
+        - device_tracker.kamspixel
+        - device_tracker.nickspixel
+        - device_tracker.kameries_pixel
+        - device_tracker.nickspixel_wifi
+        - device_tracker.billies_phone
+      value_template: >-
+        {{ is_state('device_tracker.kamspixel', 'home')
+           or is_state('device_tracker.nickspixel', 'home')
+           or is_state('device_tracker.kameries_pixel', 'home')
+           or is_state('device_tracker.nickspixel_wifi', 'home')
+           or is_state('device_tracker.billies_phone', 'home') }}

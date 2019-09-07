@@ -1,0 +1,39 @@
+# Meijer
+- name: Meijer
+  latitude: 39.664157
+  longitude: -86.077283
+  radius: 130
+  icon: mdi:cart
+# Costco
+- name: Costco
+  latitude: 39.638104
+  longitude: -86.089041
+  radius: 150
+  icon: mdi:cart
+# Kroger
+- name: Kroger on Edgewood
+  latitude: 39.680415
+  longitude: -86.129483
+  radius: 75
+  icon: mdi:cart
+- name: Kroger on County Line
+  latitude: 39.639451
+  longitude: -86.080652
+  radius: 100
+  icon: mdi:cart
+- name: Kroger on Thompson
+  latitude: 39.696727
+  longitude: -86.077530
+  radius: 130
+  icon: mdi:cart
+# Walmart
+- name: Walmart on Emerson
+  latitude: 39.699606
+  longitude: -86.085103
+  radius: 130
+  icon: mdi:cart
+- name: Walmart on County Line
+  latitude: 39.634121
+  longitude: -86.080015
+  radius: 130
+  icon: mdi:cart

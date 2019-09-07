@@ -1,0 +1,11 @@
+# TP-Link HS301 Wi-Fi Switches (Plugs)
+# These work really well, as with all my infrastructure
+# these have DHCP Reservations that give them the same
+# IP Address when the connect to the wi-fi. So I can move
+# them around at will if I wanted.
+  discovery: false
+  switch:
+   - host: 172.18.19.97
+   - host: 172.18.19.98
+   - host: 172.18.19.99
+   - host: 172.18.19.100
