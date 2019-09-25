@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    recroom_nouthdoor_motion:
+      device_class: motion
+      friendly_name: Recroom North Doorway Motion
+      value_template: '{{ is_state_attr("sensor.recroom_northdoorway","occupancy","True") }}'

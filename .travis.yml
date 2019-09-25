@@ -1,0 +1,13 @@
+# Travis CI build script.
+# I believe I took this straight from someone else's config..
+language: python
+python:
+  - "3.5"
+# It's important to have your own secrets hidden and not public.
+before_install:
+  - mv travis_secrets.yaml secrets.yaml
+  - touch ./tensorflow/frozen_inference_graph.pb
+install:
+  - pip3 install homeassistant
+script:
+  - hass -c . --script check_config
