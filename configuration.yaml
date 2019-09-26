@@ -71,9 +71,9 @@ http:
 ##########################
 ##       NEST           ##
 ##########################
-nest:
-    client_id: !secret nest_id
-    client_secret: !secret nest_secret
+# nest:
+#     client_id: !secret nest_id
+#     client_secret: !secret nest_secret
 ##########################
 ##       TTS            ##
 ##########################
