@@ -1,0 +1,189 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "admin"
+                },
+                "id": "47557fae92054223ab68f7729e8114da",
+                "user_id": "f78243763afb4743b5637e6934d687d5"
+            }
+        ],
+        "groups": [
+            {
+                "id": "system-admin",
+                "name": "Administrators"
+            },
+            {
+                "id": "system-users",
+                "name": "Users"
+            },
+            {
+                "id": "system-read-only",
+                "name": "Read Only"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": null,
+                "client_name": null,
+                "created_at": "2019-09-25T19:29:52.113598+00:00",
+                "id": "08f965838f41433687daa6cf3b3bb9c2",
+                "jwt_key": "7c5307bd59c07b11d16b7fe522203d2d4ea7166f55d90cf487f3dba3a9d28838ca31ff32861610901b16f963ed69a6323a7c99e8118958a74322b5e73d80b04b",
+                "last_used_at": "2019-09-26T01:26:38.074898+00:00",
+                "last_used_ip": "172.30.32.2",
+                "token": "d4ff9643fd14ce2a2d1bff7485662979f85cc5fdcb1825b49d1f3366c1c700ea2c92a629ccc372c2e33370d1553e975586ecd6722c5232fa4765bde88d166bfa",
+                "token_type": "system",
+                "user_id": "17a21783eb0e4d769e3fcaae91e247ee"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://home-assistant.westerhausen.me/",
+                "client_name": null,
+                "created_at": "2019-09-25T19:35:04.654501+00:00",
+                "id": "95911247c9c245e0a6939656794db129",
+                "jwt_key": "95920844a2d37f8e5ad7ec1fefec4aab9852b0e59aeeafa9c84bd1179e905535673951a5c79ecaffbd26c66b8748d353ca10497007f99a7424cbc308ec972ba5",
+                "last_used_at": "2019-09-26T01:29:33.114248+00:00",
+                "last_used_ip": "172.18.18.2",
+                "token": "e0836a44a52a826aaf963e6e064f74c393f105cc814e8a6c1ec6bab87f9acf3c2463d0a9f82757e7bc24b5c71845c53d853667b519aa83fb33a029fd2a872ae8",
+                "token_type": "normal",
+                "user_id": "f78243763afb4743b5637e6934d687d5"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "https://home-assistant.westerhausen.me/",
+                "client_name": null,
+                "created_at": "2019-09-26T01:21:24.202382+00:00",
+                "id": "4aa5c44ec7b3482f86a2a85a30c97d3d",
+                "jwt_key": "66fbcfdc84dfa2741c4a779388597de1f3e5ff5f144a63f85881ff23a08ccfa5030cdc547ae3255a9cab9e227e20c80a5408332472f820b272f5ba906cb7a8de",
+                "last_used_at": "2019-09-26T01:21:24.202482+00:00",
+                "last_used_ip": "172.18.18.2",
+                "token": "a455b4d62201ff9129402b530bc21ba09379533ed92e39f0c6f723aa61abad3cd6437e67bb786671124e447dda5024fe83d534de1796fe06a170e3d3072aa6bf",
+                "token_type": "normal",
+                "user_id": "f78243763afb4743b5637e6934d687d5"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": null,
+                "client_name": null,
+                "created_at": "2019-09-25T19:32:38.575148+00:00",
+                "id": "ec77bda0ee964e1aac3a2b1c960e17f5",
+                "jwt_key": "8545f4215cc1196e6edd31b28e2d192c6f9a2ac235f44eacb853a1cbc01a6226c0a13fd2f856d0557a05f485471c5320992a40443586f90be5454d93f4491f4f",
+                "last_used_at": null,
+                "last_used_ip": null,
+                "token": "f61898db63866c10bd2ef04b7557f218b388920111bedfd139f0d24c4602895128fad4129f37f7cef14f51ae48e536d7dc567a40271478669c309f5cf73f87a1",
+                "token_type": "system",
+                "user_id": "fbc631d00f1744d5a23a428d8ee3b54a"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": null,
+                "client_name": null,
+                "created_at": "2019-09-26T01:40:25.890773+00:00",
+                "id": "ba397bd7c40448878f0f7cd487815b0b",
+                "jwt_key": "acb0b8c33879d7d9da1b668334f9b886f509a8fbe15deaad907059e4e2dc2a96cea7d06eb1ae144a3d39a5bcc407e4f5cd0d006578df661f356a9e0a715856d6",
+                "last_used_at": null,
+                "last_used_ip": null,
+                "token": "7c975ad8ee5427d68ad296c482dd96dec85231af6dc249bcc238f7110d1eaedaa876018f37a4ae756208c17fdabc227de6ad33096cf8e41596463d5b796ffbe6",
+                "token_type": "system",
+                "user_id": "4782cb9927e44490942f8812f24875a9"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": null,
+                "client_name": null,
+                "created_at": "2019-09-26T01:40:26.451219+00:00",
+                "id": "e66213b98bc3432eac4a51fb6ec11cb0",
+                "jwt_key": "9a7ec7a14466e8f3b64aab5804591ab1be5bd04b382c5802e85aa912d96688d609d774ee13e8873fdd8825783f950eba7ef29447cb3fb718de5c6504f7e54821",
+                "last_used_at": null,
+                "last_used_ip": null,
+                "token": "14fefd04568e816e6eb152bf00cdb42729025d27c14f0131693fefc14c056f901bcb1e666210927a5b54005fddfa37a924bab4452589275dd90520757bd65edd",
+                "token_type": "system",
+                "user_id": "6530d2cbe5084256bb8837b52dbe684b"
+            }
+        ],
+        "users": [
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "63f2a16869de42e1aaff462e5839fbc4",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Home Assistant Cloud",
+                "system_generated": true
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "17a21783eb0e4d769e3fcaae91e247ee",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Hass.io",
+                "system_generated": true
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "f78243763afb4743b5637e6934d687d5",
+                "is_active": true,
+                "is_owner": true,
+                "name": "HASS Admin",
+                "system_generated": false
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "fbc631d00f1744d5a23a428d8ee3b54a",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Home Assistant Cast",
+                "system_generated": true
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "4782cb9927e44490942f8812f24875a9",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Home Assistant Cast",
+                "system_generated": true
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "a2df6f19e9c24a22869a901b8b3e2f63",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Home Assistant Cloud",
+                "system_generated": true
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "6530d2cbe5084256bb8837b52dbe684b",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Hass.io",
+                "system_generated": true
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}

@@ -1,0 +1,80 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.updater",
+                "name": null,
+                "platform": "updater",
+                "unique_id": "updater"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.seventeentrack_packages_not_found",
+                "name": null,
+                "platform": "seventeentrack",
+                "unique_id": "summary_3804577697949055153_not_found"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.seventeentrack_packages_ready_to_be_picked_up",
+                "name": null,
+                "platform": "seventeentrack",
+                "unique_id": "summary_3804577697949055153_ready_to_be_picked_up"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.seventeentrack_packages_in_transit",
+                "name": null,
+                "platform": "seventeentrack",
+                "unique_id": "summary_3804577697949055153_in_transit"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.seventeentrack_packages_expired",
+                "name": null,
+                "platform": "seventeentrack",
+                "unique_id": "summary_3804577697949055153_expired"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.seventeentrack_packages_returned",
+                "name": null,
+                "platform": "seventeentrack",
+                "unique_id": "summary_3804577697949055153_returned"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.seventeentrack_packages_undelivered",
+                "name": null,
+                "platform": "seventeentrack",
+                "unique_id": "summary_3804577697949055153_undelivered"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.seventeentrack_packages_delivered",
+                "name": null,
+                "platform": "seventeentrack",
+                "unique_id": "summary_3804577697949055153_delivered"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}

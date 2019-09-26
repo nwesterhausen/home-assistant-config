@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "last_seen": "2019-09-26T01:32:16.468262+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "HASS Admin",
+                    "id": "1c6d04554c4d45fa835710d5bf5359f1",
+                    "user_id": "f78243763afb4743b5637e6934d687d5"
+                },
+                "context": {
+                    "id": "e126d53092154037a80a6b24e9d7d093",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.hass_admin",
+                "last_changed": "2019-09-25T19:31:20.482836+00:00",
+                "last_updated": "2019-09-25T19:31:20.482836+00:00",
+                "state": "unknown"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}

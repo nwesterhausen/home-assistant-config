@@ -14,24 +14,24 @@
       model: color2
       
 # Using light groups in lovelace and/or automations to provide cleaner control.
-- platform: group
-  name: All Bedroom Lights
-  view: no
-  icon: mdi:lightbulb-outline
-  entities:
-    - light.bedroom_room_1
-    - light.bedroom_room_2
-    - light.bedroom_nick
-    - light.bedroom_kam
-- platform: group
-  name: Bedroom Room Lights
-  icon: mdi:door
-  entities:
-    - light.bedroom_room_1
-    - light.bedroom_room_2
-- platform: group
-  name: Bedroom Bed Lights
-  icon: mdi:hotel
-  entities:
-    - light.bedroom_nick
-    - light.bedroom_kam
+# - platform: group
+#   name: All Bedroom Lights
+#   view: no
+#   icon: mdi:lightbulb-outline
+#   entities:
+#     - light.bedroom_room_1
+#     - light.bedroom_room_2
+#     - light.bedroom_nick
+#     - light.bedroom_kam
+# - platform: group
+#   name: Bedroom Room Lights
+#   icon: mdi:door
+#   entities:
+#     - light.bedroom_room_1
+#     - light.bedroom_room_2
+# - platform: group
+#   name: Bedroom Bed Lights
+#   icon: mdi:hotel
+#   entities:
+#     - light.bedroom_nick
+#     - light.bedroom_kam
